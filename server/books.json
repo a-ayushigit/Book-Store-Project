@@ -1,0 +1,84 @@
+[
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "publishYear": 1925,
+      "description": "A novel depicting the decadence and excess of the Jazz Age in America.",
+      "category": "Fiction",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1490528560i/4671.jpg"
+    },
+    {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "publishYear": 1960,
+      "description": "A classic novel exploring themes of racial injustice and moral growth in the American South.",
+      "category": "Fiction",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1582303449i/29008550.jpg"
+    },
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "publishYear": 1949,
+      "description": "A dystopian novel depicting a totalitarian regime and the struggle for freedom.",
+      "category": "Fiction",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657781256i/61439040.jpg"
+    },
+    {
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "publishYear": 1813,
+      "description": "A romantic novel exploring societal norms and love in early 19th century England.",
+      "category": "Fiction",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1320399351i/1885.jpg"
+    },
+    {
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "publishYear": 1951,
+      "description": "A coming-of-age novel following the journey of a teenager through New York City.",
+      "category": "Fiction",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1398034300i/5107.jpg"
+    },
+    {
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "publishYear": 1937,
+      "description": "A fantasy novel following the adventures of Bilbo Baggins as he journeys to reclaim the Lonely Mountain.",
+      "category": "Fantasy",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546071216i/5907.jpg"
+    },
+    {
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "publishYear": 1954,
+      "description": "An epic fantasy trilogy following the quest to destroy the One Ring and defeat the Dark Lord Sauron.",
+      "category": "Fantasy",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654215925i/61215351.jpg"
+    },
+    {
+      "title": "Harry Potter and the Philosopher's Stone",
+      "author": "J.K. Rowling",
+      "publishYear": 1997,
+      "description": "The first book in the Harry Potter series, following the young wizard Harry Potter as he discovers his magical heritage.",
+      "category": "Fantasy",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg"
+    },
+    {
+      "title": "The Da Vinci Code",
+      "author": "Dan Brown",
+      "publishYear": 2003,
+      "description": "A thriller novel following symbologist Robert Langdon as he investigates a murder in Paris.",
+      "category": "Mystery",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1579621267i/968.jpg"
+    },
+    {
+      "title": "Gone Girl",
+      "author": "Gillian Flynn",
+      "publishYear": 2012,
+      "description": "A psychological thriller novel exploring the complexities of marriage and deception.",
+      "category": "Mystery",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1554086139i/19288043.jpg"
+    }
+    
+  ]
+  
