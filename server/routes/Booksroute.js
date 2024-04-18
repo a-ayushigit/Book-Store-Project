@@ -5,7 +5,7 @@ const {getAllBooks , getOneBook , updateBook , deleteBook , createBook } = requi
 
 
 router.route('/').get(getAllBooks);
-router.route('/:id').post(createBook);
+router.route('/').post(createBook);
 router.route('/:id').get(getOneBook);
 router.route('/:id').put(updateBook);
 router.route('/:id').delete(deleteBook);
