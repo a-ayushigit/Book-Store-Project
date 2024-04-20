@@ -8,7 +8,7 @@ import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import ShopPage from './pages/ShopPage'
 import axios from 'axios';
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "http://localhost:5000/api/v1/books";
 axios.defaults.withCredentials = true ;
 function App() {
   return (
