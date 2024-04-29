@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 
 const Hero = () => {
-    const [books, setBooks] = useState([]);
+    const [book, setBook] = useState([]);
     useEffect(() => {
         const fetchBooks = async () => {
             try {
@@ -10,8 +10,10 @@ const Hero = () => {
 
 
                 if (response.status === 200) {
-                    setBooks(response.data.books.slice(0, 3));
+                    
+                    setBook(response.data.books[0]);
                     // console.log(response.data.books );
+                    console.log(book);
                 }
 
             }
@@ -32,23 +34,23 @@ const Hero = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2">
 
                         <div >
-                            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold">
-                                Hero
-                                <p className="bg-clip-text text-transparent text-right text-sm dark:text-white">
-                                    by Anonymous
+                            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold m-1 sm:m-2">
+                                {book.title}
+                                <p className="bg-clip-text text-transparent text-black text-right text-sm dark:text-white m-1 sm:m-2">
+                                   by  {book.author}
                                 </p>
                             </h1>
                             <p className="text-sm">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio nisi eligendi in dignissimos vel voluptatum molestias, voluptatem odio debitis, quibusdam dolore aliquam voluptas eius tempore at necessitatibus, unde quae quia.
+                                {book.description}
                             </p>
                             <div>
-                                <button className=" px-4 py-2 hover:scale-105 duration-200 dark:bg-red-400 rounded-full bg-teal-600 font-bold">
+                                <button className=" m-1 px-4 py-2 hover:scale-105 duration-200 dark:bg-red-400 rounded-full bg-teal-600 font-bold sm:m-2">
                                     Order Now
                                 </button>
                             </div>
                         </div>
-                        <div>
-                            
+                        <div className="p-4 m-4 place-self-center">
+                            <img src ={book.imageUrl} alt=""/>
                         </div>
                     </div>
                 </div>

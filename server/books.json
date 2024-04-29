@@ -5,7 +5,8 @@
       "publishYear": 1925,
       "description": "A novel depicting the decadence and excess of the Jazz Age in America.",
       "category": "Fiction",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1490528560i/4671.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1490528560i/4671.jpg",
+      "price":250
     },
     {
       "title": "To Kill a Mockingbird",
@@ -13,7 +14,8 @@
       "publishYear": 1960,
       "description": "A classic novel exploring themes of racial injustice and moral growth in the American South.",
       "category": "Fiction",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1582303449i/29008550.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1582303449i/29008550.jpg",
+      "price":250
     },
     {
       "title": "1984",
@@ -21,7 +23,8 @@
       "publishYear": 1949,
       "description": "A dystopian novel depicting a totalitarian regime and the struggle for freedom.",
       "category": "Fiction",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657781256i/61439040.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657781256i/61439040.jpg",
+      "price":250
     },
     {
       "title": "Pride and Prejudice",
@@ -29,7 +32,8 @@
       "publishYear": 1813,
       "description": "A romantic novel exploring societal norms and love in early 19th century England.",
       "category": "Fiction",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1320399351i/1885.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1320399351i/1885.jpg",
+      "price":250
     },
     {
       "title": "The Catcher in the Rye",
@@ -37,7 +41,8 @@
       "publishYear": 1951,
       "description": "A coming-of-age novel following the journey of a teenager through New York City.",
       "category": "Fiction",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1398034300i/5107.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1398034300i/5107.jpg",
+      "price":250
     },
     {
       "title": "The Hobbit",
@@ -45,7 +50,8 @@
       "publishYear": 1937,
       "description": "A fantasy novel following the adventures of Bilbo Baggins as he journeys to reclaim the Lonely Mountain.",
       "category": "Fantasy",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546071216i/5907.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546071216i/5907.jpg",
+      "price":250
     },
     {
       "title": "The Lord of the Rings",
@@ -53,7 +59,8 @@
       "publishYear": 1954,
       "description": "An epic fantasy trilogy following the quest to destroy the One Ring and defeat the Dark Lord Sauron.",
       "category": "Fantasy",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654215925i/61215351.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654215925i/61215351.jpg",
+      "price":250
     },
     {
       "title": "Harry Potter and the Philosopher's Stone",
@@ -61,7 +68,8 @@
       "publishYear": 1997,
       "description": "The first book in the Harry Potter series, following the young wizard Harry Potter as he discovers his magical heritage.",
       "category": "Fantasy",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg",
+      "price":250
     },
     {
       "title": "The Da Vinci Code",
@@ -69,7 +77,8 @@
       "publishYear": 2003,
       "description": "A thriller novel following symbologist Robert Langdon as he investigates a murder in Paris.",
       "category": "Mystery",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1579621267i/968.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1579621267i/968.jpg",
+      "price":250
     },
     {
       "title": "Gone Girl",
@@ -77,7 +86,98 @@
       "publishYear": 2012,
       "description": "A psychological thriller novel exploring the complexities of marriage and deception.",
       "category": "Mystery",
-      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1554086139i/19288043.jpg"
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1554086139i/19288043.jpg",
+      "price":250
+    } ,
+    {
+      "title": "Where the Crawdads Sing",
+      "author": "Delia Owens",
+      "publishYear": 2018,
+      "description": "A mystery about a young woman living in the marshes of North Carolina.",
+      "category": "Fiction",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1582135294i/36809135.jpg",
+      "price":250
+    },
+    {
+      "title": "Educated",
+      "author": "Tara Westover",
+      "publishYear": 2018,
+      "description": "A memoir about the author's journey from a survivalist family in Idaho to Cambridge University.",
+      "category": "Biography & Memoir",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1506026635i/35133922.jpg",
+      "price":250
+    },
+    {
+      "title": "Circe",
+      "author": "Madeline Miller",
+      "publishYear": 2018,
+      "description": "A retelling of the story of Circe, the Greek goddess, from her perspective.",
+      "category": "Fiction",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565909496i/35959740.jpg",
+      "price":250
+    },
+    {
+      "title": "The Silent Patient",
+      "author": "Alex Michaelides",
+      "publishYear": 2019,
+      "description": "A psychological thriller about a woman who stops speaking after killing her husband.",
+      "category": "Mystery & Thriller",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1668782119i/40097951.jpg",
+      "price":250
+    },
+    {
+      "title": "The Testaments",
+      "author": "Margaret Atwood",
+      "publishYear": 2019,
+      "description": "A sequel to The Handmaid's Tale, set fifteen years after the events of the first book.",
+      "category": "Fiction",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1549292344i/42975172.jpg",
+      "price":250
+    },
+    {
+      "title": "Normal People",
+      "author": "Sally Rooney",
+      "publishYear": 2018,
+      "description": "A love story about two young people from different backgrounds in Ireland.",
+      "category": "Fiction",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1571423190i/41057294.jpg",
+      "price":250
+    },
+    {
+      "title": "Daisy Jones & The Six",
+      "author": "Taylor Jenkins Reid",
+      "publishYear": 2019,
+      "description": "A novel about the rise and fall of a fictional 1970s rock band.",
+      "category": "Fiction",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1580255154i/40597810.jpg",
+      "price":250
+    },
+    {
+      "title": "The Water Dancer",
+      "author": "Ta-Nehisi Coates",
+      "publishYear": 2019,
+      "description": "A historical novel about a young man born into slavery who discovers he has a mysterious power.",
+      "category": "Historical Fiction",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1549993860i/43982054.jpg",
+      "price":250
+    },
+    {
+      "title": "Red, White & Royal Blue",
+      "author": "Casey McQuiston",
+      "publishYear": 2019,
+      "description": "A romantic comedy about the First Son of the United States falling in love with a British prince.",
+      "category": "Romance",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1566742512i/41150487.jpg",
+      "price":250
+    },
+    {
+      "title": "The Nickel Boys",
+      "author": "Colson Whitehead",
+      "publishYear": 2019,
+      "description": "A novel inspired by the true story of a reform school in Florida that operated for over one hundred years and warped the lives of thousands of children.",
+      "category": "Fiction",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1593115396i/42270835.jpg",
+      "price":250
     }
     
   ]
