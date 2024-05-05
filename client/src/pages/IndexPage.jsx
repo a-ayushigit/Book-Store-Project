@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import { Typography } from '@mui/material'
 import Hero from '../components/Hero'
 import BestSeller from '../components/BestSeller'
+import Banner from '../components/Banner'
 
 const IndexPage = () => {
   return (
@@ -12,6 +13,9 @@ const IndexPage = () => {
         </div>
         <div>
           <BestSeller/>
+        </div>
+        <div>
+          <Banner/>
         </div>
 
       

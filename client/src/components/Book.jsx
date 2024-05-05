@@ -41,7 +41,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
             books && books.map(book => <SwiperSlide key={book._id}>
                 <Link to={`/book/${book._id}`}>
                     <div className="relative">
-                        <img className="h-[50vh] w-[30vw]" src={book.imageUrl} alt="" />
+                        <img className="h-[50vh] w-[30vw] rounded-2xl" src={book.imageUrl} alt="" />
                         <div className="absolute p-2 top-3 right-3  bg-blue-400  rounded  hover:bg-black dark:bg-red-700 dark:hover:bg-black">
                             <ShoppingCartIcon className="h-4 w-4 text-white "/>
                         </div>
