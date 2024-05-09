@@ -5,6 +5,7 @@ const cors = require('cors');
 const  connectDB = require( './db/connect');
 require('dotenv').config();
 const booksRouter = require('./routes/Booksroute')
+const authRouter = require('./routes/AuthRoute')
 
 
 //Middleware 
@@ -21,7 +22,8 @@ app.get('/',(req,res)=>{
     res.send("Hello World !");
 })
 
-app.use('/api/v1/books', booksRouter);
+app.use('/api/v1/books', booksRouter);//marks the routes of the website api endpoints 
+app.use('/api/v1/auth' , authRouter);
 
 const start = async() =>{
     try {
