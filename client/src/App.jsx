@@ -9,7 +9,7 @@ import RegisterPage from './pages/RegisterPage'
 import ShopPage from './pages/ShopPage'
 import BookPage from './pages/BookPage'
 import axios from 'axios';
-axios.defaults.baseURL = "http://localhost:5000/api/v1/books";//so that we dont have to write theentire address again and again 
+axios.defaults.baseURL = "http://localhost:5000/api/v1/";//so that we dont have to write theentire address again and again 
 axios.defaults.withCredentials = true ;
 
 const router = createBrowserRouter(
