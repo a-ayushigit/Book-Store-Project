@@ -13,6 +13,3 @@ button.light{
     @apply bg-sky-950 text-white p-2 w-full rounded-3xl mb-60;
 }
 
-button.dark{
-    @apply bg-red-900 text-white p-2 w-full rounded-3xl mb-60;
-}

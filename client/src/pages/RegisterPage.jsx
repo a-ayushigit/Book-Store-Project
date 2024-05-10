@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios"
 const RegisterPage = () => {
   const [username,setUsername] = useState('');
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
+  
+
+  const navigate = useNavigate();
+
   async function registerUser(ev){
     ev.preventDefault();
     try {
@@ -13,12 +17,16 @@ const RegisterPage = () => {
         username , email , password
       }
     );
-    alert('Registration Successful . Now you can log in !')
+    
+    alert('Registration Successful . Now you can log in !');
+    navigate('/login');
+    
     } 
     catch (error) {
       console.log(error);
       alert('Registration failed')
     }
+    
     
   }
 
