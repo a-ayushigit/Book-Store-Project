@@ -2,50 +2,43 @@ import axios from "axios";
 import {createContext , useEffect , useState } from "react";
 import {useNavigate } from 'react-router-dom';
 
+
 //export the context you have created 
 
-export const UserContext = createContext();
+export const UserContext = createContext({});
 
 //create the function which will provide the context or the required data 
 export default  function UserContextProvider({children}){
     const [user , setUser] = useState(null);
-    const [ready , setReady] = useState(false);
     useEffect(()=>{
-        
-        if(!user){
+    if(!user){
             console.log('Hello')
     axios.get('auth/profile').then(({data})=>{
         console.log(data);
-        setUser(data);
-        console.log(data);
-        setReady(true);
+        //setUser({data[username] , data[email]});
+        let userdata = {username:data.username , email:data.email};
+        console.log(userdata);
+        console.log(typeof(userdata));
+        setUser(userdata);
+        console.log(user);
+        
+        
+      
     }).catch(err=>{
         console.log(err);
     });
         }
+},[user])
 
-    // async function fetchData(ev){
-    //     ev.preventDefault();
-    //     try{
-    //     const {data} = await axios.get('http://localhost:5000/api/v1/auth/profile');
-    //     setUser(data);
-    //      }
-    //      catch(err){
-    //         console.log(err);
-    //      }
+    return (
         
-    // }
-    // if(!user){
-    //     fetchData();
-    // }
+        <UserContext.Provider value={{user , setUser }}>
+            {children}
+        </UserContext.Provider>
+        
 
-    },[])
-
-    return 
-    (<UserContext.Provider value={{user , setUser , ready}}>
-        {children}
-    </UserContext.Provider>
     )
+    
 
 
 }

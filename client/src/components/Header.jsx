@@ -7,8 +7,9 @@ import DarkMode from './DarkMode';
 import { UserContext } from '../Contexts/UserContext';
 
 const Header = () => {
-const user = useContext(UserContext);
+const {user} = useContext(UserContext);
 console.log(user);
+
   const Menu = [
     {
       id:1 , name:"Home" , link:"/#",
@@ -17,7 +18,7 @@ console.log(user);
       id:2 , name:"Shop" , link:"/shop",
     }, 
     {
-      id:3 , name:user?<PersonIcon/>:<LoginIcon/> , link:user?"/account":"/login",
+      id:3 , name:user?<><PersonIcon/>{' '+user.username}</>:<LoginIcon/> , link:user?"/account":"/login",
     }
   ]
   return (

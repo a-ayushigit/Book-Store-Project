@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 import axios from "axios";
+import { UserContext } from '../Contexts/UserContext';
 const LoginPage = () => {
    
   const navigate = useNavigate();
@@ -8,10 +9,15 @@ const LoginPage = () => {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
  
+
+  
+ 
   async function loginUser(ev){
     ev.preventDefault();
+    
     try {
-      await axios.post('auth/login' , {email , password});
+      const {data} = await axios.post('auth/login' , {email , password} , {withCredentials:true});
+      
       alert('Login successful');
       navigate('/');
      
