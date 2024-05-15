@@ -42,7 +42,7 @@ const login = async(req , res)=>{
         const passok = bcrypt.compareSync(passwordextract , user.password);
 
         if(passok){
-            jwt.sign({email:user.email , id:user._id } ,process.env.JWT_SECRET ,{},(err,token)=>{
+            jwt.sign({email:user.email , id:user._id , isAdmin:user.isAdmin } ,process.env.JWT_SECRET ,{expiresIn:"3d"},(err,token)=>{
                 if(err) throw err;
                 res.status(200).cookie('token' , token).json(user);
             }  )
@@ -60,8 +60,7 @@ const login = async(req , res)=>{
 
 const profile = async(req , res)=>{
     const {token} = req.cookies;
-    console.log("hi")
-    console.log(token);
+    
     try {
         if(token){
             jwt.verify(token , process.env.JWT_SECRET , {} , async(err,userData)=>{
