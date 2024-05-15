@@ -6,7 +6,7 @@ const  connectDB = require( './db/connect');
 require('dotenv').config();
 const booksRouter = require('./routes/Booksroute')
 const authRouter = require('./routes/AuthRoute')
-
+const cookieParser = require('cookie-parser');
 
 //Middleware 
 app.use(cors(
@@ -16,7 +16,9 @@ app.use(cors(
   }
 ));
 app.use(express.json());
+
 //helps in making connection to the frontend side 
+app.use(cookieParser());
 
 app.get('/',(req,res)=>{
     res.send("Hello World !");

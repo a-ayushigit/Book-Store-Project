@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Logo from "../assets/logo.jpg";
 import { Link } from 'react-router-dom';
 import PersonIcon from '@mui/icons-material/Person';
+import LoginIcon from '@mui/icons-material/Login';
 import DarkMode from './DarkMode';
-const Header = () => {
+import { UserContext } from '../Contexts/UserContext';
 
+const Header = () => {
+const user = useContext(UserContext);
+console.log(user);
   const Menu = [
     {
       id:1 , name:"Home" , link:"/#",
@@ -13,7 +17,7 @@ const Header = () => {
       id:2 , name:"Shop" , link:"/shop",
     }, 
     {
-      id:3 , name:<PersonIcon/> , link:"/login"
+      id:3 , name:user?<PersonIcon/>:<LoginIcon/> , link:user?"/account":"/login",
     }
   ]
   return (
