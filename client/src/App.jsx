@@ -25,6 +25,7 @@ const router = createBrowserRouter(
     <Route path="register" element={<RegisterPage/>}/>
     <Route path="shop" element={<ShopPage/>}/>
     <Route path="account" element={<AccountPage/>}/>
+    <Route path="account/:subpage" element={<AccountPage/>}/>
     <Route path='book/:id' element={<BookPage/>} loader={async ({params})=>{
     const res =  await axios.get(`http://localhost:5000/api/v1/books/${params.id}`);
     console.log(res.data);

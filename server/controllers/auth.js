@@ -82,6 +82,16 @@ const profile = async(req , res)=>{
 
 }
 
+const logout = async(req,res)=>{
+    try{
+        res.cookie('token' , '').json(true);
+    }
+    catch(err){
+        console.log(err);
+    }
+   
+}
+
 module.exports = {
-    register , login , profile 
+    register , login , profile , logout
 };

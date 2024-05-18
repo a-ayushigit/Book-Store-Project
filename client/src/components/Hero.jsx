@@ -7,8 +7,6 @@ const Hero = () => {
         const fetchBooks = async () => {
             try {
                 const response = await axios.get('http://localhost:5000/api/v1/books');
-
-
                 if (response.status === 200) {
                     
                     setBook(response.data.books[0]);
@@ -24,14 +22,14 @@ const Hero = () => {
         fetchBooks();
     }, [])
     return (
-        <div>
+        <div className="px-auto">
             
-            <div className="min-h-[550px] sm:min-h-[650px] bg-gray-100 flex justify-center items-center dark:bg-red-800 dark:text-white duration-200">
+            <div className="px-3 py-3 min-h-[550px] sm:min-h-[650px] bg-gray-100 flex justify-center items-center dark:bg-red-800 dark:text-white duration-200 ">
                 <div className="container pb-8 sm:pb-0">
                     <div className="grid grid-cols-1 sm:grid-cols-2 ">
 
                         <div  className="">
-                            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold m-1 sm:m-2">
+                            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold m-1 sm:m-2 ">
                                 {book.title}
                                 <p className="bg-clip-text  text-black text-right text-sm dark:text-white m-1 sm:m-2">
                                    by  {book.author}

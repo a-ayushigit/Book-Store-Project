@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PersonIcon from '@mui/icons-material/Person';
 import LoginIcon from '@mui/icons-material/Login';
 import DarkMode from './DarkMode';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { UserContext } from '../Contexts/UserContext';
 
 const Header = () => {
@@ -19,6 +20,9 @@ console.log(user);
     }, 
     {
       id:3 , name:user?<><PersonIcon/>{' '+user.username}</>:<LoginIcon/> , link:user?"/account":"/login",
+    },
+    {
+      id:4 , name:<ShoppingCartIcon/>,link:"/account/myPurchase",
     }
   ]
   return (
