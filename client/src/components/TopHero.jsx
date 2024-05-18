@@ -10,8 +10,8 @@ const image = [img , img2 , img3 , img4 , img5];
 
 const TopHero = () => {
   return (
-    <div>
-      <Slider slides={image} />
+    <div className="h-full" >
+      <Slider  slides={image} />
     </div>
   )
 }

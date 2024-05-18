@@ -5,7 +5,9 @@ import Hero from '../components/Hero'
 import BestSeller from '../components/BestSeller'
 import Banner from '../components/Banner'
 import TopHero from '../components/TopHero'
-import HeroSlider from '../components/HeroSlider'
+
+import Category from '../components/Category'
+
 
 const IndexPage = () => {
   return (
@@ -16,7 +18,8 @@ const IndexPage = () => {
             {/* <HeroSlider/> */}
         </div>
         <div>
-          <BestSeller/>
+          {/* <BestSeller/> */}
+          <Category/>
         </div>
         <div>
           <Banner/>

@@ -26,8 +26,8 @@ const BestSeller = () => {
         fetchBooks();
     }, [])
   return (
-    <div className="h-[85vh] dark:bg-red-200  bg-teal-400 ">
-    <div className="flex font-bold justify-around text-3xl my-5 dark:text-red-900">
+    <div className="h-[85vh] dark:bg-red-200  ">
+    <div className="flex  justify-around text-3xl my-5 dark:text-red-900">
         BEST SELLING BOOKS
     </div>
     <div>
