@@ -13,3 +13,13 @@ button.light{
     @apply bg-sky-950 text-white p-2 w-full rounded-3xl mb-60;
 }
 
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar{
+        display:none;
+    }
+    .no-scrollbar{
+        -ms-overflow-style:none;
+        scrollbar-width: none;
+    }
+}
+

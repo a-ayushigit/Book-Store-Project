@@ -1,9 +1,10 @@
 import React from 'react'
+import CardSlider from './CardSlider';
 import { useState , useEffect } from 'react';
 import axios from 'axios';
-import Book from './Book';
 
-const BestSeller = () => {
+
+const BestSellers = () => {
     const [books, setBooks] = useState([]);
     useEffect(() => {
         const fetchBooks = async () => {
@@ -25,18 +26,13 @@ const BestSeller = () => {
         }
         fetchBooks();
     }, [])
+
   return (
-    <div className="h-screen dark:bg-red-200  ">
-    <div className="flex  justify-around text-3xl my-5 dark:text-red-900">
-        BEST SELLING BOOKS
-    </div>
-    <div>
-       <Book books={books} />
-    </div>
-     
+    <div className='h-screen object-fit p-5'>
+        <span className="font-serif font-bold text-cyan-950 shadow-md">BEST SELLERS</span>
+      <CardSlider books={books} title="BEST SELLER"/>
     </div>
   )
 }
 
-export default BestSeller
-
+export default BestSellers
