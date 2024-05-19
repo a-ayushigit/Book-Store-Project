@@ -18,7 +18,7 @@ const DarkMode = () => {
   return (
     <div className="flex">
     <div className="relative flex  justify-center my-0">
-        <button className=" flex w-16 h-8 border-4  border-gray-100 rounded-full px-3 ">
+        <button className=" flex w-16 h-8 border-4 border-gray-500 dark:border-gray-100 rounded-full px-3 ">
         <WbSunnyIcon className={`w-8 h-6 cursor-pointer drop-shadow-[1px_1px_1px_rgba(0,0,0,0.1)] transition-all hover:drop-shadow-[1px_1px_2px_rgba(0,0,0,0.5)]  duration-300 absolute right-0 z-10 ${theme === "dark" ? "opacity-0" : "opacity-100"} `} 
         onClick={() => {setTheme(theme === "dark" ? "light":"dark")}}
         />
