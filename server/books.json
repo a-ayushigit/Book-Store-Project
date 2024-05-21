@@ -4,7 +4,7 @@
       "author": "F. Scott Fitzgerald",
       "publishYear": 1925,
       "description": "A novel depicting the decadence and excess of the Jazz Age in America.",
-      "category": "Fiction",
+      "category": ["Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1490528560i/4671.jpg",
       "price":250
     },
@@ -13,7 +13,7 @@
       "author": "Harper Lee",
       "publishYear": 1960,
       "description": "A classic novel exploring themes of racial injustice and moral growth in the American South.",
-      "category": "Fiction",
+      "category": ["Fiction" ],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1582303449i/29008550.jpg",
       "price":250
     },
@@ -22,7 +22,7 @@
       "author": "George Orwell",
       "publishYear": 1949,
       "description": "A dystopian novel depicting a totalitarian regime and the struggle for freedom.",
-      "category": "Fiction",
+      "category": ["Fiction" , "Fantasy"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657781256i/61439040.jpg",
       "price":250
     },
@@ -31,7 +31,7 @@
       "author": "Jane Austen",
       "publishYear": 1813,
       "description": "A romantic novel exploring societal norms and love in early 19th century England.",
-      "category": "Fiction",
+      "category": ["Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1320399351i/1885.jpg",
       "price":250
     },
@@ -40,7 +40,7 @@
       "author": "J.D. Salinger",
       "publishYear": 1951,
       "description": "A coming-of-age novel following the journey of a teenager through New York City.",
-      "category": "Fiction",
+      "category":["Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1398034300i/5107.jpg",
       "price":250
     },
@@ -49,7 +49,7 @@
       "author": "J.R.R. Tolkien",
       "publishYear": 1937,
       "description": "A fantasy novel following the adventures of Bilbo Baggins as he journeys to reclaim the Lonely Mountain.",
-      "category": "Fantasy",
+      "category": ["Fiction","Fantasy"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546071216i/5907.jpg",
       "price":250
     },
@@ -58,7 +58,7 @@
       "author": "J.R.R. Tolkien",
       "publishYear": 1954,
       "description": "An epic fantasy trilogy following the quest to destroy the One Ring and defeat the Dark Lord Sauron.",
-      "category": "Fantasy",
+      "category":["Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654215925i/61215351.jpg",
       "price":250
     },
@@ -67,7 +67,7 @@
       "author": "J.K. Rowling",
       "publishYear": 1997,
       "description": "The first book in the Harry Potter series, following the young wizard Harry Potter as he discovers his magical heritage.",
-      "category": "Fantasy",
+      "category": ["Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg",
       "price":250
     },
@@ -76,7 +76,7 @@
       "author": "Dan Brown",
       "publishYear": 2003,
       "description": "A thriller novel following symbologist Robert Langdon as he investigates a murder in Paris.",
-      "category": "Mystery",
+      "category": ["Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1579621267i/968.jpg",
       "price":250
     },
@@ -85,7 +85,7 @@
       "author": "Gillian Flynn",
       "publishYear": 2012,
       "description": "A psychological thriller novel exploring the complexities of marriage and deception.",
-      "category": "Mystery",
+      "category": ["Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1554086139i/19288043.jpg",
       "price":250
     } ,
@@ -94,7 +94,7 @@
       "author": "Delia Owens",
       "publishYear": 2018,
       "description": "A mystery about a young woman living in the marshes of North Carolina.",
-      "category": "Fiction",
+      "category": ["Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1582135294i/36809135.jpg",
       "price":250
     },
@@ -103,7 +103,7 @@
       "author": "Tara Westover",
       "publishYear": 2018,
       "description": "A memoir about the author's journey from a survivalist family in Idaho to Cambridge University.",
-      "category": "Biography & Memoir",
+      "category": ["Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1506026635i/35133922.jpg",
       "price":250
     },
@@ -112,7 +112,7 @@
       "author": "Madeline Miller",
       "publishYear": 2018,
       "description": "A retelling of the story of Circe, the Greek goddess, from her perspective.",
-      "category": "Fiction",
+      "category": ["Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1565909496i/35959740.jpg",
       "price":250
     },
@@ -121,7 +121,7 @@
       "author": "Alex Michaelides",
       "publishYear": 2019,
       "description": "A psychological thriller about a woman who stops speaking after killing her husband.",
-      "category": "Mystery & Thriller",
+      "category": ["Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1668782119i/40097951.jpg",
       "price":250
     },
@@ -130,7 +130,7 @@
       "author": "Margaret Atwood",
       "publishYear": 2019,
       "description": "A sequel to The Handmaid's Tale, set fifteen years after the events of the first book.",
-      "category": "Fiction",
+      "category": ["Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1549292344i/42975172.jpg",
       "price":250
     },
@@ -139,7 +139,7 @@
       "author": "Sally Rooney",
       "publishYear": 2018,
       "description": "A love story about two young people from different backgrounds in Ireland.",
-      "category": "Fiction",
+      "category":[ "Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1571423190i/41057294.jpg",
       "price":250
     },
@@ -148,7 +148,7 @@
       "author": "Taylor Jenkins Reid",
       "publishYear": 2019,
       "description": "A novel about the rise and fall of a fictional 1970s rock band.",
-      "category": "Fiction",
+      "category": ["Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1580255154i/40597810.jpg",
       "price":250
     },
@@ -157,7 +157,7 @@
       "author": "Ta-Nehisi Coates",
       "publishYear": 2019,
       "description": "A historical novel about a young man born into slavery who discovers he has a mysterious power.",
-      "category": "Historical Fiction",
+      "category": ["Historical Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1549993860i/43982054.jpg",
       "price":250
     },
@@ -166,7 +166,7 @@
       "author": "Casey McQuiston",
       "publishYear": 2019,
       "description": "A romantic comedy about the First Son of the United States falling in love with a British prince.",
-      "category": "Romance",
+      "category": ["Romance"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1566742512i/41150487.jpg",
       "price":250
     },
@@ -175,10 +175,427 @@
       "author": "Colson Whitehead",
       "publishYear": 2019,
       "description": "A novel inspired by the true story of a reform school in Florida that operated for over one hundred years and warped the lives of thousands of children.",
-      "category": "Fiction",
+      "category": ["Fiction"],
       "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1593115396i/42270835.jpg",
       "price":250
-    }
+    },
+    
+      {
+          "title": "The Great Adventure",
+          "author": "John Doe",
+          "publishYear": 2021,
+          "description": "An exhilarating journey through the unknown, filled with challenges and discoveries.",
+          "category": ["Adventure", "Fiction"],
+          "imageUrl": "http://example.com/images/great-adventure.jpg",
+          "price": 19.99
+      },
+      {
+          "title": "Mysteries of the Deep",
+          "author": "Jane Smith",
+          "publishYear": 2019,
+          "description": "Dive into the depths of the ocean to uncover hidden secrets and ancient creatures.",
+          "category": ["Non-fiction", "Science"],
+          "imageUrl": "http://example.com/images/mysteries-deep.jpg",
+          "price": 24.50
+      },
+      {
+          "title": "Coding for Beginners",
+          "author": "Alex Johnson",
+          "publishYear": 2023,
+          "description": "A comprehensive guide to starting your journey in programming, suitable for all ages.",
+          "category": ["Education", "Technology"],
+          "imageUrl": "http://example.com/images/coding-beginners.jpg",
+          "price": 29.99
+      },
+      {
+          "title": "The Hidden Temple",
+          "author": "Sarah Brown",
+          "publishYear": 2020,
+          "description": "A gripping tale of discovery and danger in the heart of the jungle.",
+          "category": ["Adventure", "Thriller"],
+          "imageUrl": "http://example.com/images/hidden-temple.jpg",
+          "price": 21.99
+      },
+      {
+          "title": "The Time Traveler",
+          "author": "Michael Williams",
+          "publishYear": 2018,
+          "description": "An epic story of a man who travels through time to change his destiny.",
+          "category": ["Science Fiction", "Fantasy"],
+          "imageUrl": "http://example.com/images/time-traveler.jpg",
+          "price": 18.75
+      },
+      {
+          "title": "Gardening 101",
+          "author": "Emily Davis",
+          "publishYear": 2022,
+          "description": "A beginner's guide to growing your own garden, from flowers to vegetables.",
+          "category": ["Non-fiction", "Gardening"],
+          "imageUrl": "http://example.com/images/gardening-101.jpg",
+          "price": 15.99
+      },
+      {
+          "title": "Secrets of the Universe",
+          "author": "David Lee",
+          "publishYear": 2017,
+          "description": "An exploration of the cosmos and the mysteries that lie beyond our planet.",
+          "category": ["Non-fiction", "Science"],
+          "imageUrl": "http://example.com/images/secrets-universe.jpg",
+          "price": 27.50
+      },
+      {
+          "title": "Mastering Photography",
+          "author": "Jessica Taylor",
+          "publishYear": 2021,
+          "description": "A comprehensive guide to becoming a skilled photographer, from basics to advanced techniques.",
+          "category": ["Education", "Photography"],
+          "imageUrl": "http://example.com/images/mastering-photography.jpg",
+          "price": 32.00
+      },
+      {
+          "title": "The Haunted Mansion",
+          "author": "Daniel Martinez",
+          "publishYear": 2019,
+          "description": "A chilling story of a family that moves into a mansion with a dark past.",
+          "category": ["Horror", "Thriller"],
+          "imageUrl": "http://example.com/images/haunted-mansion.jpg",
+          "price": 22.99
+      },
+      {
+          "title": "Ancient Civilizations",
+          "author": "Laura Wilson",
+          "publishYear": 2020,
+          "description": "A journey through the history and achievements of ancient civilizations around the world.",
+          "category": ["Non-fiction", "History"],
+          "imageUrl": "http://example.com/images/ancient-civilizations.jpg",
+          "price": 19.99
+      },
+      {
+          "title": "The Art of Cooking",
+          "author": "Sophia Robinson",
+          "publishYear": 2022,
+          "description": "A culinary masterpiece that teaches you the art and science of cooking delicious meals.",
+          "category": ["Non-fiction", "Cooking"],
+          "imageUrl": "http://example.com/images/art-of-cooking.jpg",
+          "price": 28.00
+      },
+      {
+          "title": "Fantasy Realms",
+          "author": "Brian Moore",
+          "publishYear": 2023,
+          "description": "An enchanting collection of short stories set in fantastical worlds filled with magic and wonder.",
+          "category": ["Fantasy", "Short Stories"],
+          "imageUrl": "http://example.com/images/fantasy-realms.jpg",
+          "price": 16.50
+      },
+      {
+          "title": "The Science of Happiness",
+          "author": "Rachel Green",
+          "publishYear": 2018,
+          "description": "A scientific approach to understanding and achieving happiness in everyday life.",
+          "category": ["Non-fiction", "Self-Help"],
+          "imageUrl": "http://example.com/images/science-of-happiness.jpg",
+          "price": 23.75
+      },
+      {
+          "title": "Urban Legends",
+          "author": "Steven Thompson",
+          "publishYear": 2017,
+          "description": "A collection of spooky and thrilling urban legends from around the world.",
+          "category": ["Horror", "Mystery"],
+          "imageUrl": "http://example.com/images/urban-legends.jpg",
+          "price": 20.00
+      },
+      {
+          "title": "Journey to Mars",
+          "author": "Natalie Harris",
+          "publishYear": 2021,
+          "description": "An exciting science fiction tale about the first human mission to Mars and the discoveries that await.",
+          "category": ["Science Fiction", "Adventure"],
+          "imageUrl": "http://example.com/images/journey-to-mars.jpg",
+          "price": 25.00
+      },
+      {
+          "title": "Digital Marketing Essentials",
+          "author": "Christopher White",
+          "publishYear": 2020,
+          "description": "A guide to mastering digital marketing strategies for businesses of all sizes.",
+          "category": ["Non-fiction", "Business"],
+          "imageUrl": "http://example.com/images/digital-marketing-essentials.jpg",
+          "price": 30.00
+      },
+      {
+          "title": "The Enchanted Forest",
+          "author": "Olivia Clark",
+          "publishYear": 2019,
+          "description": "A magical story of a young girl who discovers a hidden world within an enchanted forest.",
+          "category": ["Fantasy", "Children"],
+          "imageUrl": "http://example.com/images/enchanted-forest.jpg",
+          "price": 18.99
+      },
+      {
+          "title": "History of Art",
+          "author": "Matthew Scott",
+          "publishYear": 2022,
+          "description": "An exploration of the evolution of art from ancient times to the modern era.",
+          "category": ["Non-fiction", "Art"],
+          "imageUrl": "http://example.com/images/history-of-art.jpg",
+          "price": 35.00
+      },
+      {
+          "title": "Healthy Living",
+          "author": "Amanda Hill",
+          "publishYear": 2023,
+          "description": "A guide to achieving a healthy lifestyle through diet, exercise, and mindfulness.",
+          "category": ["Non-fiction", "Health"],
+          "imageUrl": "http://example.com/images/healthy-living.jpg",
+          "price": 21.50
+      },
+      {
+          "title": "The Lost City",
+          "author": "James Lopez",
+          "publishYear": 2018,
+          "description": "An adventurous tale of a team of explorers who uncover a lost city in the Amazon jungle.",
+          "category": ["Adventure", "Mystery"],
+          "imageUrl": "http://example.com/images/lost-city.jpg",
+          "price": 22.00
+      },
+      {
+          "title": "Robotics for Kids",
+          "author": "Patricia Martin",
+          "publishYear": 2021,
+          "description": "An introduction to robotics and programming for young learners.",
+          "category": ["Education", "Technology"],
+          "imageUrl": "http://example.com/images/robotics-for-kids.jpg",
+          "price": 25.50
+      },
+      {
+          "title": "Exploring the Mind",
+          "author": "Robert Anderson",
+          "publishYear": 2019,
+          "description": "A journey into the human mind and the science behind our thoughts and behaviors.",
+          "category": ["Non-fiction", "Psychology"],
+          "imageUrl": "http://example.com/images/exploring-the-mind.jpg",
+          "price": 24.75
+      },
+      {
+          "title": "The Secret Garden",
+          "author": "Isabella Collins",
+          "publishYear": 2020,
+          "description": "A heartwarming story of a young girl who discovers a secret garden that changes her life.",
+          "category": ["Fiction", "Children"],
+          "imageUrl": "http://example.com/images/secret-garden.jpg",
+          "price": 19.50
+      },
+      {
+          "title": "Cybersecurity Essentials",
+          "author": "Thomas King",
+          "publishYear": 2022,
+          "description": "A guide to understanding and implementing cybersecurity measures for individuals and businesses.",
+          "category": ["Non-fiction", "Technology"],
+          "imageUrl": "http://example.com/images/cybersecurity-essentials.jpg",
+          "price": 29.99
+      },
+      {
+          "title": "Creative Writing",
+          "author": "Hannah Lewis",
+          "publishYear": 2023,
+          "description": "A guide to developing your creative writing skills, from storytelling to poetry.",
+          "category": ["Education", "Writing"],
+          "imageUrl": "http://example.com/images/creative-writing.jpg",
+          "price": 26.00
+      },
+      {
+          "title": "The Last Frontier",
+          "author": "Andrew Young",
+          "publishYear": 2017,
+          "description": "An epic adventure story set in the uncharted wilderness of Alaska.",
+          "category": ["Adventure", "Fiction"],
+          "imageUrl": "http://example.com/images/last-frontier.jpg",
+          "price": 21.75
+      },
+      {
+          "title": "Mindful Meditation",
+          "author": "Barbara Hall",
+          "publishYear": 2021,
+          "description": "A guide to practicing mindful meditation to improve mental health and well-being.",
+          "category": ["Non-fiction", "Self-Help"],
+          "imageUrl": "http://example.com/images/mindful-meditation.jpg",
+          "price": 23.50
+      },
+      {
+          "title": "The Future of AI",
+          "author": "Kevin Baker",
+          "publishYear": 2020,
+          "description": "An exploration of the advancements and implications of artificial intelligence in the modern world.",
+          "category": ["Non-fiction", "Technology"],
+          "imageUrl": "http://example.com/images/future-of-ai.jpg",
+          "price": 28.99
+      },
+      {
+          "title": "Traveling the World",
+          "author": "Samantha Green",
+          "publishYear": 2022,
+          "description": "A travel guide that takes you on a journey to some of the most beautiful and exotic places on Earth.",
+          "category": ["Non-fiction", "Travel"],
+          "imageUrl": "http://example.com/images/traveling-the-world.jpg",
+          "price": 27.00
+      },
+      {
+          "title": "Space Exploration",
+          "author": "Nicholas Roberts",
+          "publishYear": 2019,
+          "description": "An in-depth look at the history and future of space exploration.",
+          "category": ["Non-fiction", "Science"],
+          "imageUrl": "http://example.com/images/space-exploration.jpg",
+          "price": 31.50
+      },
+      {
+          "title": "The Art of War",
+          "author": "Sun Tzu",
+          "publishYear": -500,
+          "description": "An ancient Chinese military treatise that is still widely read and applied today.",
+          "category": ["Non-fiction", "Philosophy"],
+          "imageUrl": "http://example.com/images/art-of-war.jpg",
+          "price": 15.00
+      },
+      {
+          "title": "The Renaissance",
+          "author": "Catherine Scott",
+          "publishYear": 2020,
+          "description": "A detailed exploration of the Renaissance period and its impact on art, culture, and science.",
+          "category": ["Non-fiction", "History"],
+          "imageUrl": "http://example.com/images/renaissance.jpg",
+          "price": 33.00
+      },
+      {
+          "title": "Fairy Tales",
+          "author": "Multiple Authors",
+          "publishYear": 2018,
+          "description": "A collection of classic fairy tales from around the world.",
+          "category": ["Fiction", "Children"],
+          "imageUrl": "http://example.com/images/fairy-tales.jpg",
+          "price": 18.25
+      },
+      {
+          "title": "The Jazz Age",
+          "author": "Margaret Turner",
+          "publishYear": 2021,
+          "description": "A look at the vibrant culture and music of the Jazz Age in the 1920s.",
+          "category": ["Non-fiction", "History"],
+          "imageUrl": "http://example.com/images/jazz-age.jpg",
+          "price": 24.99
+      },
+      {
+          "title": "Virtual Reality",
+          "author": "George Mitchell",
+          "publishYear": 2019,
+          "description": "An exploration of virtual reality technology and its applications.",
+          "category": ["Non-fiction", "Technology"],
+          "imageUrl": "http://example.com/images/virtual-reality.jpg",
+          "price": 27.75
+      },
+      {
+          "title": "Mystery of the Sphinx",
+          "author": "Richard Adams",
+          "publishYear": 2022,
+          "description": "A thrilling adventure that uncovers the secrets of the ancient Sphinx in Egypt.",
+          "category": ["Adventure", "Mystery"],
+          "imageUrl": "http://example.com/images/mystery-sphinx.jpg",
+          "price": 22.50
+      },
+      {
+          "title": "The Solar System",
+          "author": "Linda Baker",
+          "publishYear": 2020,
+          "description": "A detailed guide to the planets and other celestial bodies in our solar system.",
+          "category": ["Non-fiction", "Science"],
+          "imageUrl": "http://example.com/images/solar-system.jpg",
+          "price": 29.50
+      },
+      {
+          "title": "The Wonders of Nature",
+          "author": "Julie Harris",
+          "publishYear": 2021,
+          "description": "An exploration of the natural wonders of the world, from mountains to oceans.",
+          "category": ["Non-fiction", "Nature"],
+          "imageUrl": "http://example.com/images/wonders-of-nature.jpg",
+          "price": 26.25
+      },
+      {
+          "title": "The Digital Revolution",
+          "author": "Jason Wright",
+          "publishYear": 2019,
+          "description": "An in-depth look at the digital revolution and its impact on society and the economy.",
+          "category": ["Non-fiction", "Technology"],
+          "imageUrl": "http://example.com/images/digital-revolution.jpg",
+          "price": 28.75
+      },
+      {
+          "title": "Epic Fantasy",
+          "author": "Anthony Lewis",
+          "publishYear": 2023,
+          "description": "A collection of epic fantasy tales filled with heroes, magic, and mythical creatures.",
+          "category": ["Fantasy", "Short Stories"],
+          "imageUrl": "http://example.com/images/epic-fantasy.jpg",
+          "price": 20.99
+      },
+      {
+          "title": "The Ancient World",
+          "author": "Karen Thompson",
+          "publishYear": 2022,
+          "description": "A comprehensive guide to the ancient world and its civilizations.",
+          "category": ["Non-fiction", "History"],
+          "imageUrl": "http://example.com/images/ancient-world.jpg",
+          "price": 34.50
+      },
+      {
+          "title": "The Power of Mindfulness",
+          "author": "Elizabeth Johnson",
+          "publishYear": 2021,
+          "description": "A guide to practicing mindfulness and its benefits for mental health and well-being.",
+          "category": ["Non-fiction", "Self-Help"],
+          "imageUrl": "http://example.com/images/power-of-mindfulness.jpg",
+          "price": 23.99
+      },
+      {
+          "title": "The Last Pirate",
+          "author": "Mark Walker",
+          "publishYear": 2020,
+          "description": "An adventurous tale of a pirate's last voyage and his search for hidden treasure.",
+          "category": ["Adventure", "Historical Fiction"],
+          "imageUrl": "http://example.com/images/last-pirate.jpg",
+          "price": 21.99
+      },
+      {
+          "title": "The Art of Zen",
+          "author": "Michael Turner",
+          "publishYear": 2023,
+          "description": "A guide to understanding and practicing Zen philosophy for a peaceful life.",
+          "category": ["Non-fiction", "Philosophy"],
+          "imageUrl": "http://example.com/images/art-of-zen.jpg",
+          "price": 24.50
+      },
+      {
+          "title": "Futuristic Cities",
+          "author": "Helen Evans",
+          "publishYear": 2022,
+          "description": "An exploration of the design and technology behind the cities of the future.",
+          "category": ["Non-fiction", "Architecture"],
+          "imageUrl": "http://example.com/images/futuristic-cities.jpg",
+          "price": 29.25
+      },
+      {
+          "title": "The World of Robots",
+          "author": "Dennis Moore",
+          "publishYear": 2021,
+          "description": "A guide to understanding robotics and its applications in various industries.",
+          "category": ["Non-fiction", "Technology"],
+          "imageUrl": "http://example.com/images/world-of-robots.jpg",
+          "price": 27.75
+      }
+  
+  
     
   ]
   

@@ -2,8 +2,29 @@ const express = require("express");
 const Book = require("../models/book");
 
 const getAllBooks = async(req , res)=>{
+    const qnew = req.query.new;
+    let qcategory = req.query.category;
+    
     try{
-    const books = await Book.find({});
+
+    let books;
+    if(qnew){
+      books = await Book.find().sort({createdAt:-1}).limit(5);
+    }
+    else if(qcategory){
+       
+      books = await Book.find({
+        category:{$in:[qcategory]},
+        
+      })
+      
+    }
+   
+    else {
+        books = await Book.find({});
+    }
+
+ 
     res.status(200).json({books});
     }
     catch(error){
@@ -56,14 +77,7 @@ const createBook = async(req , res)=>{
 
 const updateBook = async(req,res) => {
     try{
-        if(
-            !req.body.title || !req.body.author || !req.body.publishYear || !req.body.imageUrl
-        )
-        {
-            res.status(400).send({
-                message: 'Send all required fields : title , author , publishYear imageUrl',
-            })
-        }
+        
 
         const {id} = req.params;
         const result = await Book.findByIdAndUpdate(id , req.body);

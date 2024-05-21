@@ -6,6 +6,7 @@ const  connectDB = require( './db/connect');
 require('dotenv').config();
 const booksRouter = require('./routes/Booksroute')
 const authRouter = require('./routes/AuthRoute')
+const userAdminRouter = require('./routes/UserAdminRoute')
 const cookieParser = require('cookie-parser');
 
 //Middleware 
@@ -26,6 +27,7 @@ app.get('/',(req,res)=>{
 
 app.use('/api/v1/books', booksRouter);//marks the routes of the website api endpoints 
 app.use('/api/v1/auth' , authRouter);
+app.use('/api/v1/userAdmin' , userAdminRouter);
 
 const start = async() =>{
     try {
