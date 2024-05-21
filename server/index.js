@@ -1,12 +1,15 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000
 const cors = require('cors');
 const  connectDB = require( './db/connect');
-require('dotenv').config();
+
 const booksRouter = require('./routes/Booksroute')
 const authRouter = require('./routes/AuthRoute')
 const userAdminRouter = require('./routes/UserAdminRoute')
+const orderRouter = require('./routes/OrderRoute');
+const cartRouter = require('./routes/CartRoute');
 const cookieParser = require('cookie-parser');
 
 //Middleware 
@@ -28,6 +31,8 @@ app.get('/',(req,res)=>{
 app.use('/api/v1/books', booksRouter);//marks the routes of the website api endpoints 
 app.use('/api/v1/auth' , authRouter);
 app.use('/api/v1/userAdmin' , userAdminRouter);
+app.use('/api/v1/orders' , orderRouter);
+app.use('/api/v1/carts' , cartRouter);
 
 const start = async() =>{
     try {

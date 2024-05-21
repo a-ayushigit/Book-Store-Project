@@ -12,38 +12,12 @@ import BestSellers from '../components/BestSellers'
 import coverImage from "../assets/coverimage.jpg";
 const IndexPage = () => {
   return (
-    <div className="w-full bg-cyan-100 dark:bg-red-400">
-        <div className="">
-            
-            <TopHero/>
-           
-        </div>
-        <div>
-          <br></br>
-        </div>
-        <div className="top-5">
-         
-          <Category/>
-        </div>
-        <div>
-          <br></br>
-        </div>
-        <div className="">
-          <BestSellers/>
-        </div>
-        <div className="sm:h-[30vh]">
-
-        </div>
-        <div className="h-screen sm:h-[35vh] flex items-center sm:items-end justify-center mb-0">
-        
-          <img src={coverImage} className="h-[35vh]"/>
-          
-        </div>
-        <div className="top-0">
-          <Banner/>
-        </div>
-
-      
+    <div className="w-full bg-cyan-100 dark:bg-red-400 grid-rows-12 relative gap-1">
+       <TopHero className="row-span-3" />
+       <Category className="row-span-3" />
+       <BestSellers className="row-span-3" />
+       {/* <img src={coverImage} className="h-[100%] pt-5"/> */}
+       <Banner className="row-span-3" />
     </div>
   )
 }

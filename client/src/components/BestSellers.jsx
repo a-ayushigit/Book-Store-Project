@@ -28,8 +28,8 @@ const BestSellers = () => {
     }, [])
 
   return (
-    <div className='h-screen object-fit p-5'>
-        <span className="font-serif font-bold text-cyan-950 shadow-md">BEST SELLERS</span>
+    <div className='h-auto py-2'>
+        <span className="font-serif font-bold text-cyan-950 hover:shadow-md flex items-center justify-center">BEST SELLERS</span>
       <CardSlider books={books} title="BEST SELLER"/>
     </div>
   )

@@ -29,6 +29,21 @@ const bookSchema = new mongoose.Schema({
     price:{
         type:Number , 
         required:true,
+    } , 
+    language: {
+        type:String ,
+        required:true
+    },
+    binding:{
+        type:String , 
+        required:true
+    },
+    tags:{
+        type:Array,
+        required:true
+    },
+    discount:{
+        type:Number 
     }
 
 },

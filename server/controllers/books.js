@@ -4,6 +4,8 @@ const Book = require("../models/book");
 const getAllBooks = async(req , res)=>{
     const qnew = req.query.new;
     let qcategory = req.query.category;
+    let qtag = req.query.tag;
+    let qlang = req.query.lang;
     
     try{
 
@@ -18,6 +20,16 @@ const getAllBooks = async(req , res)=>{
         
       })
       
+    }
+    else if(qtag){
+        books = await Book.find({
+            tags:{$in:[qtag]},
+        })
+    }
+    else if(qlang){
+        books = await Book.find({
+            language:qlang,
+        })
     }
    
     else {
