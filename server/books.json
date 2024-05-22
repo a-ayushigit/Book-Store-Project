@@ -506,7 +506,7 @@
                     "price": 11.99,
                     "language": "English",
                     "binding": "Paperback",
-                    "tags": ["Best Seller", "International Best Sellers"],
+                    "tags": ["Best Seller", "International Best Sellers","24 hr deals"],
                     "discount": 0
                 },
                 {
@@ -545,7 +545,7 @@
                     "price": 16.99,
                     "language": "English",
                     "binding": "Paperback",
-                    "tags": ["Best Seller", "Trending"],
+                    "tags": ["Best Seller", "Trending","24 hr deals"],
                     "discount": 5
                 },
                 {
@@ -792,7 +792,7 @@
                     "price": 12.99,
                     "language": "Hindi",
                     "binding": "Paperback",
-                    "tags": ["Best Seller", "International Best Sellers"],
+                    "tags": ["Best Seller", "International Best Sellers" , "24 hr deals"],
                     "discount": 10
                 },
                 {
@@ -857,7 +857,20 @@
                     "price": 15.99,
                     "language": "Hindi",
                     "binding": "Paperback",
-                    "tags": ["Best Seller", "International Best Sellers"],
+                    "tags": ["Crazy Bookpacks", "Academic", "24 hr deals"],
+                    "discount": 5
+                },
+                {
+                    "title": "Exam Prep",
+                    "author": "Govind Puri",
+                    "publishYear": 1985,
+                    "description": "This book on Objective Quantitative Aptitude will play a vital role in your Competitive Exams preparations as Quantitative Aptitude is a fundamental part of almost all Competitive Examinations in India, including Banking, SSC, Railways, UPSC, and various other State Level Exams.",
+                    "category": ["Exam"],
+                    "imageUrl": "https://m.media-amazon.com/images/G/31/img20/Books/092021/UnrecExam/Quantitative_aptitude__Reasoning._SY530_QL85_.jpg",
+                    "price": 15.99,
+                    "language": "English",
+                    "binding": "Paperback",
+                    "tags": [ "Academic"],
                     "discount": 5
                 }
                 

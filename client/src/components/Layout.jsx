@@ -5,11 +5,11 @@ import Footer from './Footer'
 
 const Layout = () => {
   return (
-    <div className="p-4 grid  min-h-screen ">
+    <div className="flex flex-col min-h-screen p-1">
         
-        <Header className="h-auto"/>
-        <Outlet className="h-auto"/>
-        <Footer className="h-auto mb-0"/>
+        <Header className=""/>
+        <Outlet className=""/>
+        <Footer className=""/>
         
     </div>
   )
