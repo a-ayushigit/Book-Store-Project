@@ -1,43 +1,105 @@
 const express = require("express");
 const Book = require("../models/book");
 
+
 const getAllBooks = async(req , res)=>{
-    const qnew = req.query.new;
-    let qcategory = req.query.category;
-    let qtag = req.query.tag;
-    let qlang = req.query.lang;
+    // const qnew = req.query.new;
+    // let qcategory = req.query.category;
+    // let qtag = req.query.tag;
+    // let qlang = req.query.lang;
     
     try{
 
-    let books;
-    if(qnew){
-      books = await Book.find().sort({createdAt:-1}).limit(5);
-    }
-    else if(qcategory){
+    
+    // if(qnew){
+    //   books = await Book.find().sort({createdAt:-1}).limit(5);
+    // }
+    // else if(qcategory){
        
-      books = await Book.find({
-        category:{$in:[qcategory]},
+    //   books = await Book.find({
+    //     category:{$in:[qcategory]},
         
-      })
+    //   })
       
-    }
-    else if(qtag){
-        books = await Book.find({
-            tags:{$in:[qtag]},
-        })
-    }
-    else if(qlang){
-        books = await Book.find({
-            language:qlang,
-        })
-    }
+    // }
+    // else if(qtag){
+    //     books = await Book.find({
+    //         tags:{$in:[qtag]},
+    //     })
+    // }
+    // else if(qlang){
+    //     books = await Book.find({
+    //         language:qlang,
+    //     })
+    // }
    
-    else {
-        books = await Book.find({});
-    }
+    // else {
+    //     books = await Book.find({});
+    // }
+        const {title , author , publishYear , category , lang, binding , tag , discount , rating , sort ,  numericFilters} = req.query;
+        let {limit , page} = req.query;
+        const queryObj = {};
+        if(title) queryObj.title = {$regex: title , $options:'i'}//'i' stands for case-insensitive
+        if(author) queryObj.author = author;
+        if(publishYear) queryObj.publishYear = Number(publishYear);
+        if(category) queryObj.category = {$in:category};
+        if(lang) queryObj.language = lang;
+        if(binding) queryObj.binding = binding;
+        if(tag) queryObj.tags = {$in:tag};
+        if(discount) queryObj.discount = Number( discount);
+        if(rating) queryObj.rating = Number(rating);
+        if(numericFilters){
+            const operatorMap = {
+                '>':'$gt',
+                '>=': '$gte',
+                '=': '$eq',
+                '<': '$lt',
+                '<=': '$lte',
+            }
+            const regEx = /\b(>|>=|=|<|<=)\b/g;
+            let filters = numericFilters.replace(
+                regEx , 
+                (match) =>`-${operatorMap[match]}-`
+            )
 
+            const options = ['price' , 'rating' , 'discount'];
+            filters = filters.split(',').forEach((item)=>{
+                const [field,operator,value] = item.split('-');
+                if(options.includes(field)){
+                    queryObj[field] = {[operator]:Number(value)};
+                }
+            });
+            console.log(numericFilters);
+        }
+        //console.log(queryObj);
+
+
+        let result = Book.find(queryObj);
+        
+        if(sort){
+            const sortList = sort.split(',').join(' ');
+            console.log((sortList));
+            result =  result.sort(sortList);
+            //console.log(result);
+        }
+        else {
+            result =  result.sort('createdAt');
+        }
+//use await at the end of chaining 
+if(!page) page = 1;
+if(!limit) limit = 10;
+const skip = (page - 1) * limit;
+
+result = result.skip(skip).limit(limit);
+let books = await result;
+res.status(200).send(books);
+       
+      
+    
+
+        
  
-    res.status(200).json({books});
+   // res.status(200).json({books});
     }
     catch(error){
         console.log(error.message);

@@ -1,6 +1,8 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import Card from '../components/Card';
+import Pagination from '../components/Pagination';
+
 const ShopPage = () => {
   // const location = useLocation();
   // const books = (location.state.books.books);
@@ -18,8 +20,9 @@ const ShopPage = () => {
         {/* {books && books.map((book,id)=>(
       <div key={id} className="h-auto grid col-span-12 md:col-span-4 sm:grid sm:col-span-6 " ><Card className="" book = {book} /></div>
      ))} */}
-        </div>
     
+        </div>
+      <Pagination/>
 
       </div>
     </div>

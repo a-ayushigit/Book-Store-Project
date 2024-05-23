@@ -99,7 +99,9 @@ const Carousel = () => {
                 response = await axios.get(`http://localhost:5000/api/v1/books?lang=${lang}`);
                 setTitle(lang);
             }
-            setBooks(response.data.books.slice(0,16));
+            //console.log(response.data)
+            //console.log(response.data.books);
+            setBooks(response.data.slice(0,16));
             console.log(books);
 
 
@@ -108,6 +110,7 @@ const Carousel = () => {
         }
         
     }
+    
     return (
         <div>
         <div className="h-[50vh] flex ">

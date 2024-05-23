@@ -11,7 +11,8 @@
             "language": "English",
             "binding": "Hardcover",
             "tags": ["Best Seller", "Trending"],
-            "discount": 10
+            "discount": 10,
+            "rating":4.5
         },
         {
             "title": "Educated",
@@ -24,7 +25,8 @@
             "language": "English",
             "binding": "Paperback",
             "tags": ["Best Seller", "International Best Sellers"],
-            "discount": 5
+            "discount": 5,
+            "rating":4.5
         },
         {
             "title": "Becoming",
@@ -37,7 +39,8 @@
             "language": "English",
             "binding": "Hardcover",
             "tags": ["Best Seller", "International Best Sellers"],
-            "discount": 15
+            "discount": 15,
+            "rating":4.5
         },
         {
             "title": "Where the Crawdads Sing",
@@ -50,7 +53,8 @@
             "language": "English",
             "binding": "Paperback",
             "tags": ["Best Seller", "Trending"],
-            "discount": 0
+            "discount": 0,
+            "rating":4.5
         },
         {
             "title": "Sapiens: A Brief History of Humankind",
@@ -63,7 +67,8 @@
             "language": "English",
             "binding": "Hardcover",
             "tags": ["Best Seller", "International Best Sellers"],
-            "discount": 10
+            "discount": 10,
+            "rating":4.5
         },
         {
             "title": "Atomic Habits",
@@ -76,7 +81,8 @@
             "language": "English",
             "binding": "Hardcover",
             "tags": ["Best Seller", "Trending"],
-            "discount": 5
+            "discount": 5,
+            "rating":4.5
         },
         {
             "title": "The Alchemist",
@@ -89,7 +95,8 @@
             "language": "English",
             "binding": "Paperback",
             "tags": ["Best Seller", "International Best Sellers"],
-            "discount": 20
+            "discount": 20,
+            "rating":4.5
         },
         {
             "title": "The Four Agreements",
@@ -102,7 +109,8 @@
             "language": "English",
             "binding": "Paperback",
             "tags": ["Best Seller", "Trending"],
-            "discount": 10
+            "discount": 10,
+            "rating":4.5
         },
         {
             "title": "Normal People",
@@ -115,7 +123,8 @@
             "language": "English",
             "binding": "Hardcover",
             "tags": ["Best Seller", "Trending"],
-            "discount": 5
+            "discount": 5,
+            "rating":4.5
         },
         {
             "title": "Dune",
@@ -128,7 +137,8 @@
             "language": "English",
             "binding": "Hardcover",
             "tags": ["Best Seller", "International Best Sellers"],
-            "discount": 10
+            "discount": 10,
+            "rating":4.5
         } , 
         
             {
@@ -142,7 +152,8 @@
                 "language": "English",
                 "binding": "Paperback",
                 "tags": ["Best Seller", "International Best Sellers"],
-                "discount": 15
+                "discount": 15,
+                "rating":4.5
             },
             {
                 "title": "The Catcher in the Rye",
@@ -155,7 +166,8 @@
                 "language": "English",
                 "binding": "Paperback",
                 "tags": ["Best Seller", "Trending"],
-                "discount": 0
+                "discount": 0,
+                "rating":4.5
             },
             {
                 "title": "The Great Gatsby",
@@ -168,7 +180,8 @@
                 "language": "English",
                 "binding": "Paperback",
                 "tags": ["Best Seller", "International Best Sellers"],
-                "discount": 10
+                "discount": 10,
+                "rating":4.5
             },
             {
                 "title": "To Kill a Mockingbird",
@@ -181,7 +194,8 @@
                 "language": "English",
                 "binding": "Hardcover",
                 "tags": ["Best Seller", "International Best Sellers"],
-                "discount": 5
+                "discount": 5,
+                "rating":4.5
             },
             {
                 "title": "Pride and Prejudice",
@@ -194,7 +208,8 @@
                 "language": "English",
                 "binding": "Paperback",
                 "tags": ["Best Seller", "International Best Sellers"],
-                "discount": 20
+                "discount": 20,
+                "rating":4.5
             },
             {
                 "title": "Brave New World",
@@ -207,7 +222,8 @@
                 "language": "English",
                 "binding": "Paperback",
                 "tags": ["Best Seller", "International Best Sellers"],
-                "discount": 10
+                "discount": 10,
+                "rating":4.5
             },
             {
                 "title": "The Hobbit",
@@ -220,7 +236,8 @@
                 "language": "English",
                 "binding": "Hardcover",
                 "tags": ["Best Seller", "International Best Sellers"],
-                "discount": 5
+                "discount": 5,
+                "rating":4.5
             },
             {
                 "title": "The Road",
@@ -233,7 +250,8 @@
                 "language": "English",
                 "binding": "Hardcover",
                 "tags": ["Best Seller", "International Best Sellers"],
-                "discount": 10
+                "discount": 10,
+                "rating":4.5
             },
             {
                 "title": "Harry Potter and the Sorcerer's Stone",
@@ -246,7 +264,8 @@
                 "language": "English",
                 "binding": "Hardcover",
                 "tags": ["Best Seller", "International Best Sellers"],
-                "discount": 0
+                "discount": 10,
+                "rating":4.5
             },
             {
                 "title": "The Da Vinci Code",
@@ -259,7 +278,8 @@
                 "language": "English",
                 "binding": "Hardcover",
                 "tags": ["Best Seller", "International Best Sellers"],
-                "discount": 10
+                "discount": 10,
+                "rating":4.5
             },
             
                 {
@@ -273,7 +293,8 @@
                     "language": "English",
                     "binding": "Hardcover",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":4.5
                 },
                 {
                     "title": "The Subtle Art of Not Giving a F*ck",
@@ -286,7 +307,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":5
                 },
                 {
                     "title": "The Goldfinch",
@@ -299,7 +321,8 @@
                     "language": "English",
                     "binding": "Hardcover",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 15
+                    "discount": 15,
+                    "rating":5
                 },
                 {
                     "title": "Thinking, Fast and Slow",
@@ -312,7 +335,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":5
                 },
                 {
                     "title": "The Handmaid's Tale",
@@ -325,7 +349,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":5
                 },
                 {
                     "title": "The Power of Habit",
@@ -338,7 +363,8 @@
                     "language": "English",
                     "binding": "Hardcover",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":4
                 },
                 {
                     "title": "Little Fires Everywhere",
@@ -351,7 +377,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":4
                 },
                 {
                     "title": "The Giver",
@@ -364,7 +391,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 0
+                    "discount": 10,
+                    "rating":4
                 },
                 {
                     "title": "Eleanor Oliphant Is Completely Fine",
@@ -377,7 +405,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":4
                 },
                 {
                     "title": "Good Omens",
@@ -390,7 +419,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":4
                 },
                 {
                     "title": "The Night Circus",
@@ -403,7 +433,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":4
                 },
                 {
                     "title": "The Martian",
@@ -416,7 +447,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":4
                 },
                 {
                     "title": "The Girl on the Train",
@@ -429,7 +461,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":4
                 },
                 {
                     "title": "Gone Girl",
@@ -442,7 +475,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":4
                 },
                 {
                     "title": "The Underground Railroad",
@@ -455,7 +489,8 @@
                     "language": "English",
                     "binding": "Hardcover",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 0
+                    "discount": 0,
+                    "rating":4
                 },
                 {
                     "title": "A Song of Ice and Fire (Game of Thrones)",
@@ -468,7 +503,8 @@
                     "language": "English",
                     "binding": "Hardcover",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 15
+                    "discount": 15,
+                    "rating":4
                 },
                 {
                     "title": "The Kite Runner",
@@ -481,7 +517,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":4
                 },
                 {
                     "title": "The Book Thief",
@@ -494,7 +531,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":4
                 },
                 {
                     "title": "The Hunger Games",
@@ -507,7 +545,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers","24 hr deals"],
-                    "discount": 0
+                    "discount": 0,
+                    "rating":4
                 },
                 {
                     "title": "The Help",
@@ -520,7 +559,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":4
                 },
                 {
                     "title": "The Shadow of the Wind",
@@ -533,7 +573,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":5
                 },
                 {
                     "title": "The Nightingale",
@@ -546,7 +587,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending","24 hr deals"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":5
                 },
                 {
                     "title": "The Secret History",
@@ -559,7 +601,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":5
                 },
                 {
                     "title": "All the Light We Cannot See",
@@ -572,7 +615,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":5
                 },
                 {
                     "title": "The Seven Husbands of Evelyn Hugo",
@@ -585,7 +629,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":5
                 },
                 {
                     "title": "The Tattooist of Auschwitz",
@@ -598,7 +643,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":5
                 },
                 {
                     "title": "Crazy Rich Asians",
@@ -611,7 +657,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":5
                 },
                 {
                     "title": "One Hundred Years of Solitude",
@@ -624,7 +671,8 @@
                     "language": "Spanish",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":5
                 },
                 {
                     "title": "The Alchemist",
@@ -637,7 +685,8 @@
                     "language": "Portuguese",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":5
                 },
                 {
                     "title": "My Name is Red",
@@ -650,7 +699,8 @@
                     "language": "Turkish",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 15
+                    "discount": 15,
+                    "rating":5
                 },
                 {
                     "title": "The Girl with the Dragon Tattoo",
@@ -663,7 +713,8 @@
                     "language": "Swedish",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":5
                 },
                 {
                     "title": "The Little Prince",
@@ -676,7 +727,8 @@
                     "language": "French",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":5
                 },
                 {
                     "title": "Blindness",
@@ -689,7 +741,9 @@
                     "language": "Portuguese",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":4
+
                 },
                 {
                     "title": "Norwegian Wood",
@@ -702,7 +756,8 @@
                     "language": "Japanese",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":3
                 },
                 {
                     "title": "The Wind-Up Bird Chronicle",
@@ -715,7 +770,8 @@
                     "language": "Japanese",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":3
                 },
                 {
                     "title": "Crime and Punishment",
@@ -728,7 +784,8 @@
                     "language": "Russian",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 15
+                    "discount": 15,
+                    "rating":3
                 },
                 {
                     "title": "गोदान (Godan)",
@@ -741,7 +798,8 @@
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":3
                 },
                 {
                     "title": "राग दरबारी (Raag Darbari)",
@@ -754,7 +812,8 @@
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":3
                 },
                 {
                     "title": "मधुशाला (Madhushala)",
@@ -767,7 +826,8 @@
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":3
                 },
                 {
                     "title": "चित्रलेखा (Chitralekha)",
@@ -780,7 +840,8 @@
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":3
                 },
                 {
                     "title": "गुनाहों का देवता (Gunaho Ka Devta)",
@@ -793,7 +854,8 @@
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers" , "24 hr deals"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":3
                 },
                 {
                     "title": "तमस (Tamas)",
@@ -806,7 +868,8 @@
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":3
                 },
                 {
                     "title": "मैला आँचल (Maila Anchal)",
@@ -819,7 +882,8 @@
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":3
                 },
                 {
                     "title": "कुरु कुरु स्वाहा (Kuru Kuru Swaha)",
@@ -832,7 +896,8 @@
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":3
                 },
                 {
                     "title": "सूरज का सातवाँ घोड़ा (Suraj Ka Satvan Ghoda)",
@@ -845,7 +910,8 @@
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "rating":3
                 },
                 {
                     "title": "नीलकंठ (Neelkanth)",
@@ -858,7 +924,8 @@
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Crazy Bookpacks", "Academic", "24 hr deals"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":3
                 },
                 {
                     "title": "Exam Prep",
@@ -871,7 +938,8 @@
                     "language": "English",
                     "binding": "Paperback",
                     "tags": [ "Academic"],
-                    "discount": 5
+                    "discount": 5,
+                    "rating":3
                 }
                 
             ]

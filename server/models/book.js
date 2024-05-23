@@ -44,6 +44,9 @@ const bookSchema = new mongoose.Schema({
     },
     discount:{
         type:Number 
+    },
+    rating:{
+        type:Number
     }
 
 },
