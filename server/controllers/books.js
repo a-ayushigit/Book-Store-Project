@@ -36,7 +36,7 @@ const getAllBooks = async(req , res)=>{
     // else {
     //     books = await Book.find({});
     // }
-        const {title , author , publishYear , category , lang, binding , tag , discount , rating , sort ,  numericFilters} = req.query;
+        const {title , author , publishYear , category , lang, price,binding , tag , discount , rating , sort ,  numericFilters} = req.query;
         let {limit , page} = req.query;
         const queryObj = {};
         if(title) queryObj.title = {$regex: title , $options:'i'}//'i' stands for case-insensitive
@@ -48,6 +48,7 @@ const getAllBooks = async(req , res)=>{
         if(tag) queryObj.tags = {$in:tag};
         if(discount) queryObj.discount = Number( discount);
         if(rating) queryObj.rating = Number(rating);
+        if(price) queryObj.price = Number(price);
         if(numericFilters){
             const operatorMap = {
                 '>':'$gt',
@@ -73,8 +74,9 @@ const getAllBooks = async(req , res)=>{
         }
         //console.log(queryObj);
 
-
+        
         let result = Book.find(queryObj);
+       // const total = await Book.countDocuments(queryObj);
         
         if(sort){
             const sortList = sort.split(',').join(' ');
@@ -90,16 +92,27 @@ if(!page) page = 1;
 if(!limit) limit = 10;
 const skip = (page - 1) * limit;
 
-result = result.skip(skip).limit(limit);
-let books = await result;
-res.status(200).send(books);
-       
-      
-    
 
-        
- 
-   // res.status(200).json({books});
+
+
+// result.countDocuments().then((response)=>{
+//     total=response;
+// }).catch((err)=>console.log(err));
+
+const total = await Book.countDocuments(queryObj);
+
+let books  = await result.skip(skip).limit(limit);
+
+
+
+const obj = {
+    books:books,
+    total:Number(total)
+}
+
+res.status(200).send(obj);
+//console.log(res);
+// res.status(200).json({books ,total });
     }
     catch(error){
         console.log(error.message);

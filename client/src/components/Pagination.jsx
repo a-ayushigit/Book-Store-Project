@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect } from 'react'
 
 const Pagination = ({
-  totalBooks , booksPerPage , setCurrentPage , currentPage 
+page , setPage , totalBooks 
     
 }) => {
 // useEffect(()=>{

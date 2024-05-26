@@ -99,10 +99,10 @@ const Carousel = () => {
                 response = await axios.get(`http://localhost:5000/api/v1/books?lang=${lang}`);
                 setTitle(lang);
             }
-            //console.log(response.data)
-            //console.log(response.data.books);
-            setBooks(response.data.slice(0,16));
-            console.log(books);
+            console.log(response.data)
+            console.log(response.data.books);
+          setBooks(response.data.books.slice(0,16));
+            //console.log(books);
 
 
         } catch (error) {

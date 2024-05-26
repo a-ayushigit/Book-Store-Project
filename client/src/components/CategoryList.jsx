@@ -28,8 +28,9 @@ const CategoryList = () => {
       else {
         response = await axios.get(`http://localhost:5000/api/v1/books?lang=${lang}`);
       }
-      books = response.data;
-     navigate('/shop' , {state:{books:books}});
+      books = response.books;
+      console.log(books);
+     //navigate('/shop' , {state:{books:books}});
       
     } catch (error) {
       console.log(error);
