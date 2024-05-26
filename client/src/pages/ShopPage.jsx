@@ -4,7 +4,7 @@ import Card from '../components/Card';
 import Pagination from '../components/Pagination';
 import axios from 'axios';
 
-const LIMIT = 9;
+const LIMIT = 10;
 
 const ShopPage = () => {
   const [curPage, setcurPage] = useState(1);
@@ -33,40 +33,32 @@ const ShopPage = () => {
   }
 
   return (
-    <div className="grid grid-cols-12 h-screen relative overflow-y object-contain overflow-y-scroll" >
-      <div className="col-span-3 h-screen sticky ">
-        <p className="p-2">FILTER </p>
-        <div className="flex justify-center">
-        
-        </div>
-      </div>
-      <div className="col-span-9 h-screen ">
-        <div className="grid grid-cols-12 w-full">
+    <div className="m-2 p-2" >
+     <div className="grid grid-cols-12 ">
           {books && books.map((book, id) => (
-            <div key={id} className="h-auto grid col-span-6 md:col-span-4 sm:grid sm:col-span-6 " ><Link to={`/book/${book._id}`}><Card className="" book={book} /></Link></div>
+            <div key={id} className=" size-auto grid col-span-6  p-2 m-4 my-8 border hover:shadow-2xl" ><Link to={`/book/${book._id}`}><Card className="" book={book} /></Link></div>
           ))}
-
-        </div>
-
-        <ul className="flex decoration-transparent bottom-0 justify-center items-center" >
-          {curPage !== 1 &&
-            <li className="flex-auto justify-center items-center cursor-pointer" onClick={() => setcurPage(curPage - 1)}>Prev</li>
+      </div>
+      <div className="">
+         <ul className="flex decoration-transparent  justify-center items-center " >
+          {
+            <li className={`flex-auto shrink justify-center items-center cursor-pointer `} onClick={() => curPage !== 1? setcurPage(curPage - 1):setcurPage(curPage)}><div className="flex w-28 justify-evenly">Prev</div></li> 
+            
           }
           {pageArrayCalculator(totalBooks, LIMIT).map((page) => (
-            <li key={page} className={`flex-auto cursor-pointer ${page === curPage ? "bg-red-200" : "bg-grey-300"} self-center justify-self-center text-center`} onClick={() => setcurPage(curPage)}>
+            <li key={page} className={`flex-auto shrink cursor-pointer ${page === curPage ? "bg-red-200" : "bg-grey-300"} self-center  rounded-full justify-evenly h-6 w-12  text-center`} onClick={() => setcurPage(page)}>
               {page}
             </li>
           ))}
           {
-            curPage !== pageArrayCalculator(totalBooks, LIMIT).length &&
-            <li className="flex-auto text-justify cursor-pointer justify-center items-center" onClick={() => setcurPage(curPage + 1)}>
-              Next
+            <li className="flex-auto shrink cursor-pointer justify-center items-center" onClick={() =>curPage !== pageArrayCalculator(totalBooks, LIMIT).length? setcurPage(curPage + 1):setcurPage(curPage)}>
+              <div className="flex w-28 justify-evenly">Next</div>
             </li>
           }
         </ul>
-
+        </div>
       </div>
-    </div>
+    
   )
 }
 
