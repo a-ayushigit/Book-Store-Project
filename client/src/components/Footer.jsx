@@ -4,7 +4,7 @@ import SocialIcons from './SocialIcons'
 
 const Footer = () => {
     return (
-        <footer className="relative  bg-slate-900 text-white dark:bg-orange-950 ">
+        <footer className="relative  bg-slate-900 text-white dark:bg-orange-950 z-100">
             <div className="md:flex md:items-center md:justify-between sm:px-12 px-4 py-7  bg-cyan-950 dark:bg-red-900">
                 <h1 className="lg:text-4xl text-3xl md:mb-0 mb-6 lg:leading-normal  font-semibold md:w-2/5">
                     <span className=" text-blue-300 dark:text-yellow-600">Every</span> page holds a <span  className=" text-blue-300  dark:text-yellow-600">new</span>  avenue .
