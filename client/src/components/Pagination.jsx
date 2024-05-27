@@ -2,7 +2,7 @@
 import React from 'react'
 
 const Pagination = ({
- totalBooks , LIMIT , pageArrayCalculator , curPage , setcurPage
+ totalBooks , LIMIT , pageArrayCalculator , curPage , setcurPage 
     
 }) => {
 

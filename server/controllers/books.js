@@ -8,10 +8,7 @@ const getAllBooks = async(req , res)=>{
     // let qtag = req.query.tag;
     // let qlang = req.query.lang;
     
-    try{
-
-    
-    // if(qnew){
+   // if(qnew){
     //   books = await Book.find().sort({createdAt:-1}).limit(5);
     // }
     // else if(qcategory){
@@ -36,16 +33,17 @@ const getAllBooks = async(req , res)=>{
     // else {
     //     books = await Book.find({});
     // }
+    try{
         const {title , author , publishYear , category , lang, price,binding , tag , discount , rating , sort ,  numericFilters} = req.query;
         let {limit , page} = req.query;
         const queryObj = {};
         if(title) queryObj.title = {$regex: title , $options:'i'}//'i' stands for case-insensitive
         if(author) queryObj.author = author;
         if(publishYear) queryObj.publishYear = Number(publishYear);
-        if(category) queryObj.category = {$in:category};
-        if(lang) queryObj.language = lang;
+        if(category) queryObj.category = {$in:category.split(',')};
+        if(lang) queryObj.language ={$in:lang.split(',')};
         if(binding) queryObj.binding = binding;
-        if(tag) queryObj.tags = {$in:tag};
+        if(tag) queryObj.tags = {$in:tag.split(',')};
         if(discount) queryObj.discount = Number( discount);
         if(rating) queryObj.rating = Number(rating);
         if(price) queryObj.price = Number(price);
