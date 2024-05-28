@@ -6,11 +6,12 @@ import Layout from './components/Layout'
 import IndexPage from './pages/IndexPage'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
-import ShopPage from './pages/ShopPage'
+
 import BookPage from './pages/BookPage'
 import AccountPage from './pages/AccountPage'
 import axios from 'axios';
 import UserContextProvider from './Contexts/UserContext.jsx'
+import Shopper from './pages/Shopper.jsx'
 axios.defaults.baseURL = "http://localhost:5000/api/v1/";//so that we dont have to write theentire address again and again 
 axios.defaults.withCredentials = true ;
 
@@ -23,7 +24,7 @@ const router = createBrowserRouter(
     <Route index path="/" element ={<IndexPage/>}/>
     <Route path="login" element={<LoginPage/>}/>
     <Route path="register" element={<RegisterPage/>}/>
-    <Route path="shop" element={<ShopPage/>}/>
+    <Route path="shop" element={<Shopper/>}/>
     <Route path="account" element={<AccountPage/>}/>
     <Route path="account/:subpage" element={<AccountPage/>}/>
     <Route path='book/:id' element={<BookPage/>} loader={async ({params})=>{

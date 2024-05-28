@@ -7,7 +7,7 @@ const Pagination = ({
 }) => {
 
 return (
-    <div >
+    <div className=" pb-2" >
        <ul className="flex decoration-transparent  justify-center items-center " >
           {
             <li className={`flex-auto shrink justify-center items-center cursor-pointer `} onClick={() => curPage !== 1? setcurPage(curPage - 1):setcurPage(curPage)}><div className="flex w-28 justify-evenly">Prev</div></li> 

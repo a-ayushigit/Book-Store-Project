@@ -68,9 +68,9 @@ const getAllBooks = async(req , res)=>{
                     queryObj[field] = {[operator]:Number(value)};
                 }
             });
-            console.log(numericFilters);
+           // console.log(numericFilters);
         }
-        //console.log(queryObj);
+       // console.log(queryObj);
 
         
         let result = Book.find(queryObj);
