@@ -14,7 +14,7 @@ return (
             
           }
           {pageArrayCalculator(totalBooks, LIMIT).map((page) => (
-            <li key={page} className={`flex-auto shrink cursor-pointer ${page === curPage ? "bg-red-200" : "bg-grey-300"} self-center  rounded-full justify-evenly h-6 w-12  text-center`} onClick={() => setcurPage(page)}>
+            <li key={page} className={`flex-auto shrink cursor-pointer ${page === curPage ? " bg-red-600" : "bg-grey-300"} self-center  rounded-full justify-evenly h-6 w-12  text-center`} onClick={() => setcurPage(page)}>
               {page}
             </li>
           ))}

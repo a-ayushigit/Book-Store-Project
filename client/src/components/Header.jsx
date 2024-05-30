@@ -23,7 +23,7 @@ const Header = () => {
       id: 3, name: user ? <><PersonIcon />{' ' + user.username}</> : <><LoginIcon />{" Login "}</>, link: user ? "/account" : "/login",
     },
     {
-      id: 4, name:<><ShoppingCartIcon />{" Cart "}</> , link: "/account/myPurchase",
+      id: 4, name:<><ShoppingCartIcon />{" Cart "}</> , link: "/cart",
     }
   ]
   return (

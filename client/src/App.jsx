@@ -6,7 +6,7 @@ import Layout from './components/Layout'
 import IndexPage from './pages/IndexPage'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
-
+import CartPage from './pages/CartPage.jsx'
 import BookPage from './pages/BookPage'
 import AccountPage from './pages/AccountPage'
 import axios from 'axios';
@@ -26,7 +26,9 @@ const router = createBrowserRouter(
     <Route path="register" element={<RegisterPage/>}/>
     <Route path="shop" element={<Shopper/>}/>
     <Route path="account" element={<AccountPage/>}/>
+    <Route path="cart" element={<CartPage/>}/>
     <Route path="account/:subpage" element={<AccountPage/>}/>
+
     <Route path='book/:id' element={<BookPage/>} loader={async ({params})=>{
     const res =  await axios.get(`http://localhost:5000/api/v1/books/${params.id}`);
     console.log(res.data);
