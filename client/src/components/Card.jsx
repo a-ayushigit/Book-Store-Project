@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import CartProvider, { CartContext } from '../Contexts/CartContext'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Card = ({ book }) => {
   const cart = useContext(CartContext);
   
   return (
-    <div className="flex flex-row relative  h-auto max-h-30 sm:max-h-40">
+    <div className="flex flex-row relative   h-auto max-h-30 sm:max-h-40">
 
       <div className="flex"><img className=" h-36 w-auto" src={book.imageUrl} /></div>
       <div className="flex gap-1 object-contain max-h-40 m-4">
@@ -19,16 +19,18 @@ const Card = ({ book }) => {
           <div className="absolute m-0 p-1 top-0 right-0 h-8 w-16 bg-red-500 rounded text-white ">
             {`${book.discount}% off`}
           </div>
-          <div className="flex flex-row gap-3 py-2 px-2 justify-around">
-          <button className="light text-xs text-wrap dark:bg-red-900 hover:shadow-2xl " onClick={()=>{
+          <div className="flex flex-row h-[3rem] gap-1 py-2 px-2 justify-around">
+          <button className="light flex  h-[2rem]  text-nowrap object-contain  justify-center items-center  text-xs  dark:bg-red-900 hover:scale-105 " onClick={()=>{
             cart.addToCart(book);
-           
+            alert("Book added successfully!");
             console.log(cart.items);
             
-          }}>Add To Cart </button>
-          <button className="light text-xs whitespace-break-spaces dark:bg-red-900 hover:shadow-2xl w-full" onClick={()=>{
-            navigate(`/book/${book._id}`)
-          }}>View Details </button>
+          }}> <p>Add To Cart</p>  </button>
+          
+          <button className="light flex h-[2rem] text-nowrap object-contain justify-center items-center  text-xs  dark:bg-red-900 hover:scale-105 w-full" onClick={()=>{
+            
+          }}><Link to={`/book/${book._id}`}> View Details</Link> </button>
+          
           </div>
          
         </div>

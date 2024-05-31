@@ -115,16 +115,7 @@ const Shopper = () => {
 
   }, [url])
 
-  function pageArrayCalculator(totalBooks, LIMIT) {
-    let pages = [];
-    const final = Math.ceil(((totalBooks)) / LIMIT);
-    console.log(final);
-    for (let i = 1; i <= final; i++) {
-      pages.push(i);
-    }
-
-    return pages;
-  }
+ 
 
   const handleGenreFilter = (e) => {
     const value = e.target.value;
@@ -163,10 +154,10 @@ const Shopper = () => {
 
 
   return (
-    <div className="bg-pink-200 min-h-screen max-h-[300rem] flex h-auto max-w-h-screen">
-      <div className={`bg-blue-400 ${open ? "w-[35vw] max-w-[35vw]" : "hidden w-0"} relative transform duration-900 flex-col break-words text-wrap`}>
+    <div className="dark:bg-pink-200 min-h-screen max-h-[300rem] flex h-auto max-w-h-screen">
+      <div className={`bg-blue-400 dark:text-yellow-100 dark:bg-red-800 ${open ? "w-[30vw] max-w-[35vw]" : "hidden w-0"} relative transform duration-900 flex-col break-words text-wrap`}>
         {/* genres */}
-        <h3 className="font-serif font-bold">Genre</h3>
+        <h3 className="font-serif font-bold  dark:text-white">Genre</h3>
         <ul className="sm:grid grid-cols-6">
           {genres.map((genre, id) => (
             <li key={id} className="flex flex-row text-sm gap-2 sm:col-span-3">
@@ -175,7 +166,7 @@ const Shopper = () => {
           ))}
         </ul>
         {/* categories */}
-        <h3 className="font-serif font-bold">Categories</h3>
+        <h3 className="font-serif font-bold dark:text-white">Categories</h3>
         <ul className="sm:grid grid-cols-6">
           {tags.map((tag, id) => (
             <li key={id} className="flex flex-row text-sm gap-2 sm:col-span-3 justify-start">
@@ -186,7 +177,7 @@ const Shopper = () => {
           ))}
         </ul>
         {/* price */}
-        <h3 className="font-serif font-bold">Price</h3>
+        <h3 className="font-serif font-bold dark:text-white">Price</h3>
         <div className="flex flex-row gap-3 object-contain px-2 text-wrap ">
 
           <span className="text-xs sm:text-sm">Rs.0</span>
@@ -195,7 +186,7 @@ const Shopper = () => {
           <p className="flex text-wrap text-xs sm:text-sm">Max Price:- Rs.{maxPrice}</p>
         </div>
         {/* rating */}
-        <h3 className="font-serif font-bold">Rating</h3>
+        <h3 className="font-serif font-bold  dark:text-white">Rating</h3>
         <div className="flex flex-row gap-3 object-contain px-2">
 
           <span className="text-xs sm:text-sm">0</span>
@@ -205,7 +196,7 @@ const Shopper = () => {
         </div>
 
         {/* binding */}
-        <h3 className="font-serif font-bold">Binding</h3>
+        <h3 className="font-serif font-bold   dark:text-white">Binding</h3>
         <ul className="sm:grid grid-cols-6">
           {bindingItems.map((b, id) => (
             <li key={id} className="flex flex-row text-sm gap-2 sm:col-span-3 justify-start">
@@ -216,7 +207,7 @@ const Shopper = () => {
           ))}
         </ul>
         {/* languages */}
-        <h3 className="font-serif font-bold">Languages</h3>
+        <h3 className="font-serif font-bold   dark:text-white">Languages</h3>
         <ul className="sm:grid grid-cols-6">
           {languages.map((lang, id) => (
             <li key={id} className="flex flex-row text-sm gap-2 sm:col-span-3 justify-start">
@@ -226,17 +217,17 @@ const Shopper = () => {
         </ul>
 
       </div>
-      <div className={`${open ? "w-[70vw]  sm:max-w-[65vw] sm:w-[65vw]" : "w-[100vw]"}`}>
+      <div className={`${open ? "w-[70vw]  sm:min-w-[65vw] sm:w-[70vw]" : "w-[100vw]"}`}>
         {/* top second nav */}
         <div className="flex flex-row">
-          <span className="flex m-1 border h-12 w-20 p-4 justify-center items-center text-sm hover:cursor-pointer" onClick={() => setOpen(!open)}>FILTER{open ? <ArrowLeftIcon /> : <FilterListIcon />} </span>
-          <span className="flex m-1 border h-12 w-20 p-4 justify-center items-center text-sm hover:cursor-pointer">SORT <SortIcon /></span>
+          <span className="flex m-1 border dark:border-red-900 h-12 w-20 p-4 justify-center items-center text-sm hover:cursor-pointer" onClick={() => setOpen(!open)}>FILTER{open ? <ArrowLeftIcon /> : <FilterListIcon />} </span>
+          <span className="flex m-1 border dark:border-red-900 h-12 w-20 p-4 justify-center items-center text-sm hover:cursor-pointer">SORT <SortIcon /></span>
           {/* search bar */}
         </div>
 
 
-        <BooksDisplay books={books} />
-        <Pagination totalBooks={totalBooks} LIMIT={LIMIT} pageArrayCalculator={pageArrayCalculator} curPage={curPage} setcurPage={setcurPage} />
+        <BooksDisplay books={books}  open={open}/>
+        <Pagination totalBooks={totalBooks} LIMIT={LIMIT} curPage={curPage} setcurPage={setcurPage} />
       </div>
     </div>
   )

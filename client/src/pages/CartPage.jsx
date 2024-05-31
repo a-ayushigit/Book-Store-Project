@@ -1,11 +1,66 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../Contexts/CartContext'
+import { UserContext } from '../Contexts/UserContext';
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
+import CloseIcon from '@mui/icons-material/Close';
 
 const CartPage = () => {
-    const cart = useContext(CartContext);
+  const cart = useContext(CartContext);
+  const user = useContext(UserContext);
+  const booksCount = cart.items.reduce((sum, book) => sum + book.quantity, 0);
+  const items = cart.items;
+  console.log(cart);
+  console.log(user);
   return (
-    <div>
-      Cart
+    <div className="dark:bg-red-400 bg-blue-200 ">
+      <h1 className="sm:text-lg font-bold flex px-4">CART ITEMS</h1>
+      {user.user ?
+        (<div className="dark:bg-red-400 bg-blue-200 ">
+          <p className="text-xl flex items-center justify-center">Hello {user.user.username}</p>
+          <p className=" flex items-center justify-center">You have {booksCount} books in your cart </p>
+          <div className="grid grid-cols-12">
+            <div className="bg-blue-100 dark:bg-red-300 w-full max-h-[300rem] h-auto min-h-screen col-span-9">
+              <ul className="decoration-none flex flex-col gap-1 p-1">
+                {items.map((item) =>
+                  <li key={item._id}>
+                    <div className=" w-full h-[15rem] border border-black grid grid-cols-12">
+                      <div className="flex items-center justify-center w-auto col-span-12 sm:col-span-3">
+                        <img src={item.imageUrl} alt="" className="sm:h-[12rem] w-auto h-auto" />
+                      </div>
+                      <div className="flex flex-col w-auto col-span-12 sm:col-span-9">
+                      <div className="flex flex-row justify-end p-1"><CloseIcon className="top-0 rounded border  border-black p-1 bg-red-700 cursor-pointer " onClick={()=>cart.removeAllBooks(item._id)}/></div>
+                        <p className="flex flex-row justify-start pt-8 sm:text-2xl font-bold font-serif">{item.title}
+                        
+                        </p>
+                        
+                        <p className="flex flex-row justify-start ">by {item.author}</p>
+                        <p className="flex flex-row justify-start ">Rs. {item.price}</p>
+                        <br />
+                        <div className="flex flex-row ">
+                          <div className="flex flex-row justify-start">Quantity : <p className="px-2 h-8 flex flex-row gap-1 text-center"><AddIcon className=" flex self-center place-self-center border border-black p-1 rounded h-8 cursor-pointer" onClick={() => cart.addToCart(item)} /> <input className=" h-8 w-8 flex  px-1  place-items-center justify-items-center rounded " type="number" readOnly value={item.quantity} />
+                           <RemoveIcon className=" flex self-center place-self-center border border-black p-1 rounded h-8 cursor-pointer" onClick={() => cart.removeOneBook(item)} />
+                           </p></div>
+                          
+                        </div>
+                        
+                      </div>
+                      
+                    </div>
+
+
+                  </li>
+                )}
+              </ul>
+
+            </div>
+            <div className="bg-pink-800 w-full max-h-[300rem] h-auto min-h-screen col-span-3">
+              Checkout
+            </div>
+          </div>
+
+        </div>)
+        : (<p>Please login to view your cart Items</p>)}
     </div>
   )
 }
