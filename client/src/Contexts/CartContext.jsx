@@ -8,7 +8,8 @@ export const CartContext = createContext({
     addToCart:()=>{},
     getProductQuantity:()=>{},
     getTotalCost:()=>{},
-    removeAllBooks:()=>{}
+    removeAllBooks:()=>{},
+    getDiscountedPrice:()=>{}
     
 });
 
@@ -80,6 +81,15 @@ export default function CartProvider({children}){
         return total;
     }
 
+    function getDiscountedPrice(){
+        let total = 0 ;
+        cartProducts?.map((cartItem)=> {
+            total = total + (cartItem.price*cartItem.quantity*(cartItem.discount/100));
+
+        })
+        return total;
+    }
+
     function removeOneBook(book){
        const quantity = getProductQuantity(book._id);
        if(quantity == 1){
@@ -97,7 +107,8 @@ export default function CartProvider({children}){
         addToCart,
         getProductQuantity,
         getTotalCost,
-        removeAllBooks
+        removeAllBooks,
+        getDiscountedPrice
     }
 
     return (

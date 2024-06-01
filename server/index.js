@@ -10,6 +10,7 @@ const authRouter = require('./routes/AuthRoute')
 const userAdminRouter = require('./routes/UserAdminRoute')
 const orderRouter = require('./routes/OrderRoute');
 const cartRouter = require('./routes/CartRoute');
+const paymentRouter = require('./routes/PaymentRoute');
 const cookieParser = require('cookie-parser');
 
 //Middleware 
@@ -33,6 +34,7 @@ app.use('/api/v1/auth' , authRouter);
 app.use('/api/v1/userAdmin' , userAdminRouter);
 app.use('/api/v1/orders' , orderRouter);
 app.use('/api/v1/carts' , cartRouter);
+app.use('/api/v1/payments',paymentRouter);
 
 const start = async() =>{
     try {
