@@ -14,9 +14,13 @@ const razorpayInstance = new Razorpay ({
 
 const orderItems = (req , res)=>{
     let {amount} = req.body ;
+    console.log(amount);
+    
+    amount = parseInt(amount);
+    console.log(typeof(amount));
     try {
         const options = {
-            amount : Number(amount)*100,
+            amount : (amount)*100,
             currency:"INR",
             receipt:require("crypto").randomBytes(10).toString('hex'),
         }

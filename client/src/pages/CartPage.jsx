@@ -4,7 +4,9 @@ import { UserContext } from '../Contexts/UserContext';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import CloseIcon from '@mui/icons-material/Close';
-
+import axios from 'axios';
+import dotenv from 'dotenv'
+//dotenv.config()
 const CartPage = () => {
 
   const cart = useContext(CartContext);
@@ -14,10 +16,76 @@ const CartPage = () => {
   let price = cart.getTotalCost().toFixed(2) ;
   let discountPrice = cart.getDiscountedPrice().toFixed(2) ;
 
-
-
+  
   console.log(cart);
   console.log(user);
+
+  const handlePayment = async() =>{
+    console.log(price);
+    try{
+      const res = await axios.post('http://localhost:5000/api/v1/payments/order' , 
+          JSON.stringify({"amount" : price - discountPrice}) , 
+          {
+            headers: {
+            "content-type": "application/json"
+        }
+      }
+      )
+      const data = res.data;
+      console.log(data);
+      handlePaymentVerify(data.data);
+    }
+    catch(err){
+      console.log(err);
+    }
+
+  }
+
+  const handlePaymentVerify = async(data) =>{
+    console.log(import.meta.env.KEY_ID_RAZORPAY);
+    const options = {
+
+      key: import.meta.env.KEY_ID_RAZORPAY,
+      amount: data.amount,
+      currency: data.currency,
+      name: "BookSphere",
+      description: "Test Mode",
+      order_id: data.id,
+      handler: async (response) => {
+          console.log("response", response)
+          try {
+              const res = await axios.post(`http://localhost:5000/api/v1/payments/verify`, 
+                JSON.stringify({
+                  razorpay_order_id: response.razorpay_order_id,
+                  razorpay_payment_id: response.razorpay_payment_id,
+                  razorpay_signature: response.razorpay_signature,
+              }),
+                 {
+                  headers: {
+                    'content-type': 'application/json'
+                }
+                 }
+                 
+              )
+
+              const verifyData = await res.json();
+
+              if (verifyData.message) {
+                 console.log(verifyData.message)
+              }
+          } catch (error) {
+              console.log(error);
+          }
+      },
+      theme: {
+          color: "#5f63b8"
+      }
+  };
+  const rzp1 = new window.Razorpay(options);
+  rzp1.open();
+
+  }
+
   return (
     <div className="dark:bg-red-400 bg-blue-200 ">
       <h1 className="sm:text-lg font-bold flex px-4">CART ITEMS</h1>
@@ -84,7 +152,9 @@ const CartPage = () => {
                 <p className="flex flex-row col-span-12 items-center text-xs justify-center text-green-800 font-semibold">You will save Rs. {discountPrice} on this order  </p>
 
                 </div>
-                <button className="bg-yellow-300 text-orange-900 py-1 my-2 border-orange-300 text-xs font-bold shadow-xl mx-2 ">Proceed to Buy </button>
+                <button className="bg-yellow-300 text-orange-900 py-1 my-2 border-orange-300 text-xs font-bold shadow-xl mx-2 "
+                onClick={handlePayment}
+                >Proceed to Buy </button>
               </div>
             </div>
            
