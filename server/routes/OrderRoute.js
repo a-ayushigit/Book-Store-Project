@@ -7,7 +7,7 @@ const {verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin} = require(
 
 router.get('/' ,verifyTokenAndAdmin,getAllOrders );
 router.get('/:id' , verifyTokenAndAuthorization,getOneOrder);
-router.post('/:id' , verifyToken , createOrder);
+router.post('/createOrder' , verifyToken , createOrder);
 router.put('/:id', verifyTokenAndAdmin , updateOrder);
 router.delete('/:id' ,  verifyTokenAndAdmin, deleteOrder);
 router.get('/income', verifyTokenAndAdmin ,getIncome );

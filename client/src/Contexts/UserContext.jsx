@@ -16,7 +16,7 @@ export default  function UserContextProvider({children}){
     axios.get('auth/profile').then(({data})=>{
         console.log(data);
         //setUser({data[username] , data[email]});
-        let userdata = {username:data.username , email:data.email};
+        let userdata = {username:data.username , email:data.email , _id:data._id};
         console.log(userdata);
         console.log(typeof(userdata));
         setUser(userdata);

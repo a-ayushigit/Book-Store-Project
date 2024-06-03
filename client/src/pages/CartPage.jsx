@@ -6,6 +6,9 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import CloseIcon from '@mui/icons-material/Close';
 import axios from 'axios';
 import dotenv from 'dotenv'
+import { useNavigate } from 'react-router-dom';
+import library from '../assets/books-6344402_1280.png'
+
 //dotenv.config()
 const CartPage = () => {
 
@@ -13,8 +16,10 @@ const CartPage = () => {
   const user = useContext(UserContext);
   const booksCount = cart.items.reduce((sum, book) => sum + book.quantity, 0);
   const items = cart.items;
+  const navigate = useNavigate();
   let price = cart.getTotalCost().toFixed(2) ;
   let discountPrice = cart.getDiscountedPrice().toFixed(2) ;
+  let orders = [];
 
   
   console.log(cart);
@@ -41,8 +46,41 @@ const CartPage = () => {
 
   }
 
+  const sendToDatabase = async(orders) =>{
+      let books = [];
+     
+      orders.map((order)=>{
+        const { _id ,...others } = order;
+        books.push({...others ,"bookId":_id}  );
+      })
+      console.log(`books `);
+      console.log(user._id);
+      console.log(typeof(user._id));
+      console.log(user);
+      console.log(typeof(user));
+      console.log(books);
+      console.log(orders);
+      try {
+        await axios.post('http://localhost:5000/api/v1/orders/createOrder',
+          {
+            "userId":user.user._id, 
+            "books":books,
+            "amount":price-discountPrice,
+             "address":"India",
+            }
+
+        )
+        
+      } catch (error) {
+        console.log(error)
+      }
+
+
+  }
+
   const handlePaymentVerify = async(data) =>{
-    console.log(import.meta.env.KEY_ID_RAZORPAY);
+    console.log(JSON.stringify(import.meta.env.KEY_ID_RAZORPAY));
+    console.log(typeof(JSON.stringify(import.meta.env.KEY_ID_RAZORPAY)));
     const options = {
 
       key: import.meta.env.KEY_ID_RAZORPAY,
@@ -68,10 +106,17 @@ const CartPage = () => {
                  
               )
 
-              const verifyData = await res.json();
+              // const verifyData =  res;
+              // console.log(verifyData);
 
-              if (verifyData.message) {
-                 console.log(verifyData.message)
+              if (res.data.message) {
+                 console.log(res.data.message);
+                 items.map((item)=>{
+                  orders.push(item);
+                  cart.removeAllBooks(item._id);
+                 })
+                 sendToDatabase(orders)
+
               }
           } catch (error) {
               console.log(error);
@@ -90,13 +135,13 @@ const CartPage = () => {
     <div className="dark:bg-red-400 bg-blue-200 ">
       <h1 className="sm:text-lg font-bold flex px-4">CART ITEMS</h1>
       {user.user ?
-        (<div className="dark:bg-red-400 bg-blue-200 ">
+        (<div className="dark:bg-red-400 bg-gradient-to-r from-sky-300 to-indigo-300">
           <p className="text-xl flex items-center justify-center">Hello {user.user.username}</p>
           <p className=" flex items-center justify-center">You have {booksCount} books in your cart </p>
           <div className="grid grid-cols-12">
-            <div className="bg-blue-100 dark:bg-red-300 w-full max-h-[300rem] h-auto min-h-screen col-span-9">
+            <div className=" bg-gradient-to-r from-cyan-200 to-blue-500 dark:bg-red-300 w-full max-h-[300rem] h-auto min-h-screen col-span-9">
               <ul className="decoration-none flex flex-col gap-1 p-1">
-                {items.map((item) =>
+                {(items.map((item) =>
                   <li key={item._id}>
                     <div className=" w-full h-[15rem] border border-black grid grid-cols-12">
                       <div className="flex items-center justify-center w-auto col-span-12 sm:col-span-3">
@@ -124,9 +169,10 @@ const CartPage = () => {
 
 
                   </li>
-                )}
+                ))
+                }
               </ul>
-
+             
             </div>
             <div className="bg-blue-400 w-full max-h-[300rem] h-auto min-h-screen col-span-3 border border-gray-100 p-1">
               <p className="text-lg flex justify-center font-semibold">  ORDER SUMMARY </p>

@@ -1,13 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { UserContext } from '../Contexts/UserContext'
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import ProfilePage from './ProfilePage';
+import OrderPage  from './OrderPage';
+
+
 
 
 const AccountPage = () => {
   const {user , setUser} = useContext(UserContext);
   const {subpage} = useParams();
   const navigate = useNavigate();
+ 
+  const [orders,setOrders] = useState([]);
+
+  console.log(location);
   if(!user){
     return (
      navigate('/login')
@@ -37,27 +45,30 @@ const AccountPage = () => {
     navigate('/');
   }
 
+  async function handleOrders(){
+    console.log("$$$$$$$$")
+    try {
+      console.log(user._id)
+      const response =   await axios.get(`http://localhost:5000/api/v1/orders/${user._id}`);
+      setOrders(response);
+    } catch (error) {
+      console.log(error);
+    }
+   
+  }
+
   return (
   <>
     <div className="mx-3">
         <nav className="flex gap-3 items-center justify-center p-5 max-w-auto">
           <Link className={linkClasses("myprofile")} to="/account/myprofile">My Profile</Link>
-          <Link className={linkClasses("myorders")} to="/account/myorders">My Orders</Link>
-          <Link className={linkClasses("mycart")} to="/account/mycart">My Cart</Link>
+          <Link onClick={handleOrders} className={linkClasses("myorders")} to="/account/myorders">My Orders</Link>
+          {/* <Link className={linkClasses("mycart")} to="/account/mycart">My Cart</Link> */}
           
         </nav>
 
-        {subpage === "myprofile" && (
-          <div>
-            <div className="">
-              Logged in as {user.username} ({user.email})
-              </div>
-              <div className='flex items-center justify-center my-5'>
-                <button onClick={handleLogout} className="py-3 rounded-full bg-blue-500 px-6 text-white dark:bg-red-800 font-bold">Logout</button>
-              </div>
-          </div>
-        )}
-        
+        {subpage === "myprofile" && <ProfilePage handleLogout={handleLogout} user={user} setUser={setUser} />}
+        {subpage === "myorders" && <OrderPage  user={user} setUser={setUser} orders={orders} />}
       </div>
     </>
   )
