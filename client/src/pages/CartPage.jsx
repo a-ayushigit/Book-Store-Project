@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../Contexts/CartContext'
 import { UserContext } from '../Contexts/UserContext';
 import AddIcon from '@mui/icons-material/Add';
@@ -8,6 +8,7 @@ import axios from 'axios';
 import dotenv from 'dotenv'
 import { useNavigate } from 'react-router-dom';
 import library from '../assets/books-6344402_1280.png'
+import Modal from '../components/Modal';
 
 //dotenv.config()
 const CartPage = () => {
@@ -21,9 +22,12 @@ const CartPage = () => {
   let discountPrice = cart.getDiscountedPrice().toFixed(2) ;
   let orders = [];
 
+  const [modal , setModal] = useState(false);
+
   
   console.log(cart);
   console.log(user);
+
 
   const handlePayment = async() =>{
     console.log(price);
@@ -131,7 +135,10 @@ const CartPage = () => {
 
   }
 
-  return (
+  return (<>
+   <Modal modal={modal} handlePayment={handlePayment}
+     />
+   {console.log(handlePayment)}
     <div className="dark:bg-red-400 bg-blue-200 ">
       <h1 className="sm:text-lg font-bold flex px-4">CART ITEMS</h1>
       {user.user ?
@@ -199,17 +206,22 @@ const CartPage = () => {
 
                 </div>
                 <button className="bg-yellow-300 text-orange-900 py-1 my-2 border-orange-300 text-xs font-bold shadow-xl mx-2 "
-                onClick={handlePayment}
+                onClick={()=>{
+
+                  setModal(!modal);
+                  
+                }}
                 >Proceed to Buy </button>
               </div>
             </div>
            
           </div>
-
-        </div>)
+          
+        </div>
+        )
         : (<p>Please login to view your cart Items</p>)}
     </div>
-  )
+    </>)
 }
 
 export default CartPage

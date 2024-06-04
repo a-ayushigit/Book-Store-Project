@@ -13,7 +13,7 @@ const AccountPage = () => {
   const {subpage} = useParams();
   const navigate = useNavigate();
  
-  const [orders,setOrders] = useState([]);
+  const [orders,setOrders] = useState({});
 
   console.log(location);
   if(!user){
