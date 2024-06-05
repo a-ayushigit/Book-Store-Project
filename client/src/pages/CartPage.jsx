@@ -42,6 +42,7 @@ const CartPage = () => {
       )
       const data = res.data;
       console.log(data);
+      setModal(false);
       handlePaymentVerify(data.data);
     }
     catch(err){
@@ -71,6 +72,7 @@ const CartPage = () => {
             "books":books,
             "amount":price-discountPrice,
              "address":"India",
+             "status":"pending",
             }
 
         )
@@ -136,7 +138,7 @@ const CartPage = () => {
   }
 
   return (<>
-   <Modal modal={modal} handlePayment={handlePayment}
+   <Modal modal={modal} handlePayment={handlePayment} setModal={setModal}
      />
    {console.log(handlePayment)}
     <div className="dark:bg-red-400 bg-blue-200 ">

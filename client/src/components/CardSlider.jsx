@@ -24,7 +24,7 @@ console.log(books);
 
          
       {books && books.map((book)=>
-      <div key={book._id} className="transform hover:scale-105 hover:border ease-in-out duration-1500 gap-1 pr-1 ">
+      <div key={book._id} className="transform hover:scale-95 hover:border ease-in-out duration-1500 gap-1 pr-1 ">
          <Link to={`/book/${book._id}`} >
            <div className="h-[19rem] flex items-center w-[200px] p-1 " >
            <img className="h-[15rem] w-[10rem] sm:h-[18rem] sm:w-[12rem]  cursor-pointer " src={book.imageUrl}/>
