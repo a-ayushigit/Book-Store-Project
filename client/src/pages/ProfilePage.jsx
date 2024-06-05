@@ -11,6 +11,12 @@ const ProfilePage = ({
               <div className='flex items-center justify-center my-5'>
                 <button onClick={handleLogout} className="py-3 rounded-full bg-blue-500 px-6 text-white dark:bg-red-800 font-bold">Logout</button>
               </div>
+
+              <div>
+                <form>
+
+                </form>
+              </div>
     </div>
   )
 }
