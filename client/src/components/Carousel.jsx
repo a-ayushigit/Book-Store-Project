@@ -121,7 +121,7 @@ const Carousel = () => {
                 <div className="grid grid-cols-2 sm:grid sm:grid-cols-4 gap-2 p-2  bg-cyan-100 dark:bg-red-800">
                     {catList.map((cat) =>
 
-                        <div key={cat.id} onClick={() => handleClick(cat.tag, cat.lang, cat.cat) } className="  h-auto w-30 p-1 sm:h-auto sm:w-auto text-xs sm:text-sm  hover:cursor-pointer col-span-1 flex justify-center items-center border-solid border-indigo-100 shadow-sm hover:shadow-2xl dark:bg-red-400  bg-cyan-400 border-separate rounded-2xl gap-3 transform duration:300 ease-in-out hover:scale-105"><img className="size-5 sm:size-14 flex justify-center text-wrap" src={cat.img} alt="" /><p> {cat.title}</p></div>
+                        <div key={cat.id} onClick={() => handleClick(cat.tag, cat.lang, cat.cat) } className="  h-auto w-30 p-1 sm:h-auto sm:w-auto text-xs sm:text-sm  hover:cursor-pointer col-span-1 flex justify-center items-center border-solid border-indigo-100 shadow-sm hover:shadow-2xl dark:bg-red-400  bg-cyan-400 border-separate rounded-2xl gap-3 transform duration:300 ease-in-out hover:scale-95"><img className="size-5 sm:size-14 flex justify-center items-center text-wrap" src={cat.img} alt="" /><p> {cat.title}</p></div>
                            
 
                     )}

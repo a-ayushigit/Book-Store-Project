@@ -8,7 +8,7 @@ const SlidingBooks = ({books:books , title:title}) => {
     console.log(books);
   return (
     <div className='h-auto pb-2 '>
-        <span className="  font-serif font-bold text-cyan-950 self-center shadow-md flex items-center justify-center">{title}</span>
+        <span className="flex   font-serif font-bold text-cyan-950 self-center shadow-md items-center justify-center">{title}</span>
       <CardSlider books={books} title={title}/>
     </div>
   )

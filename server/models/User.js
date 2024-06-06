@@ -8,7 +8,27 @@ const UserSchema = new mongoose.Schema({
     isAdmin:{
         type:Boolean, 
         default:false,
+    },
+    isModerator:{
+        type:Boolean,
+        default:false
+    },
+    groups:{
+        type:Array
+    },
+    moderatorGroups:{
+        type:Array
+    },
+    bookshelves:{
+        type:Array
+    },
+    reviews:{
+        type:Array
+    },
+    comments:{
+        type:Array
     }
+
 } , {
     timestamps:true
 });

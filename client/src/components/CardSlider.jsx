@@ -24,13 +24,13 @@ console.log(books);
 
          
       {books && books.map((book)=>
-      <div key={book._id} className="transform hover:scale-95 hover:border ease-in-out duration-1500 gap-1 pr-1 ">
+      <div key={book._id} className="flex items-center justify-center transform hover:scale-95 hover:border ease-in-out duration-1500 gap-1 pr-1 ">
          <Link to={`/book/${book._id}`} >
-           <div className="h-[19rem] flex items-center w-[200px] p-1 " >
-           <img className="h-[15rem] w-[10rem] sm:h-[18rem] sm:w-[12rem]  cursor-pointer " src={book.imageUrl}/>
+           <div className="h-[19rem] grid items-center justify-center w-[200px] p-1 " >
+           <img className="flex self-center justify-self-center h-[15rem] w-[10rem] sm:h-[18rem] sm:w-[12rem]  cursor-pointer " src={book.imageUrl}/>
            </div>
             <div className="flex justify-center p-1 flex-wrap flex-auto ">
-                <p  className="py-3 flex justify-center  bg-blue-500 px-6 text-white dark:bg-red-800 font-bold w-full">
+                <p  className="py-3 flex justify-center  bg-blue-500 px-6 text-white dark:bg-red-800 font-bold w-full text-xs">
                     {title}
                 </p>
             </div>
