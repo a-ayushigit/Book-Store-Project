@@ -6,6 +6,10 @@ const GroupSchema = new mongoose.Schema({
       required:true,
       unique:true   
     } , 
+    createdBy:{
+        type:Number,
+        required:true
+    },
     description:{
     type:String , 
     required:true
@@ -29,6 +33,9 @@ const GroupSchema = new mongoose.Schema({
     }, 
     discussions:{
         type:Array ,
+    },
+    pendingMembers:{
+        type:Array,
     }
 
 },

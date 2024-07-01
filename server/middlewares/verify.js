@@ -48,4 +48,15 @@ const verifyTokenAndAdmin = (req , res, next) =>{
 
 }
 
-module.exports = {verifyToken , verifyTokenAndAuthorization ,verifyTokenAndAdmin};
+const verifyTokenAndModerator = (req , res , next) => {
+    verifyToken(req , res , ()=>{
+        if(req.user.isModerator ){
+            next();
+        }
+        else{
+            res.status(403).json("Not authorized to do that !");
+        }
+    })
+}
+
+module.exports = {verifyToken , verifyTokenAndAuthorization , verifyTokenAndModerator , verifyTokenAndAdmin};

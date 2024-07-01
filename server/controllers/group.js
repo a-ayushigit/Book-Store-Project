@@ -53,6 +53,7 @@ const getOneGroup = async(req , res) =>{
 }
 
 const updateGroup = async (req , res)=>{
+
     try{
         const {id} = req.params;
         const result = await Group.findByIdAndUpdate(id ,
@@ -75,4 +76,74 @@ const updateGroup = async (req , res)=>{
     }
 }
 
-module.exports = {createGroup , deleteGroup , getAllGroups , getOneGroup , updateGroup }
+const requestMember = async (req , res) =>{
+    const groupId = req.params.id;
+    const group = await Group.findById(groupId);
+    try{
+       if(!group.pendingMembers.includes(req.user._id) && !group.members.includes(req.user._id)){
+       group.pendingMembers.push(req.user._id);
+       await group.save().then(res.status(200).json({message : "Request sent successfully"})).catch((err)=>{
+        console.log(err);
+       })
+       }
+       else{
+        res.status(400).json({message : "Already requested or a member"});
+       } 
+
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+const acceptMember = async (req , res) =>{
+    const groupId = req.params.id;
+    const group = await Group.findById(groupId);
+    try{
+        if (group.moderators.includes(req.user._id) || group.createdBy.equals(req.user._id)){
+            const userIndex = group.pendingMembers.indexOf(req.params.userId);
+            if(userIndex > -1){
+                group.pendingMembers.splice(userIndex , 1);
+                group.members.push(req.user._id);
+                await group.save().then(res.status(200).json({"message":"Added successfully to the group"}).catch((err)=>{console.log(err)}));
+
+            }
+            else{
+                res.status(400).json({"message":"User not found in pending member list"});
+            }
+        }
+        else{
+            res.status(400).json({"message":"You are not a moderator of this group"});
+        }
+
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+const rejectMember = async (req , res) =>{
+    const groupId = req.params.id;
+    const group = await Group.findById(groupId);
+    try{
+        if (group.moderators.includes(req.user._id) || group.createdBy.equals(req.user._id)){
+            const userIndex = group.pendingMembers.indexOf(req.params.userId);
+            if(userIndex > -1){
+                group.pendingMembers.splice(userIndex, 1);
+                await group.save().then(res.status(200).json({"message":"Rejected successfully"}).catch((err)=>{console.log(err)}));
+            }
+            else{
+                res.status(400).json({"message":"User not found in pending member list"});
+            }
+        }
+        else{
+            res.status(400).json({"message":"You are not a moderator of this group"});
+        }
+
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+module.exports = {createGroup , deleteGroup , getAllGroups , getOneGroup , updateGroup , requestMember , acceptMember , rejectMember}

@@ -13,6 +13,8 @@ import axios from 'axios';
 import UserContextProvider from './Contexts/UserContext.jsx'
 import Shopper from './pages/Shopper.jsx'
 import Community from './pages/Community.jsx'
+import DiscussionsPage from './pages/DiscussionsPage.jsx'
+import GroupPage from './pages/GroupsPage.jsx'
 axios.defaults.baseURL = "http://localhost:5000/api/v1/";//so that we dont have to write theentire address again and again 
 axios.defaults.withCredentials = true ;
 
@@ -36,7 +38,8 @@ const router = createBrowserRouter(
     console.log(res.data);
     return res.data;
     }}/>
-
+    <Route path="discussions" element={<DiscussionsPage/>}/>
+    <Route path="groups" element={<GroupPage/>}/>
     </Route>
   </Route>
  

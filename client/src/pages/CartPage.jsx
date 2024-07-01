@@ -21,6 +21,36 @@ const CartPage = () => {
   let price = cart.getTotalCost().toFixed(2) ;
   let discountPrice = cart.getDiscountedPrice().toFixed(2) ;
   let orders = [];
+  const optionsList = [
+    {
+      id:1 , label:'Full Name'
+    },
+    {
+      id:2 , label:'Mobile Number'
+    },
+    {
+      id:3 , label:'Flat, House no., Building, Company, Apartment'
+    },
+    {
+      id:4 , label:'Pincode'
+    },
+    
+    {
+      id:5 , label:'Area, Street, Sector, Village'
+    },
+    {
+      id:6 , label:'Landmark'
+    },
+    {
+      id:7 , label:'Town/City'
+    }, 
+    {
+      id:8 , label:'State'
+    },
+    {
+      id:9 , label:'Country/Region'
+    }
+  ];
 
   const [modal , setModal] = useState(false);
 
@@ -138,7 +168,7 @@ const CartPage = () => {
   }
 
   return (<>
-   <Modal modal={modal} handlePayment={handlePayment} setModal={setModal}
+   <Modal modal={modal} handleSubmission={handlePayment} setModal={setModal} optionsList={optionsList} type="cart"
      />
    {console.log(handlePayment)}
     <div className="dark:bg-red-400 bg-blue-200 ">
