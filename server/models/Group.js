@@ -7,13 +7,17 @@ const GroupSchema = new mongoose.Schema({
       unique:true   
     } , 
     createdBy:{
-        type:Number,
+        type:String,
         required:true
     },
     description:{
     type:String , 
     required:true
     },
+    rules:{
+        type:String , 
+        required:true
+        },
     members:{
         type:Array,
 
@@ -36,6 +40,14 @@ const GroupSchema = new mongoose.Schema({
     },
     pendingMembers:{
         type:Array,
+    },
+    isPublic:{
+        type:Boolean,
+        default:true
+    },
+    isPrivate:{
+    type:Boolean,
+    default:false
     }
 
 },

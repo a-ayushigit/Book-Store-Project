@@ -62,7 +62,7 @@ const CartPage = () => {
   const handlePayment = async() =>{
     console.log(price);
     try{
-      const res = await axios.post('http://localhost:5000/api/v1/payments/order' , 
+      const res = await axios.post('/payments/order' , 
           JSON.stringify({"amount" : price - discountPrice}) , 
           {
             headers: {
@@ -96,7 +96,7 @@ const CartPage = () => {
       console.log(books);
       console.log(orders);
       try {
-        await axios.post('http://localhost:5000/api/v1/orders/createOrder',
+        await axios.post('/orders/createOrder',
           {
             "userId":user.user._id, 
             "books":books,
@@ -128,7 +128,7 @@ const CartPage = () => {
       handler: async (response) => {
           console.log("response", response)
           try {
-              const res = await axios.post(`http://localhost:5000/api/v1/payments/verify`, 
+              const res = await axios.post(`/payments/verify`, 
                 JSON.stringify({
                   razorpay_order_id: response.razorpay_order_id,
                   razorpay_payment_id: response.razorpay_payment_id,

@@ -13,10 +13,10 @@ const {verifyTokenAndAuthorization, verifyTokenAndAdmin ,  verifyTokenAndModerat
 
 router.get('/' ,getAllGroups );
 router.get('/:id' , getOneGroup);
-router.post('/createGroup' , verifyTokenAndAdmin , createGroup);
+router.post('/createGroup' , createGroup);
 router.put('/:id',  verifyTokenAndModerator, updateGroup);
 router.delete('/:id' ,  verifyTokenAndModerator , deleteGroup);
-router.post('/:id/request/:userId', verifyTokenAndModerator, requestMember);
+router.post('/:id/request/:userId', requestMember);
 router.post('/:id/accept/:userId', verifyTokenAndModerator, acceptMember);
 router.post('/:id/reject/:userId', verifyTokenAndModerator, rejectMember);
 

@@ -78,10 +78,11 @@ const updateGroup = async (req , res)=>{
 
 const requestMember = async (req , res) =>{
     const groupId = req.params.id;
+    const userId = req.params.userId;
     const group = await Group.findById(groupId);
     try{
-       if(!group.pendingMembers.includes(req.user._id) && !group.members.includes(req.user._id)){
-       group.pendingMembers.push(req.user._id);
+       if(!group.pendingMembers.includes(userId) && !group.members.includes(userId)){
+       group.pendingMembers.push(userId);
        await group.save().then(res.status(200).json({message : "Request sent successfully"})).catch((err)=>{
         console.log(err);
        })

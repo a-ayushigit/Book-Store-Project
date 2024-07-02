@@ -3,7 +3,7 @@ import React from 'react'
 const Modal = (props) => {
   console.log(props.modal);
   return (
-    <div className={`${(props.modal === true) ? ' border border-gray-600 sm:h-auto min-h-[15rem]  w-auto min-w-[25rem] sm:max-h-[500vh] sm:w-[35rem] flex self-center absolute top-14 flex-shrink transition-shadow duration-500 backdrop-blur-sm bg-white/30 flex-col z-50 overscroll-contain text-xs' : 'hidden'} `}>
+    <div className={`${(props.modal === true) ? 'h-auto border border-gray-600 sm:h-auto min-h-[15rem]  w-auto min-w-[25rem] sm:max-h-[500vh] sm:w-[35rem] flex  self-center absolute top-14 flex-shrink transition-shadow duration-500 backdrop-blur-sm bg-white/30 flex-col z-50 overscroll-contain text-xs' : 'hidden'} `}>
 
 
       <p className="flex  font-bold px-2 justify-between pt-2">
@@ -15,8 +15,7 @@ const Modal = (props) => {
 
 
 
-        <form className="grid grid-cols-6" >
-
+        <form className="grid grid-cols-6" onSubmit={props.handleSubmission}>
          {props.type === 'cart' ?(props.optionsList.map((option) => (
             <div key={option.id} className="flex flex-col col-span-6">
               <label className="flex items-start justify-around px-2 font-bold py-1 ">{option.label}</label>
@@ -29,27 +28,27 @@ const Modal = (props) => {
             props.optionsList.map((option) => (
               <div key={option.id} className="flex flex-col col-span-6">
                 <label className="flex items-start justify-around px-2 font-bold py-1 ">{option.name}</label>
-                <input type={option.type} className="flex flex-grow w-full max-w-[30rem] max-h-7 self-center justify-self-center px-5 col-span-6" />
+                {option.type}
               </div>
   
             ))
           )}
-
-        </form>
-        <div className='flex flex-row items-center justify-center'>
+        <div className='col-span-6 flex flex-row items-center justify-center'>
          {props.type === 'cart' ?(
-          <button onClick={props.handleSubmission} className="bg-green-900 w-40 h-10 rounded-full text-nowrap m-2 font-bold text-white">
+          <button type="submit" className="bg-green-900 w-40 h-10 rounded-full text-nowrap m-2 font-bold text-white">
             Confirm Shipping Address
          
          </button>
          ):
          (
-          <button onClick={props.Submission} className="bg-green-900 w-40 h-10 rounded-full text-nowrap m-2 font-bold text-white">
+          <button type="submit"   className="bg-green-900 w-40 h-10 flex items-center justify-center rounded-full text-nowrap m-2 font-bold text-white">
             Confirm Group Details
             </button>
          )
          } 
         </div>
+        </form>
+        
 
         {/* {console.log(handlePayment)} */}
       </div>

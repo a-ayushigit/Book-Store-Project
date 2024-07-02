@@ -62,11 +62,11 @@ const Header = () => {
   return (
     <div className="h-10 bg-cyan-200  dark:bg-red-950 duration-200 dark:text-white">
       <div className="w-full  flex  h-10 shadow justify-between py-1 px-2 gap-1 ">
-        <div className="flex font-bold text-2xl sm:text-3xl items-center">
+        <div className="flex font-bold text-xs sm:text-3xl items-center justify-between">
 
           <a href="#" className="flex ">
             <img src={Logo} alt="" className="h-8" />
-            BookSphere
+           <p className="text-xl sm:text-2xl">BookSphere</p> 
           </a>
 
         </div>
@@ -79,13 +79,13 @@ const Header = () => {
               Menu.map((menu)=>(
  
                <li key={menu.id} className="inline-block hover:text-blue-700">
-                  <div className="font-bold uppercase text-xl sm:text-xs rounded-md hover:border hover:border-blue-950 p-1">
+                  <div className="font-bold uppercase text-xs rounded-md hover:border hover:border-blue-950 p-1">
                  
                  
                   <a href={menu.link}> 
                   <div className="flex flex-row text-wrap text-xs relative text-center justify-center">
                   {menu.icon}
-                  <p className="flex flex-row text-center justify-center pt-1 pl-1"> {menu.name} </p> 
+                  <p className="md:flex flex-row hidden md:text-center justify-center pt-1 pl-1"> {menu.name} </p> 
                   </div>
                   </a>
                   </div>
