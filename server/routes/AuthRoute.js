@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const {verifyTokenAndAuthorization, verifyTokenAndAdmin} = require("../middlewares/verify");
 const {register , login , profile , logout} = require('../controllers/auth');
 
 // router.route('/register').post(register);

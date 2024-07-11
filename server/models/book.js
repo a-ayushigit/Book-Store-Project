@@ -43,10 +43,15 @@ const bookSchema = new mongoose.Schema({
         required:true
     },
     discount:{
-        type:Number 
+        type:Number ,
+        default:0
     },
     rating:{
         type:Number
+    },
+    stock:{
+        type:Number,
+        default:100
     }
 
 },

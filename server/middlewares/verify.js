@@ -35,6 +35,7 @@ const verifyTokenAndAuthorization = (req , res, next) =>{
 
 }
 
+//only admin allowed tasks 
 const verifyTokenAndAdmin = (req , res, next) =>{
     verifyToken(req , res , ()=>{
         

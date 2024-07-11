@@ -6,9 +6,12 @@ const bookshelfSchema = new mongoose.Schema({
     unique:true , 
     required:true
    },
-   books:{
-    type:Array
+   books:[{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"Books"
    }
+
+   ]
 
 },
     {

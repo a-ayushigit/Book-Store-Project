@@ -2,12 +2,15 @@ const mongoose = require("mongoose");
 
 const reviewSchema = new mongoose.Schema({
    userId:{
-    type:String , 
+    type:mongoose.Schema.Types.ObjectId, 
     unique:true , 
-    required:true
+    required:true,
+    ref:"Users"
    },
    bookId:{
-    type:String
+    type:mongoose.Schema.Types.ObjectId,
+    required:true,
+    ref:"Books"
    },
    description:{
     type:String,

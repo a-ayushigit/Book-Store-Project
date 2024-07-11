@@ -103,6 +103,7 @@ const acceptMember = async (req , res) =>{
     try{
         if (group.moderators.includes(req.user._id) || group.createdBy.equals(req.user._id)){
             const userIndex = group.pendingMembers.indexOf(req.params.userId);
+            //check if the user exists or not in list  of pending members
             if(userIndex > -1){
                 group.pendingMembers.splice(userIndex , 1);
                 group.members.push(req.user._id);

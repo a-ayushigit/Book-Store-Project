@@ -13,6 +13,7 @@ import axios from 'axios';
 import UserContextProvider from './Contexts/UserContext.jsx'
 import Shopper from './pages/Shopper.jsx'
 import Community from './pages/Community.jsx'
+import ChatPage from './pages/ChatPage.jsx'
 import DiscussionsPage from './pages/DiscussionsPage.jsx'
 import GroupPage from './pages/GroupsPage.jsx'
 axios.defaults.baseURL = "http://localhost:5000/api/v1/";//so that we dont have to write theentire address again and again 
@@ -32,7 +33,7 @@ const router = createBrowserRouter(
     <Route path="cart" element={<CartPage/>}/>
     <Route path="account/:subpage" element={<AccountPage/>}/>
     <Route path="community" element={<Community/>}/>
-
+    <Route path="chats" element={<ChatPage/>}/>
     <Route path='book/:id' element={<BookPage/>} loader={async ({params})=>{
     const res =  await axios.get(`http://localhost:5000/api/v1/books/${params.id}`);
     console.log(res.data);

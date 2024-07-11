@@ -13,21 +13,58 @@ const UserSchema = new mongoose.Schema({
         type:Boolean,
         default:false
     },
-    groups:{
-        type:Array
+    groups:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Groups"
+        }
+    ],
+    moderatorGroups:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Groups"
+        }
+    ],
+    bookshelves:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Bookshelves"
+        }
+    ],
+    reviews:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Reviews"
+        }
+    ],
+    comments:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Comments"
+        }
+    ],
+    profilePic:{
+        type:String , 
+        default:""
     },
-    moderatorGroups:{
-        type:Array
-    },
-    bookshelves:{
-        type:Array
-    },
-    reviews:{
-        type:Array
-    },
-    comments:{
-        type:Array
-    }
+    friends:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Users"
+        }
+    ],
+    pendingFriends:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Users"
+        }
+    ],
+    requestSendPeople:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Users"
+        }
+    ]
 
 } , {
     timestamps:true

@@ -1,0 +1,25 @@
+import React, { useContext, useEffect, useState } from 'react'
+import { UserContext } from '../Contexts/UserContext';
+import Chatcomponent from '../components/Chatcomponent';
+
+
+const ChatPage = () => {
+  const [users , setUsers] = useState([]);
+  const [messages, setMessages] = useState([]);
+  const user = useContext(UserContext);
+ 
+  useEffect(()=>{
+
+  },[])
+  return (
+    <div >
+      {user.user? 
+      <div>
+      <Chatcomponent/>
+      </div>
+       : "Please login to chat "}
+       </div>
+  )
+}
+
+export default ChatPage

@@ -7,7 +7,8 @@ const commentSchema = new mongoose.Schema({
     required:true
    },
    bookshelfName:{
-    type:String
+    type:String , 
+    ref:'Bookshelves'
    },
    description:{
     type:String,

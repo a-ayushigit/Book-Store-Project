@@ -37,7 +37,7 @@ const Header = () => {
     {
       id: 3,
       icon: user ? <PersonIcon /> : <LoginIcon />,
-      name: user ? <>{' ' + user.username}</> : "Login" , 
+      name: user ? <>{' ' + user.username.split(" ")[0]}</> : "Login" , 
       link: user ? "/account" : "/login",
     },
      {

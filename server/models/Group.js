@@ -8,7 +8,8 @@ const GroupSchema = new mongoose.Schema({
     } , 
     createdBy:{
         type:String,
-        required:true
+        required:true,
+        ref:"Users"
     },
     description:{
     type:String , 
@@ -24,11 +25,15 @@ const GroupSchema = new mongoose.Schema({
     },
     bookshelf:{
         type:Array ,
+        ref:"Bookshelves"
 
     },
-    moderators:{
-        type:Array
-    },
+    moderators:[
+       { 
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"Users",
+    }
+    ],
     tags:{
         type:Array,
     },
@@ -38,9 +43,12 @@ const GroupSchema = new mongoose.Schema({
     discussions:{
         type:Array ,
     },
-    pendingMembers:{
-        type:Array,
-    },
+    pendingMembers:[
+        { 
+         type: mongoose.Schema.Types.ObjectId,
+         ref:"Users",
+     }
+     ],
     isPublic:{
         type:Boolean,
         default:true

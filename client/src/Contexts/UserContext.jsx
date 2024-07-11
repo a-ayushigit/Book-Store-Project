@@ -12,7 +12,7 @@ export default  function UserContextProvider({children}){
     const [user , setUser] = useState(null);
     useEffect(()=>{
     if(!user){
-            console.log('Hello')
+            console.log('Hello bolo')
     axios.get('auth/profile').then(({data})=>{
         console.log(data);
         //setUser({data[username] , data[email]});

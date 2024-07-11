@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
-const app = express();
+const {app , server } = require('./socket/socket');
+
 const port = process.env.PORT || 5000
 const cors = require('cors');
 const  connectDB = require( './db/connect');
@@ -14,6 +15,7 @@ const paymentRouter = require('./routes/PaymentRoute');
 const groupRouter = require('./routes/GroupRoute');
 const reviewRouter = require('./routes/ReviewRoute');
 const commentsRouter = require('./routes/CommentRoute');
+const chatRouter = require('./routes/ChatRoute');
 const cookieParser = require('cookie-parser');
 
 //Middleware 
@@ -41,11 +43,12 @@ app.use('/api/v1/payments',paymentRouter);
 app.use('/api/v1/groups', groupRouter);
 app.use('/api/v1/reviews', reviewRouter);
 app.use('/api/v1/comments', commentsRouter);
+app.use('/api/v1/chats' , chatRouter);
 
 const start = async() =>{
     try {
     await connectDB(process.env.MONGO_URI);
-    app.listen(port , console.log(`Server is listening to port  ${port}..`));
+    server.listen(port , console.log(`Server is listening to port  ${port}..`));
     }
     catch(error){
       console.log(error);

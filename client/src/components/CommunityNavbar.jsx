@@ -15,7 +15,7 @@ const CommunityNavbar = () => {
         {
             id:3,
             name:"Chat",
-            link:"/chat"
+            link:"/chats"
         }
     ]
   return (
