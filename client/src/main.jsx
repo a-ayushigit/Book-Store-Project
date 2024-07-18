@@ -6,16 +6,18 @@ import { BrowserRouter } from 'react-router-dom'
 import UserContextProvider from './Contexts/UserContext.jsx'
 import CartProvider from './Contexts/CartContext.jsx'
 import { SocketContextProvider } from './Contexts/SocketContext.jsx'
+import { ChatProvider } from './Contexts/ChatContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
  
   <React.StrictMode>
   <UserContextProvider>
     <CartProvider>
-   
+     <ChatProvider>
     <SocketContextProvider>
     <App />
     </SocketContextProvider>
+    </ChatProvider>
     </CartProvider>
     </UserContextProvider> 
   </React.StrictMode>,

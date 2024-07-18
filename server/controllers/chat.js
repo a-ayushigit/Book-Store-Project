@@ -2,12 +2,13 @@ const express = require('express')
 const Message = require('../models/Message');
 const  Conversation  = require('../models/Conversation');
 const User = require('../models/User');
+const { getReceiverSocketId } = require('../socket/socket');
 
 const sendMessage = async (req , res) =>{
     try{
     const {message} = req.body ;
     const {id:receiverId} = req.params ;
-    const {senderId} = req.body ;
+    const senderId = req.user.id;
     console.log("Hello")
     let conversation = await Conversation.findOne({
         participants:{ $all : [senderId , receiverId]},
@@ -28,10 +29,20 @@ const sendMessage = async (req , res) =>{
     if(newMessage){
         conversation.messages.push(newMessage._id);
     }
+
+
     
     await Promise.all([conversation.save() , newMessage.save()]);
-    console.log("Hello")
+    // console.log("Hello")
+    const receiverSocketId = getReceiverSocketId(receiverId);
+    if(receiverSocketId){
+        io.to(receiverSocketId).emit("newMessage" , newMessage);//sending message to specific client
+    }
+
     res.status(201).json(newMessage);
+
+
+
     }
     catch(err){
         console.log("Error in message controller :", err.message)
