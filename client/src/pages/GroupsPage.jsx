@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import {useEffect , useContext} from 'react'
 import axios from 'axios'
 import { UserContext } from '../Contexts/UserContext';
-
-
+import CommunityNavbar from '../components/CommunityNavbar'
 
 const GroupsPage = () => {
  const [groups , setGroups] = useState([]);
@@ -39,6 +38,7 @@ const visitGroup = async()=>{
   }, [])
   return (
     <div className="h-[250vh]">
+      <div><CommunityNavbar/></div>
       <h1 className="flex font-bold text-4xl font-serif justify-center">GROUPS</h1>
       <div className="grid grid-cols-12 gap-4 p-3">
       {groups.map((group,i)=>(

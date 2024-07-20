@@ -6,7 +6,13 @@ export default {
   ],
   darkMode:"class",
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage:{
+        'book-side-left': "url('/src/assets/bookImage.jpg')",
+        'book-side-right':"url('/src/assets/bookImage2.jpg')",
+        'book-center':"url('/src/assets/community_image.png')"
+      }
+    },
     
   },
   plugins: [],

@@ -5,47 +5,20 @@ import { useState , useContext  } from 'react';
 import axios from 'axios';
 import { UserContext } from '../Contexts/UserContext'
 import {  useNavigate } from 'react-router-dom'
-
-
-
+import CommunityForm from '../components/CommunityForm';
+import communityImage from '../assets/community_image.png';
+import {groupOptionsList} from '../constants/index';
 const Community = () => {
-  const [modal , setModal] = useState(false);
+  const [groupForm , setGroupForm] = useState(false);
+  const [discussionForm , setDiscussionForm] = useState(false);
   const {user , setUser} = useContext(UserContext);
   const navigate = useNavigate();
-  const optionsList = [
-    {
-      id:1 , 
-      name:"Group Name",
-      type: <input type="text" className="flex flex-grow w-full max-w-[30rem] max-h-7 self-center justify-self-center px-5 col-span-6" />
-    } , 
-    {
-      id:2 ,
-      name:"Description",
-      type:<textarea className="flex flex-grow w-full max-w-[30rem] max-h-7 self-center justify-self-center px-5 col-span-6"/>
-    },
-    {
-      id:3 , 
-      name:"Rules",
-      type:<textarea className="flex flex-grow w-full max-w-[30rem] max-h-7 self-center justify-self-center px-5 col-span-6"/>
-    }, 
-    {
-      id:4 , 
-      name:"Group / BookClub Topic",
-      type:<input type="text" className="flex flex-grow w-full max-w-[30rem] max-h-7 self-center justify-self-center px-5 col-span-6" />
-    },
-    {
-      id:5 ,
-      name:"Public",
-      type:<input name="privacy" type="radio" className="flex flex-grow w-full max-w-[30rem] max-h-7 self-center justify-self-center px-5 col-span-3" />
-    } , 
-    {
-      id:6 , 
-      name:"Private",
-      type:<input name="privacy" type="radio" className="flex flex-grow w-full max-w-[30rem] max-h-7 self-center justify-self-center px-5 col-span-3" />
-    }
-  ]
-  const handleGroup = async () => {
-    setModal(true);
+
+  const handleGroupAndDiscussion = async (item) => {
+
+    if(item === "group") setGroupForm(true);
+    else if (item === "discussion") setDiscussionForm(true);
+    else return;
   }
 
   const handleSubmission = async (ev) =>{
@@ -85,11 +58,40 @@ const Community = () => {
   return (
     <div className="">
       <div><CommunityNavbar/></div>
-      <div className="flex m-3">
-        <button className="flex p-3 rounded-xl bg-cyan-500 text-white " onClick={handleGroup}>Add a Group</button>
+      <div className="flex m-3 items-center justify-center gap-5">
+        <button className="flex p-3 rounded-xl bg-cyan-500 text-white " onClick={()=>handleGroupAndDiscussion("group")}>Add a Group</button>
+        <button className="flex p-3 rounded-xl bg-cyan-500 text-white " onClick={()=>handleGroupAndDiscussion("discussion")}>Start a Discussion</button>
       </div>
-     <div className="flex  m-2 p-3">
-     <Modal className="flex " modal={modal}   setModal={setModal} optionsList={optionsList} handleSubmission={handleSubmission} type="group"/>
+     <div className="flex bg-book-center m-2 p-3">
+     {/* <Modal className="flex " modal={modal}   setModal={setModal} optionsList={optionsList} handleSubmission={handleSubmission} type="group"/> */}
+     {
+      groupForm?
+      <CommunityForm group={groupForm} discussionForm={discussionForm} options={groupOptionsList} />:
+      discussionForm?
+      <CommunityForm discussion={discussionForm} group={groupForm} options={groupOptionsList} />:
+      <div className="flex  h-[75vh] w-screen ">
+        <div className="flex flex-col  gap-5 w-full place-items-center">
+               <p className="flex items-start font-serif font-bold text-lg text-cyan-950">Come and Engage with the vibrant community !!!</p>
+               <ul className="flex list-disc flex-col items-start font-serif font-bold text-lg text-cyan-950">
+                <li>Shared Interests</li>
+                <li>Diverse Opinion</li>
+                <li>Collective Insights</li>
+                <li>Reading Motivation</li>
+                <li>.....and lots more </li>
+
+               </ul>
+               <p className="flex items-start font-serif font-bold text-lg text-cyan-950">
+                Join the community .....
+               </p>
+                {/* <img src={communityImage} alt="community" className="flex h-[75vh]"/> */}
+        </div>
+        
+        
+       
+      </div>
+          
+     }
+
       </div> 
     </div>
   )
