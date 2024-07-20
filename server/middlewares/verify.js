@@ -51,8 +51,8 @@ const verifyTokenAndAdmin = (req, res, next) => {
 
 }
 
-const verifyTokenAndModerator = (req, res, next) => {
-    verifyToken(req, res, () => {
+const verifyTokenAndModeratorOrCreator = (req, res, next) => {
+    verifyTokenAndAuthorization(req, res, () => {
         // if(req.user.isModerator ){
         //     next();
         // }
@@ -77,4 +77,4 @@ const verifyTokenAndModerator = (req, res, next) => {
     })
 }
 
-module.exports = { verifyToken, verifyTokenAndAuthorization, verifyTokenAndModerator, verifyTokenAndAdmin };
+module.exports = { verifyToken, verifyTokenAndAuthorization, verifyTokenAndModeratorOrCreator, verifyTokenAndAdmin };

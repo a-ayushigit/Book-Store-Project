@@ -1,4 +1,4 @@
-const groupOptionsList = [
+export const groupOptionsList = [
     {
       id:1 , 
       name:"Group Name",
@@ -31,5 +31,3 @@ const groupOptionsList = [
     }
   ]
 
-
-export default {groupOptionsList}
