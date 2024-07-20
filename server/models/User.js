@@ -31,21 +31,21 @@ const UserSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
-    isModerator: {
-        type: Boolean,
-        default: false
-    },
    
-    groups: [
+   
+ 
+    groups:[
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Groups"
-        }
-    ],
-    moderatorGroups: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Groups"
+            id:{
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Groups"
+            },
+            role: {
+                type: String,
+                enum: ["creator", "moderator", "member"],
+                default: "member"
+            }
+
         }
     ],
     bookshelves: [

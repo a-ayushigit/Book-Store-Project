@@ -83,7 +83,7 @@ const login = async (req, res) => {
             console.log("user id" , user._id);
             if (passok) {
                 const { accessToken, refreshToken } = await generateAccessAndRefreshToken(user._id);
-                const { _id, username, fullname, email } = await User.findById(user._id);
+                const loggedInUser = await User.findById(user._id).select("-password -refreshToken");
 
                 const options = {
                     httpOnly: true,
@@ -95,7 +95,7 @@ const login = async (req, res) => {
                 return res.status(200)
                     .cookie('accessToken', accessToken, options)
                     .cookie('refreshToken', refreshToken, options)
-                    .json({ loggedInUser: { username, email, _id, fullname }, accessToken, refreshToken, message: "User logged in successfully" });
+                    .json({ loggedInUser, accessToken, refreshToken, message: "User logged in successfully" });
             }
             else {
                 return res.status(401).json('password not ok : Invalid Credentials! ');
@@ -120,10 +120,15 @@ const profile = async (req, res) => {
         const  accessToken  = req.cookies.accessToken;
         // console.log("token",token);
         console.log("Hello profile 3");
-        console.log(accessToken);
+        console.log(typeof(accessToken));
         
         console.log("Hello profile 2");
+        // if(accessToken === "" ) {
+        //     console.log("Returning Function!");
+        //     return res.status(200).json("Log in to get access");
+        // }
         if (accessToken) {
+            
             jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET, {}, async (err, userData) => {
                 if (err) throw err;
                 const user = await User.findById(userData._id).select("-password -refreshToken");
@@ -197,6 +202,7 @@ const logout = async (req, res) => {
 
 
         return res.status(200).clearCookie('accessToken', options).clearCookie('refreshToken', options).json("User logged out!");
+        // res.status(200).cookie('accessToken' , '' , options).json("User logged Out successfully!");
     }
     catch (err) {
         console.log(err);

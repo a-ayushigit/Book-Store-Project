@@ -13,14 +13,10 @@ import LocalMallIcon from '@mui/icons-material/LocalMall';
 import HomeIcon from '@mui/icons-material/Home';
 
 const Header = () => {
-  const { user } = useContext(UserContext);
+  const { user , loading } = useContext(UserContext);
   const cart = useContext(CartContext);
   const booksCount = cart.items.reduce((sum , book)=>sum + book.quantity , 0);
   console.log(user);
-
-
-
-
   const Menu = [
     {
      id: 1, 
@@ -36,9 +32,10 @@ const Header = () => {
     },
     {
       id: 3,
-      icon: user ? <PersonIcon /> : <LoginIcon />,
-      name: user ? <>{' ' + user.username.split(" ")[0]}</> : "Login" , 
-      link: user ? "/account" : "/login",
+      // icon: user ? <PersonIcon /> :loading?<>Loading...</>: <LoginIcon />,
+      icon:loading?null:(user ? <PersonIcon />:<LoginIcon />),
+      name:loading?<>Loading...</>: (user && user.username ? <>{' ' + user?.username?.split(" ")[0]}</> : "Login") , 
+      link:loading?"#": (user ? "/account" : "/login"),
     },
      {
       id:4 , 
