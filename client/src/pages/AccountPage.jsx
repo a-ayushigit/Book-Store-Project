@@ -46,7 +46,7 @@ const AccountPage = () => {
   }
 
   async function handleOrders(){
-    console.log("$$$$$$$$")
+    //console.log("$$$$$$$$")
     try {
       console.log(user._id)
       const response =   await axios.get(`http://localhost:5000/api/v1/orders/${user._id}`);

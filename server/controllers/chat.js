@@ -2,10 +2,11 @@ const express = require('express')
 const Message = require('../models/Message');
 const  Conversation  = require('../models/Conversation');
 const User = require('../models/User');
-const { getReceiverSocketId } = require('../socket/socket');
+const { getReceiverSocketId , io} = require('../socket/socket');
 
 const sendMessage = async (req , res) =>{
     try{
+    //console.log(req);
     const {message} = req.body ;
     const {id:receiverId} = req.params ;
     const senderId = req.user.id;
@@ -74,6 +75,7 @@ catch(err){
 const acceptFriendRequest = (req , res) =>{
     try{
     const {id:userId} = req.params;
+    console.log(req);
     const receiver = req.user;
     const sender = User.findById(userId);
     if (receiver.pendingFriends.includes(userId)){
@@ -167,8 +169,9 @@ const sendFriendRequest = async (req , res) =>{
 const getSidePanelUsers = async (req , res)=>{
     
     try{
-        const loggedInUserid = req.user.id;
         //console.log(req.user);
+        const loggedInUserid = req.user._id;
+        // console.log(req.user);
         const loggedInUser = await User.findById(loggedInUserid);
         //console.log(loggedInUser);
         const users = await User.find({ '_id' :{$ne: loggedInUserid}}).select(

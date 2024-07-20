@@ -11,87 +11,200 @@ app.use(cookieParser());
 
 const bcryptSalt = bcrypt.genSaltSync(10);
 
-const register = async(req , res)=>{
-    console.log(req.body.email);
-    const newUser = new User({
-        username : req.body.username,
-        email : req.body.email,
-        password : bcrypt.hashSync(req.body.password,bcryptSalt),
-    })
+const generateAccessAndRefreshToken = async (userId) => {
     try {
-        console.log("hello")
-        const existinguser = await User.findOne({email:req.body.email});
-        if(!existinguser){
-        console.log("hi")
-        const savedUser = await newUser.save();
-        res.status(201).json(savedUser);
-        }
-        else{
-            res.status(401).send('User already exists ');
-        }
+        const user = await User.findById(userId);
+        const accessToken = user.generateAccessToken();
+        const refreshToken = user.generateRefreshToken();
+        //console.log(accessToken, refreshToken);
+        user.refreshToken = refreshToken;//updating the database 
+        console.log("ghello 1");
+        console.log(user);
+        await user.save({ validateBeforeSave: false});
+        console.log("ghello 2");
+
+        return { accessToken, refreshToken };
+
+
     } catch (error) {
-        res.status(500).json(error);
         console.log(error);
+        throw new Error("Something went wrong while generating the access and refresh token !");
     }
 }
 
-const login = async(req , res)=>{
-    const passwordextract = req.body.password;
-    const user = await User.findOne({ email: req.body.email});
-    if(user){
-        const passok = bcrypt.compareSync(passwordextract , user.password);
-
-        if(passok){
-            jwt.sign({email:user.email , id:user._id , isAdmin:user.isAdmin } ,process.env.JWT_SECRET ,{expiresIn:"3d"},(err,token)=>{
-                if(err) throw err;
-                res.status(200).cookie('token' , token).json(user);
-            }  )
-           
-        }
-        else{
-            res.status(401).json('pass not ok ');
-        }
-    }
-    else{
-        res.status(404).json('not found');
-    }
-
-}
-
-const profile = async(req , res)=>{
-    const {token} = req.cookies;
-    
+const register = async (req, res) => {
+    //console.log(req.body.email);
+    const {username, fullname, email, password} = req.body;
+    console.log("Register Password " , password);
     try {
-        if(token){
-            jwt.verify(token , process.env.JWT_SECRET , {} , async(err,userData)=>{
-                if(err) throw err ;
-                const{username , email, _id } = await User.findById(userData.id);
-                res.json({username , email , _id});
-            })
-           // console.log(res.json({username , email , _id}));
+        
+        const newUser = new User({
+            username,
+            email,
+            password,
+            fullname,
+        })
+        if ([username, fullname, email, password].some((field) => field?.trim() === ''))
+            return res.status(400).send("All fields are required !");
+        const existinguser = await User.findOne({
+            $or: [{ username }, { email }]
+        });
+        if (!existinguser) {
+            //console.log("hi")
+            const savedUser = await newUser.save();
+            const { username, email, _id, fullname } = await User.findById(savedUser._id)
+            return res.status(201).json({ username, email, _id, fullname, message: "User registered successfully" });
         }
         else {
-            res.json(null);
+            return res.status(401).send('User already exists ');
+        }
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json(error);
+
+    }
+}
+
+const login = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+        if (!email || !password) return res.status(401).json("Email and Password required !");
+        console.log("Login password ",password);
+        console.log("login 1");
+        const user = await User.findOne(
+            {
+                email:email
+            }
+        );
+        console.log("login 2");
+        if (user) {
+            const passok = await user.isPasswordCorrect(password);
+            console.log(passok);
+            console.log("user id" , user._id);
+            if (passok) {
+                const { accessToken, refreshToken } = await generateAccessAndRefreshToken(user._id);
+                const { _id, username, fullname, email } = await User.findById(user._id);
+
+                const options = {
+                    httpOnly: true,
+                    secure: true
+                }
+
+
+
+                return res.status(200)
+                    .cookie('accessToken', accessToken, options)
+                    .cookie('refreshToken', refreshToken, options)
+                    .json({ loggedInUser: { username, email, _id, fullname }, accessToken, refreshToken, message: "User logged in successfully" });
+            }
+            else {
+                return res.status(401).json('password not ok : Invalid Credentials! ');
+            }
+        }
+        else {
+            return res.status(404).json('User not found !');
+        }
+
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json("Internal Server Error");
+    }
+
+}
+
+const profile = async (req, res) => {
+   
+   
+    try {
+        const  accessToken  = req.cookies.accessToken;
+        // console.log("token",token);
+        console.log("Hello profile 3");
+        console.log(accessToken);
+        
+        console.log("Hello profile 2");
+        if (accessToken) {
+            jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET, {}, async (err, userData) => {
+                if (err) throw err;
+                const user = await User.findById(userData._id).select("-password -refreshToken");
+                res.json(user);
+                console.log(user);
+                console.log("Hello profile 1");
+            })
+            // console.log(res.json({username , email , _id}));
+            console.log("Hello profile 4");
+        }
+        else {
+            res.status(401).json("Unauthorized request");
+            console.log("Hello profile 5");
             //console.log(res);
         }
+
+    } catch (error) {
+        console.log(error);
+        console.log("Hello profile 6");
+    }
+    //    console.log("hello")
+
+}
+
+const refreshAccessToken = async(req , res) => {
+    const incomingToken = req.cookies.refreshToken || req.body.refreshToken ;
+    if (!incomingToken) return res.status(401).json("Unauthorized Access !");
+
+    try {
+        const decodedToken = jwt.verify(incomingToken ,process.env.REFRESH_TOKEN_SECRET);
+        const user = await User.findById(decodedToken._id);
+        if(!user) return res.status(401).json("Unauthorized Access");
+        if(incomingToken !== user.refreshToken) return res.status(401).json("Refresh token is expired or used");
+
+        //Generate new tokens 
+        const options = {
+            httpOnly: true,
+            secure: true
+        }
+
+        const { accessToken , newRefreshToken } = await generateAccessAndRefreshToken(user._id);
+        return res.status(200)
+        .cookie('accessToken', accessToken, options)
+        .cookie('refreshToken', newRefreshToken, options)
+        .json({ accessToken, refreshToken: newRefreshToken, message: "Access token refreshed" });
+
         
     } catch (error) {
         console.log(error);
+        return res.status(401).json(error?.message || "Invalid Refresh token");
     }
-//    console.log("hello")
-
 }
 
-const logout = async(req,res)=>{
-    try{
-        res.cookie('token' , '').json(true);
+const logout = async (req, res) => {
+    try {
+        await User.findByIdAndUpdate(
+            req.user._id , 
+            {
+                $unset : {
+                    refreshToken:1 // removed from db 
+                }
+            },
+            {
+                new:true
+            }
+        );
+        const options = {
+            httpOnly: true,
+            secure: true
+        };
+
+
+        return res.status(200).clearCookie('accessToken', options).clearCookie('refreshToken', options).json("User logged out!");
     }
-    catch(err){
+    catch (err) {
         console.log(err);
+        return res.status(500).json("Something went wrong !");
     }
-   
+
 }
 
 module.exports = {
-    register , login , profile , logout
+    register, login, profile, logout
 };

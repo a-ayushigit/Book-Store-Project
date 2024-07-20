@@ -4,6 +4,7 @@ const Group = require("../models/Group");
 
 const createGroup = async (req , res) =>{
     const newGroup = new Group(req.body);
+    
     console.log(newGroup);
     try {
         const savedGroup = await newGroup.save();

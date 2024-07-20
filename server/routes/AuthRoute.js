@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {verifyTokenAndAuthorization, verifyTokenAndAdmin} = require("../middlewares/verify");
+const {verifyTokenAndAuthorization, verifyTokenAndAdmin , verifyToken} = require("../middlewares/verify");
 const {register , login , profile , logout} = require('../controllers/auth');
 
 // router.route('/register').post(register);
@@ -11,7 +11,7 @@ const {register , login , profile , logout} = require('../controllers/auth');
 router.post('/register' , register);
 router.post('/login',login);
 router.get('/profile',profile);
-router.post('/logout' , logout);
+router.post('/logout' ,verifyToken, logout);
 
 
 module.exports = router ;

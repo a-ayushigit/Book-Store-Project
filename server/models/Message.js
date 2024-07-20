@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+//add encryption to messages  
 const messageSchema = new mongoose.Schema({
 
     senderId:{

@@ -5,7 +5,7 @@ const RegisterPage = () => {
   const [username,setUsername] = useState('');
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
-  
+  const [fullname , setFullname] = useState('');
 
   const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ const RegisterPage = () => {
     try {
       await axios.post('/auth/register',
       {
-        username , email , password
+        username , email , password , fullname
       }
     );
     
@@ -34,15 +34,19 @@ const RegisterPage = () => {
     <div className=" dark:bg-red-300 " >
       <h1 className=" mt-12 text-4xl text-center dark:text-red-950 font-semibold">Register</h1>
       <form className="max-w-md mx-auto" onSubmit={registerUser}>
-        <input type="text" placeholder="Emily Doe"
+        <input type="text" placeholder="Enter your username (Emily@21)"
         value={username} 
         onChange={ev => setUsername(ev.target.value)}
         />
-        <input type="email" placeholder="emilydoe@gmail.com"
+        <input type="text" placeholder="Enter your full name (Emily Doe)"
+        value={fullname}
+        onChange={ev => setFullname(ev.target.value)}
+        />
+        <input type="email" placeholder="Enter your email (emilydoe@gmail.com)"
         value={email}
         onChange={ev => setEmail(ev.target.value)}
         />
-        <input type="password" placeholder="Password"
+        <input type="password" placeholder="Enter your Password"
         value={password}
         onChange={ev => setPassword(ev.target.value)}
         />

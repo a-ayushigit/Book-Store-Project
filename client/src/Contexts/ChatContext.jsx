@@ -11,7 +11,7 @@ SET_MESSAGES : 'SET_MESSAGES'
 const chatReducer = (state , action) => {
     switch(action.type){
         case actionTypes.SET_SELECTED_CONVERSATION :
-            return {...state , selectedConversation : action.payload};
+            return { selectedConversation : action.payload};
         case actionTypes.SET_MESSAGES :
             return {...state , messages : action.payload};
         default :
@@ -42,10 +42,10 @@ return (
     </chatContext.Provider>
 )
 };
-export const useChatContextProvider = () => {
+export const useChatContext = () => {
     const context = useContext(chatContext);
   if(!context){
-        throw new Error('useChatContextProvider must be used within a ChatProvider');
+        throw new Error('useChatContext must be used within a ChatProvider');
     }
     return context;
 }

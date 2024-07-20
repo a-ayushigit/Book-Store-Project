@@ -16,7 +16,7 @@ const LoginPage = () => {
     ev.preventDefault();
     
     try {
-      const {data} = await axios.post('auth/login' , {email , password} , {withCredentials:true});
+      const {data} = await axios.post('auth/login' , {email,password} , {withCredentials:true});
       
       alert('Login successful');
       navigate('/');

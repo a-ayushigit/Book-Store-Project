@@ -14,13 +14,13 @@ export default  function UserContextProvider({children}){
     if(!user){
             console.log('Hello bolo')
     axios.get('auth/profile').then(({data})=>{
-        console.log(data);
+       // console.log(data);
         //setUser({data[username] , data[email]});
-        let userdata = {username:data.username , email:data.email , _id:data._id};
-        console.log(userdata);
-        console.log(typeof(userdata));
+        let userdata = data;
+       // console.log(userdata);
+       // console.log(typeof(userdata));
         setUser(userdata);
-        console.log(user);
+        //console.log(user);
         
         
       
