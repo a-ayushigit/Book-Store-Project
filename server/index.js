@@ -16,6 +16,7 @@ const groupRouter = require('./routes/GroupRoute');
 const reviewRouter = require('./routes/ReviewRoute');
 const commentsRouter = require('./routes/CommentRoute');
 const chatRouter = require('./routes/ChatRoute');
+const discussionRouter = require('./routes/DiscussionRoute');
 const cookieParser = require('cookie-parser');
 
 //Middleware 
@@ -34,6 +35,12 @@ app.get('/',(req,res)=>{
     res.send("Hello World !");
 })
 
+
+app.use(express.json({limit: "16kb"}))
+app.use(express.urlencoded({extended: true, limit: "16kb"}))
+app.use(express.static(__dirname + '/public'))
+
+
 app.use('/api/v1/books', booksRouter);//marks the routes of the website api endpoints 
 app.use('/api/v1/auth' , authRouter);
 app.use('/api/v1/userAdmin' , userAdminRouter);
@@ -44,6 +51,7 @@ app.use('/api/v1/groups', groupRouter);
 app.use('/api/v1/reviews', reviewRouter);
 app.use('/api/v1/comments', commentsRouter);
 app.use('/api/v1/chats' , chatRouter);
+app.use('/api/v1/discussions' , discussionRouter);
 
 const start = async() =>{
     try {

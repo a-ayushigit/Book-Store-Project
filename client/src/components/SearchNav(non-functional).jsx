@@ -5,6 +5,7 @@ import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import MenuIcon from '@mui/icons-material/Menu';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import SortIcon from '@mui/icons-material/Sort';
+import SearchBarComponent from './SearchBarComponent';
  
 
 
@@ -58,7 +59,7 @@ const SearchNav = () => {
      </div>
      {/* search bar */}
      <div>
-     
+     <SearchBarComponent/>
      </div>
       
     </div>

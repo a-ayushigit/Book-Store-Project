@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 const Layout = () => {
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col no-scrollbar">
         
         <Header className="min-w-h-[500rem] "/>
         <Outlet className="max-h-[300rem] min-w-h-screen max-w-h-screen"/>

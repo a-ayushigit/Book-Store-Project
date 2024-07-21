@@ -3,7 +3,7 @@ const router = express.Router();
 
 const {getAllGroups , getOneGroup , updateGroup , deleteGroup , createGroup , requestMember , acceptMember , rejectMember} = require("../controllers/group");
 
-const {verifyTokenAndAuthorization, verifyTokenAndAdmin ,  verifyTokenAndModerator} = require("../middlewares/verify");
+const {verifyTokenAndAuthorization, verifyTokenAndAdmin , verifyTokenAndModeratorOrCreator} = require("../middlewares/verify");
 
 // router.route('/').get(getAllGroups);
 // router.route('/').post(createGroup);
@@ -14,11 +14,11 @@ const {verifyTokenAndAuthorization, verifyTokenAndAdmin ,  verifyTokenAndModerat
 router.get('/' ,getAllGroups );
 router.get('/:id' , getOneGroup);
 router.post('/createGroup' , createGroup);
-router.put('/:id',  verifyTokenAndModerator, updateGroup);
-router.delete('/:id' ,  verifyTokenAndModerator , deleteGroup);
+router.put('/:id',  verifyTokenAndModeratorOrCreator, updateGroup);
+router.delete('/:id' ,  verifyTokenAndModeratorOrCreator , deleteGroup);
 router.post('/:id/request/:userId', requestMember);
-router.post('/:id/accept/:userId', verifyTokenAndModerator, acceptMember);
-router.post('/:id/reject/:userId', verifyTokenAndModerator, rejectMember);
+router.post('/:id/accept/:userId', verifyTokenAndModeratorOrCreator, acceptMember);
+router.post('/:id/reject/:userId', verifyTokenAndModeratorOrCreator, rejectMember);
 
 
 

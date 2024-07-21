@@ -3,6 +3,7 @@ import {useEffect , useContext} from 'react'
 import axios from 'axios'
 import { UserContext } from '../Contexts/UserContext';
 import CommunityNavbar from '../components/CommunityNavbar'
+import { Link } from 'react-router-dom';
 
 const GroupsPage = () => {
  const [groups , setGroups] = useState([]);
@@ -30,9 +31,7 @@ const sendRequest = async(groupId)=>{
   }
  
 }
-const visitGroup = async()=>{
-  console.log("Hello")
-}
+
   useEffect(()=>{
     getGroups()
   }, [])
@@ -48,7 +47,7 @@ const visitGroup = async()=>{
          <p>{group.description}</p>
          <div className="flex flex-row gap-5 p-1 justify-between items-center ">
           <button onClick={()=>{sendRequest(group._id)}} className={`${user._id === group.createdBy ? "hidden":"flex items-center justify-center m-1 bg-blue-500 text-white font-light rounded-xl p-1"}`}> Request to Join </button>
-          <button className='flex underline font-semibold ' onClick={visitGroup} > View Group  </button>
+          <Link to ={`/groups/${group._id}`} className='flex underline font-semibold '> View Group  </Link>
           </div>
         </div>
       </div>

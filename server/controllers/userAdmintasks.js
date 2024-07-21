@@ -1,20 +1,47 @@
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
-
-
+const { uploadOnCloudinary} = require('../utils/cloudinary');
+let fs = require("fs");
 const bcryptSalt = bcrypt.genSaltSync(10);
 
 const updateUser = async (req,res) =>{
+    console.log("Hello");
      if(req.body.password){
         req.body.password = bcrypt.hashSync(req.body.password,bcryptSalt);
      }
+     console.log("Hello2");
      try {
+        console.log("Reading files...");
+        console.log(req.files);
+        console.log("avatar", req.files.avatar[0].path);
+        let avatarLocalPath = req.files.avatar[0].path;
+        //let coverImageLocalPath = req.files.cover[0].path;
+        console.log(avatarLocalPath);
+        // console.log(coverImageLocalPath);
+        // if(coverImageLocalPath) {
+        //     const { secure_url: coverImageUrl } = await uploadOnCloudinary(coverImageLocalPath, 'covers');
+        //     req.body.coverImage = coverImageUrl;
+        //     fs.unlinkSync(coverImageLocalPath);
+        // }
+       // console.log("Uploaded cover image ");
+        if(avatarLocalPath) {
+            const { secure_url: avatarImageUrl } = await uploadOnCloudinary(avatarLocalPath, 'avatars');
+            const response = await uploadOnCloudinary(avatarLocalPath, 'avatars');
+            console.log(response);
+            req.body.avatarImage = avatarImageUrl;
+            fs.unlinkSync(avatarLocalPath);
+        }
+        console.log("Uploaded avatar image ");
         const updatedUser = await User.findByIdAndUpdate(req.params.id,{
             $set:req.body,
+          
         },{new:true})
+        console.log(updatedUser);
         res.status(200).json(updatedUser);
      } catch (error) {
         res.status(500).json(error);
+        console.log("Error updating the user :" , error.message);
+
      }
 
 

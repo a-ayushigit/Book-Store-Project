@@ -1,7 +1,7 @@
 import { useState } from 'react'
- 
+
 import './App.css'
-import { Route , useLoaderData , createBrowserRouter , createRoutesFromElements, RouterProvider } from 'react-router-dom'
+import { Route, useLoaderData, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
 import IndexPage from './pages/IndexPage'
 import LoginPage from './pages/LoginPage'
@@ -16,43 +16,83 @@ import Community from './pages/Community.jsx'
 import ChatPage from './pages/ChatPage.jsx'
 import DiscussionsPage from './pages/DiscussionsPage.jsx'
 import GroupPage from './pages/GroupsPage.jsx'
+import GroupDiscussionPage from './pages/GroupDiscussionPage.jsx'
+import DiscussionPage from './pages/DiscussionPage.jsx'
 axios.defaults.baseURL = "http://localhost:5000/api/v1/";//so that we dont have to write theentire address again and again 
-axios.defaults.withCredentials = true ;
+axios.defaults.withCredentials = true;
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    
-    <Route>
-    <Route element={<Layout/>}>
 
-    <Route index path="/" element ={<IndexPage/>}/>
-    <Route path="login" element={<LoginPage/>}/>
-    <Route path="register" element={<RegisterPage/>}/>
-    <Route path="shop" element={<Shopper/>}/>
-    <Route path="account" element={<AccountPage/>}/>
-    <Route path="cart" element={<CartPage/>}/>
-    <Route path="account/:subpage" element={<AccountPage/>}/>
-    <Route path="community" element={<Community/>}/>
-    <Route path="chats" element={<ChatPage/>}/>
-    <Route path='book/:id' element={<BookPage/>} loader={async ({params})=>{
-    const res =  await axios.get(`http://localhost:5000/api/v1/books/${params.id}`);
-    console.log(res.data);
-    return res.data;
-    }}/>
-    <Route path="discussions" element={<DiscussionsPage/>}/>
-    <Route path="groups" element={<GroupPage/>}/>
+    <Route>
+      <Route element={<Layout />}>
+
+        <Route index path="/" element={<IndexPage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="shop" element={<Shopper />} />
+        <Route path="account" element={<AccountPage />} />
+        <Route path="cart" element={<CartPage />} />
+        <Route path="account/:subpage" element={<AccountPage />} />
+        <Route path="community" element={<Community />} />
+        <Route path="chats" element={<ChatPage />} />
+        <Route
+          path='book/:id'
+          element={<BookPage />}
+          loader={
+            async ({ params }) => {
+              const res = await axios.get(`/books/${params.id}`);
+              console.log(res.data);
+              return res.data;
+            }
+          } />
+        <Route path="discussions" element={<DiscussionsPage />} />
+        <Route path="groups" element={<GroupPage />} />
+        <Route 
+           path="/groups/:groupId" 
+           element={<GroupDiscussionPage />}
+           loader={
+            async( {params} ) => {
+              const res = await axios.get(`/groups/${params.groupId}`);
+              console.log(res.data);
+              return res.data;
+            }
+           }
+           />
+        <Route 
+           path="/groups/:groupId/discussions/:discussionId" 
+           element={<GroupDiscussionPage />} 
+           loader={
+            async( {params} ) => {
+              const res = await axios.get(`/discussions/${params.discussionId}`);
+              console.log(res.data);
+              return res.data;
+            }
+           }
+           />
+        <Route 
+           path="/individual/discussions/:discussionId" 
+           element={<DiscussionPage />} 
+           loader={
+            async( {params} ) => {
+              const res = await axios.get(`/discussions/${params.discussionId}`);
+              console.log(res.data);
+              return res.data;
+            }
+           }
+           />
+      </Route>
     </Route>
-  </Route>
- 
+
   )
 )
 
 function App() {
   return (
     <>
-   
-    <RouterProvider router={router}/>
-   
+
+      <RouterProvider router={router} />
+
     </>
   )
 }

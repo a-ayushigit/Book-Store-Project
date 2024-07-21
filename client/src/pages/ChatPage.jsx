@@ -12,7 +12,7 @@ const ChatPage = () => {
 
   },[])
   return (
-    <div >
+    <div className="h-screen" >
       {user.user? 
       <div>
       <Chatcomponent/>

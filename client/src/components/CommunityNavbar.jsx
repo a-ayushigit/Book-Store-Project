@@ -19,7 +19,7 @@ const CommunityNavbar = () => {
         }
     ]
   return (
-    <div>
+    <div className="w-full">
       <nav className="bg-blue-600 text-white flex gap-2 justify-around">
      {
       navList.map((item)=>{

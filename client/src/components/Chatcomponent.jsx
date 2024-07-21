@@ -82,10 +82,10 @@ const Chatcomponent = () => {
 
     }, [])
     return (
-        <div >
+        <div className="h-screen" >
             <CommunityNavbar />
-            <div className="grid grid-cols-12 bg-blue-700 max-h-[90vh] no-scrollbar  overflow-y-scroll">
-                <div className="flex col-span-5 sm:col-span-3 bg-blue-400 flex-col no-scrollbar   max-h-[90vh] overflow-y-scroll">
+            <div className="grid grid-cols-12 bg-blue-600 h-[100vh] max-h-[100vh] no-scrollbar  overflow-y-scroll">
+                <div className="flex col-span-5 sm:col-span-3 bg-blue-400 flex-col no-scrollbar   max-h-[100vh] overflow-y-scroll">
                     {/* users list displayed  */}
                     {users.map((user) => {
                         // console.log(user);

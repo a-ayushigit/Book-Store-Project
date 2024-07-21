@@ -66,7 +66,11 @@ const UserSchema = new mongoose.Schema({
             ref: "Comments"
         }
     ],
-    profilePic: {
+    coverImage: {
+        type: String,
+        default: ""
+    },
+    avatarImage:{
         type: String,
         default: ""
     },

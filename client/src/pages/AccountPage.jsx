@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import ProfilePage from './ProfilePage';
 import OrderPage  from './OrderPage';
-
+import MyCommunityPage from './MyCommunityPage';
 
 
 
@@ -49,7 +49,7 @@ const AccountPage = () => {
     //console.log("$$$$$$$$")
     try {
       console.log(user._id)
-      const response =   await axios.get(`http://localhost:5000/api/v1/orders/${user._id}`);
+      const response =   await axios.get(`/orders/${user._id}`);
       setOrders(response);
     } catch (error) {
       console.log(error);
@@ -63,12 +63,13 @@ const AccountPage = () => {
         <nav className="flex gap-3 items-center justify-center p-5 max-w-auto">
           <Link className={linkClasses("myprofile")} to="/account/myprofile">My Profile</Link>
           <Link onClick={handleOrders} className={linkClasses("myorders")} to="/account/myorders">My Orders</Link>
-          {/* <Link className={linkClasses("mycart")} to="/account/mycart">My Cart</Link> */}
+          <Link className={linkClasses("mycommunity")} to="/account/mycommunity">My Community</Link>
           
         </nav>
 
-        {subpage === "myprofile" && <ProfilePage handleLogout={handleLogout} user={user} setUser={setUser} />}
+        {subpage === "myprofile" && <ProfilePage handleLogout={handleLogout}  />}
         {subpage === "myorders" && <OrderPage  user={user} setUser={setUser} orders={orders} />}
+        { subpage === "mycommunity" && <MyCommunityPage/>}
       </div>
     </>
   )

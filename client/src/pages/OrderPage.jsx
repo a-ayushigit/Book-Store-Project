@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, { useContext, useState } from 'react'
+import { UserContext } from '../Contexts/UserContext'
 const monthMap = {
   1: "January",
   2: "February",
@@ -21,7 +21,7 @@ const OrderPage = ({ orders }) => {
   const orderedItems = orders?.data?.Orders;
   console.log("orderedItems");
   console.log(orderedItems);
-
+  const {user , setUser} = useContext(UserContext);
 
   return (
     <div className="grid grid-cols-12">
