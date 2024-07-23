@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import {SocketContext} from '../../Contexts/SocketContext.jsx';
 import { useContext } from 'react';
-import { useChatContext } from '../../Contexts/ChatContext.jsx';
+
 import useConversations from '../../zustand/useConversations.jsx';
 const useListenRtMessage = () => {
 
@@ -13,6 +13,7 @@ const useListenRtMessage = () => {
     
     socket?.on("newMessage" , (newMessage) =>{
       setMessages([...messages, newMessage]);
+      console.log("message received from socket");
     })
     console.log(messages);
     return ()=> socket?.off("newMessage");

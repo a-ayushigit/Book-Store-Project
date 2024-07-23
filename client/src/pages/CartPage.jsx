@@ -9,6 +9,7 @@ import dotenv from 'dotenv'
 import { useNavigate } from 'react-router-dom';
 import library from '../assets/books-6344402_1280.png'
 import Modal from '../components/Modal';
+import LoginToContinuePage from './LoginToContinuePage';
 
 //dotenv.config()
 const CartPage = () => {
@@ -171,10 +172,13 @@ const CartPage = () => {
    <Modal modal={modal} handleSubmission={handlePayment} setModal={setModal} optionsList={optionsList} type="cart"
      />
    {console.log(handlePayment)}
-    <div className="dark:bg-red-400 bg-blue-200 ">
-      <h1 className="sm:text-lg font-bold flex px-4">CART ITEMS</h1>
+    <div className="dark:bg-red-400 bg-cyan-700 h-screen text-white">
+      
       {user.user ?
-        (<div className="dark:bg-red-400 bg-gradient-to-r from-sky-300 to-indigo-300">
+
+        (<>
+        <h1 className="flex justify-center items-center">CART ITEMS</h1>
+        <div className="dark:bg-red-400 bg-gradient-to-r from-sky-300 to-indigo-300">
           <p className="text-xl flex items-center justify-center">Hello {user.user.username}</p>
           <p className=" flex items-center justify-center">You have {booksCount} books in your cart </p>
           <div className="grid grid-cols-12">
@@ -250,8 +254,8 @@ const CartPage = () => {
           </div>
           
         </div>
-        )
-        : (<p>Please login to view your cart Items</p>)}
+        </>)
+        : (<><LoginToContinuePage/></>)}
     </div>
     </>)
 }

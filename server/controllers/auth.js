@@ -18,10 +18,10 @@ const generateAccessAndRefreshToken = async (userId) => {
         const refreshToken = user.generateRefreshToken();
         //console.log(accessToken, refreshToken);
         user.refreshToken = refreshToken;//updating the database 
-        console.log("ghello 1");
-        console.log(user);
+        //console.log("ghello 1");
+        //console.log(user);
         await user.save({ validateBeforeSave: false});
-        console.log("ghello 2");
+        //console.log("ghello 2");
 
         return { accessToken, refreshToken };
 
@@ -35,7 +35,7 @@ const generateAccessAndRefreshToken = async (userId) => {
 const register = async (req, res) => {
     //console.log(req.body.email);
     const {username, fullname, email, password} = req.body;
-    console.log("Register Password " , password);
+    //console.log("Register Password " , password);
     try {
         
         const newUser = new User({
@@ -69,18 +69,18 @@ const login = async (req, res) => {
     try {
         const { email, password } = req.body;
         if (!email || !password) return res.status(401).json("Email and Password required !");
-        console.log("Login password ",password);
-        console.log("login 1");
+        //console.log("Login password ",password);
+        //console.log("login 1");
         const user = await User.findOne(
             {
                 email:email
             }
         );
-        console.log("login 2");
+        //console.log("login 2");
         if (user) {
             const passok = await user.isPasswordCorrect(password);
-            console.log(passok);
-            console.log("user id" , user._id);
+            //console.log(passok);
+            //console.log("user id" , user._id);
             if (passok) {
                 const { accessToken, refreshToken } = await generateAccessAndRefreshToken(user._id);
                 const loggedInUser = await User.findById(user._id).select("-password -refreshToken");
@@ -119,10 +119,10 @@ const profile = async (req, res) => {
     try {
         const  accessToken  = req.cookies.accessToken;
         // console.log("token",token);
-        console.log("Hello profile 3");
-        console.log(typeof(accessToken));
+        //console.log("Hello profile 3");
+        //console.log(typeof(accessToken));
         
-        console.log("Hello profile 2");
+        //console.log("Hello profile 2");
         // if(accessToken === "" ) {
         //     console.log("Returning Function!");
         //     return res.status(200).json("Log in to get access");
@@ -133,21 +133,21 @@ const profile = async (req, res) => {
                 if (err) throw err;
                 const user = await User.findById(userData._id).select("-password -refreshToken");
                 res.json(user);
-                console.log(user);
-                console.log("Hello profile 1");
+                //console.log(user);
+                //console.log("Hello profile 1");
             })
             // console.log(res.json({username , email , _id}));
             console.log("Hello profile 4");
         }
         else {
             res.status(401).json("Unauthorized request");
-            console.log("Hello profile 5");
+            //console.log("Hello profile 5");
             //console.log(res);
         }
 
     } catch (error) {
         console.log(error);
-        console.log("Hello profile 6");
+        //console.log("Hello profile 6");
     }
     //    console.log("hello")
 

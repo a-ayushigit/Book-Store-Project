@@ -8,8 +8,8 @@ const {verifyToken, verifyTokenAndAdmin} = require("../middlewares/verify");
 router.get('/:id/getMessage' ,verifyToken ,getMessage);
 router.post('/:id/sendMessage', verifyToken , sendMessage);
 router.post('/:id/sendRequest', verifyToken , sendFriendRequest);
-router.post('/:id/accept', verifyToken , acceptFriendRequest);
-router.post('/:id/reject', verifyToken , rejectFriendRequest);
+router.put('/:id/accept', verifyToken , acceptFriendRequest);
+router.put('/:id/reject', verifyToken , rejectFriendRequest);
 router.get('/getUsers', verifyToken , getSidePanelUsers);
 
 module.exports = router ;

@@ -1,67 +1,83 @@
 const mongoose = require("mongoose");
 
 const GroupSchema = new mongoose.Schema({
-    name:{
-      type:String ,
-      required:true,
-      unique:true   
-    } , 
-    createdBy:{
-        type:String,
-        required:true,
-        ref:"Users"
+    name: {
+        type: String,
+        required: true,
+        unique: true
     },
-    description:{
-    type:String , 
-    required:true
-    },
-    rules:{
-        type:String , 
-        required:true
+    createdBy: {
+        name: {
+            type: String,
+            required: true,
+            ref: "Users"
         },
-    members:{
-        type:Array,
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: "Users"
+        }
+
 
     },
-    bookshelf:{
-        type:Array ,
-        ref:"Bookshelves"
-
+    description: {
+        type: String,
+        required: true
     },
-    moderators:[
-       { 
+    rules: {
+        type: String,
+        required: true
+    },
+    members: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref:"Users",
-    }
+        ref: 'Users'
+    }],
+
+    bookshelf:{
+        id:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Bookshelves"
+        },
+        name:{
+            type: String,
+            ref: "Bookshelves"
+        }
+
+    },
+    moderators: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Users",
+        }
     ],
-    tags:{
-        type:Array,
+    tags: {
+        type: Array,
     },
-    category:{
-        type:Array,
-    }, 
-    discussions:{
-        type:Array ,
+    category: {
+        type: Array,
     },
-    pendingMembers:[
-        { 
-         type: mongoose.Schema.Types.ObjectId,
-         ref:"Users",
-     }
-     ],
-    isPublic:{
-        type:Boolean,
-        default:true
+    discussions: {
+        type: Array,
     },
-    isPrivate:{
-    type:Boolean,
-    default:false
+    pendingMembers: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Users",
+        }
+    ],
+    isPublic: {
+        type: Boolean,
+        default: true
+    },
+    isPrivate: {
+        type: Boolean,
+        default: false
     }
 
 },
     {
-        timestamps:true ,
+        timestamps: true,
     }
 )
 
-module.exports = mongoose.model('Groups' , GroupSchema);
+module.exports = mongoose.model('Groups', GroupSchema);

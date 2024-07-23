@@ -28,7 +28,7 @@ const Chatcomponent = () => {
         try {
             const res = await axios.get('/chats/getUsers')
 
-            //console.log(res.data);
+            console.log(res.data);
             setUsers(res.data);
 
 

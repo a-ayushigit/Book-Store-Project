@@ -48,12 +48,19 @@ const UserSchema = new mongoose.Schema({
 
         }
     ],
-    bookshelves: [
-        {
+    bookshelf:{
+        id:{
             type: mongoose.Schema.Types.ObjectId,
             ref: "Bookshelves"
+        },
+        name:{
+            type: String,
+            ref: "Bookshelves"
         }
-    ],
+
+    }
+        
+    ,
     reviews: [
         {
             type: mongoose.Schema.Types.ObjectId,
@@ -122,7 +129,7 @@ UserSchema.methods.generateAccessToken = function () {
         isAdmin: this._isAdmin,
         isModerator: this._isModerator,
         groups: this._groups,
-        moderatorGroups: this._moderatorGroups,
+       
     }, process.env.ACCESS_TOKEN_SECRET,
         {
             expiresIn: process.env.ACCESS_TOKEN_EXPIRATION_TIME,

@@ -15,7 +15,8 @@ import Shopper from './pages/Shopper.jsx'
 import Community from './pages/Community.jsx'
 import ChatPage from './pages/ChatPage.jsx'
 import DiscussionsPage from './pages/DiscussionsPage.jsx'
-import GroupPage from './pages/GroupsPage.jsx'
+import GroupsPage from './pages/GroupsPage.jsx'
+import GroupPage from './pages/GroupPage.jsx'
 import GroupDiscussionPage from './pages/GroupDiscussionPage.jsx'
 import DiscussionPage from './pages/DiscussionPage.jsx'
 axios.defaults.baseURL = "http://localhost:5000/api/v1/";//so that we dont have to write theentire address again and again 
@@ -47,10 +48,10 @@ const router = createBrowserRouter(
             }
           } />
         <Route path="discussions" element={<DiscussionsPage />} />
-        <Route path="groups" element={<GroupPage />} />
+        <Route path="groups" element={<GroupsPage />} />
         <Route 
            path="/groups/:groupId" 
-           element={<GroupDiscussionPage />}
+           element={<GroupPage />}
            loader={
             async( {params} ) => {
               const res = await axios.get(`/groups/${params.groupId}`);
@@ -59,7 +60,7 @@ const router = createBrowserRouter(
             }
            }
            />
-        <Route 
+        {/* <Route 
            path="/groups/:groupId/discussions/:discussionId" 
            element={<GroupDiscussionPage />} 
            loader={
@@ -69,7 +70,11 @@ const router = createBrowserRouter(
               return res.data;
             }
            }
-           />
+           /> */}
+        <Route
+          path="/groups/:groupId/:subpage"
+          element={<GroupPage />}
+          />
         <Route 
            path="/individual/discussions/:discussionId" 
            element={<DiscussionPage />} 

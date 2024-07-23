@@ -6,12 +6,31 @@ const bookshelfSchema = new mongoose.Schema({
     unique:true , 
     required:true
    },
-   books:[{
+   booksToRead:[{
     type:mongoose.Schema.Types.ObjectId,
     ref:"Books"
    }
 
+   ],
+   owner: {
+    id: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      refPath: 'owner.type'
+    },
+    type: {
+      type: String,
+      required: true,
+      enum: ['Users', 'Groups']
+    }
+  },
+   booksRead:[
+    {
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"Books"
+    }
    ]
+
 
 },
     {

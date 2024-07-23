@@ -17,6 +17,7 @@ const reviewRouter = require('./routes/ReviewRoute');
 const commentsRouter = require('./routes/CommentRoute');
 const chatRouter = require('./routes/ChatRoute');
 const discussionRouter = require('./routes/DiscussionRoute');
+const bookshelfRouter = require('./routes/BookShelfRoute');
 const cookieParser = require('cookie-parser');
 
 //Middleware 
@@ -52,6 +53,7 @@ app.use('/api/v1/reviews', reviewRouter);
 app.use('/api/v1/comments', commentsRouter);
 app.use('/api/v1/chats' , chatRouter);
 app.use('/api/v1/discussions' , discussionRouter);
+app.use('/api/v1/bookshelf', bookshelfRouter);
 
 const start = async() =>{
     try {

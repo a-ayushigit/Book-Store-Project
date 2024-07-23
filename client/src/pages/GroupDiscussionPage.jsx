@@ -1,14 +1,9 @@
-import React, { useEffect } from 'react'
-import { useLoaderData } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { useLoaderData, useParams } from 'react-router-dom';
 const GroupDiscussionPage = () => {
-    const res = useLoaderData();
-    useEffect(()=>{
-     console.log(res.Groups);
-    }, [])
+ 
   return (
-    <div>
-      
-    </div>
+    <></>
   )
 }
 

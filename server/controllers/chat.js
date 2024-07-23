@@ -9,18 +9,20 @@ const sendMessage = async (req , res) =>{
     //console.log(req);
     const {message} = req.body ;
     const {id:receiverId} = req.params ;
-    const senderId = req.user.id;
-    console.log("Hello")
+    const senderId = req.user._id;
+    console.log(receiverId);
+    console.log(typeof receiverId);
+    //console.log("Hello")
     let conversation = await Conversation.findOne({
         participants:{ $all : [senderId , receiverId]},
 
     });
-    console.log("Hello2")
+    //console.log("Hello2")
     if(!conversation){
         conversation = await Conversation.create({
             participants :[senderId , receiverId],
         })
-        console.log("Hell03")
+       // console.log("Hell03")
     }
 
     const newMessage = await Message.create({
@@ -72,14 +74,17 @@ catch(err){
 }
 }
 
-const acceptFriendRequest = (req , res) =>{
+const acceptFriendRequest = async(req , res) =>{
     try{
     const {id:userId} = req.params;
-    console.log(req);
-    const receiver = req.user;
-    const sender = User.findById(userId);
+    // console.log(req.user);
+    //console.log("hello friend!!")
+    const receiver = await User.findById(req.user._id);//check if user has the object pendingFriends or not 
+    const sender = await User.findById(userId);
     if (receiver.pendingFriends.includes(userId)){
-        const userIndex = group.pendingFriends.indexOf(userId);
+        //console.log(typeof(receiver.pendingFriends));
+        //console.log(typeof(userId));
+        const userIndex = receiver.pendingFriends.indexOf(userId);
         const receiverIndex = sender.pendingFriends.indexOf(receiver._id);
         if (userIndex > -1){
             receiver.pendingFriends.splice(userIndex, 1);
@@ -87,12 +92,23 @@ const acceptFriendRequest = (req , res) =>{
 
             sender.pendingFriends.splice(userIndex, 1);
             sender.friends.push(receiver._id);
-            Promise.all([receiver.save() , sender.save()]).then(res.status(200).json({message : "Friend request accepted"})).catch((err)=>{
+            Promise.all([receiver.save() , sender.save()]).then(res.status(200).json({message : "Friend request accepted",pendingFriends:receiver.pendingFriends , friends:receiver.friends})).catch((err)=>{
                 console.log(err);
             })
 
            
         }
+        console.log(receiver._id);
+        console.log(typeof(receiver._id));
+        console.log(typeof JSON.stringify(receiver._id))
+        const receiverSocketId = getReceiverSocketId(receiver._id.toString());
+        console.log("receiverSocketId: " + receiverSocketId);
+    if(receiverSocketId){
+        console.log("socket friend entered ")
+        io.to(receiverSocketId).emit("modifyFriendList" , {pendingFriends:receiver.pendingFriends , friends:receiver.friends});//sending message to specific client
+        console.log("sent the list ")
+    }
+      
 
     }
     else{
@@ -100,14 +116,14 @@ const acceptFriendRequest = (req , res) =>{
     }
     }
     catch(err){
-        console.log("Error in get chat controller :", err.message) 
+        console.log("Error in accept friend request  controller :", err.message) 
     }
     
 }
-const rejectFriendRequest = (req , res) =>{
+const rejectFriendRequest = async(req , res) =>{
     try{
     const {id:userId} = req.params;
-    const receiver = req.user.id;
+    const receiver = await User.findById(req.user._id);
     if (receiver.pendingFriends.includes(userId)){
         const userIndex = group.pendingFriends.indexOf(userId);
         if (userIndex > -1){
@@ -134,7 +150,7 @@ const sendFriendRequest = async (req , res) =>{
     try {
         const {id:receiverId} = req.params;
         const receiver = await User.findById(receiverId);
-        const senderId = req.user.id;
+        const senderId = req.user._id;
         const sender = await User.findById(senderId);
         if (sender.friends.includes(receiver)){
             res.status(200).json({message : "You are already friends"});
@@ -169,13 +185,13 @@ const sendFriendRequest = async (req , res) =>{
 const getSidePanelUsers = async (req , res)=>{
     
     try{
-        //console.log(req.user);
+        // console.log("get side panel users ",req.user);
         const loggedInUserid = req.user._id;
         // console.log(req.user);
         const loggedInUser = await User.findById(loggedInUserid);
         //console.log(loggedInUser);
         const users = await User.find({ '_id' :{$ne: loggedInUserid}}).select(
-            "username bookshelves groups moderatorGroups profilePic"    );
+            "username bookshelves groups moderatorGroups avatarImage"    );
         const friendsData = users.map((user) =>{
             if (loggedInUser.friends.includes(user._id)){
                 return {...user._doc, isFriend : true};

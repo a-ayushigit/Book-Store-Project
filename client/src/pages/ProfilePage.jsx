@@ -10,9 +10,9 @@ const ProfilePage = ({
   const [fullname , setFullname] = useState(user.fullname);
   const [username, setUsername] = useState(user.username);
   const [email, setEmail] = useState(user.email);
-  const [password, setPassword] = useState(user.password);
+  const [password, setPassword] = useState(null);
   const [avatar, setAvatar] = useState(user.avatar);
-  console.log(user);
+  //console.log(user);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -21,9 +21,9 @@ const ProfilePage = ({
       formData.append('fullname', fullname);
       formData.append('username', username);
       formData.append('email', email);
-      formData.append('password', password);
+      if(password !== null) {formData.append('password', password);}
       const res = await axios.put(`/userAdmin/${user._id}`, formData, { withCredentials: true });
-      setUser(res.data);
+     // setUser(res.data);
       alert('Profile updated successfully');
     } catch (err) {
       console.error(err);
@@ -50,7 +50,7 @@ const ProfilePage = ({
               <label>Email</label>
               <input type="email" name="email" value={editAllow?email:user.email} disabled={!editAllow} onChange={(e)=> setEmail(e.target.value)}/>
               <label>Password</label>
-              <input type="password" name="password" value={editAllow?password:"*********"}  disabled={!editAllow} onChange={(e)=>setPassword(e.target.value)}/>
+              <input type="password" name="password" value={editAllow?password:null}  disabled={!editAllow} onChange={(e)=>setPassword(e.target.value)}/>
               <label>Upload Avatar Image</label>
               <input type="file" name="avatar" onChange={(e)=> {
                 setAvatar(e.target.files[0]);

@@ -5,18 +5,22 @@ let fs = require("fs");
 const bcryptSalt = bcrypt.genSaltSync(10);
 
 const updateUser = async (req,res) =>{
-    console.log("Hello");
-     if(req.body.password){
-        req.body.password = bcrypt.hashSync(req.body.password,bcryptSalt);
-     }
-     console.log("Hello2");
+    //console.log("Hello");
+    //  if(req.body.password){
+    //     req.body.password = bcrypt.hashSync(req.body.password,bcryptSalt);
+    //  }
+     //console.log("Hello2");
      try {
         console.log("Reading files...");
-        console.log(req.files);
-        console.log("avatar", req.files.avatar[0].path);
-        let avatarLocalPath = req.files.avatar[0].path;
-        //let coverImageLocalPath = req.files.cover[0].path;
-        console.log(avatarLocalPath);
+        //console.log(req.files);
+       // console.log("avatar", req.files.avatar[0].path);
+       let avatarLocalPath;
+        req?.files?.avatar?
+        avatarLocalPath = req.files.avatar[0].path : null;
+            //let coverImageLocalPath = req.files.cover[0].path;
+            console.log(avatarLocalPath);    
+        
+        
         // console.log(coverImageLocalPath);
         // if(coverImageLocalPath) {
         //     const { secure_url: coverImageUrl } = await uploadOnCloudinary(coverImageLocalPath, 'covers');
@@ -27,7 +31,7 @@ const updateUser = async (req,res) =>{
         if(avatarLocalPath) {
             const { secure_url: avatarImageUrl } = await uploadOnCloudinary(avatarLocalPath, 'avatars');
             const response = await uploadOnCloudinary(avatarLocalPath, 'avatars');
-            console.log(response);
+            //console.log(response);
             req.body.avatarImage = avatarImageUrl;
             fs.unlinkSync(avatarLocalPath);
         }
@@ -81,6 +85,19 @@ const getUsers = async(req , res) =>{
     }
 }
 
+const getUserPublicInfo = async (req , res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        //console.log("publicInfo ",user);
+        const  { username , fullname , avatarImage:image , _id:_id } = user._doc;
+        const userPubProf = { username , fullname , image , _id };
+        res.status(200).json(userPubProf );
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error);
+    }
+}
+
 const getStats = async(req , res) =>{
 const date = new Date();
 const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
@@ -105,4 +122,4 @@ try {
 }
 }
 
-module.exports = {updateUser , deleteUser , getUser , getUsers , getStats};
+module.exports = {updateUser , deleteUser , getUser , getUsers , getUserPublicInfo , getStats};
