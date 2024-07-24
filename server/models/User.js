@@ -82,23 +82,80 @@ const UserSchema = new mongoose.Schema({
         default: ""
     },
     friends: [
-        {
+       {_id: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "Users"
+        },
+        fullname:{
+            type: String,
+            ref: "Users"
+        }, 
+       
+        image:{
+            type: String,
+            ref: "Users"
+        },
+        email:{
+            type: String,
+            ref: "Users"
+        },
+        username:{
+            type: String,
+            ref: "Users"
         }
+        
+    }
     ],
     pendingFriends: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
+        {_id: {
+             type: mongoose.Schema.Types.ObjectId,
+             ref: "Users"
+         },
+         
+         fullname:{
+             type: String,
+             ref: "Users"
+         }, 
+         image:{
+             type: String,
+             ref: "Users"
+         },
+         email:{
+             type: String,
+             ref: "Users"
+         },
+         username:{
+            type: String,
             ref: "Users"
         }
-    ],
+         
+     }
+     ],
     requestSendPeople: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
+        {_id: {
+             type: mongoose.Schema.Types.ObjectId,
+             ref: "Users"
+         },
+          
+         fullname:{
+             type: String,
+             ref: "Users"
+         }, 
+         image:{
+             type: String,
+             ref: "Users"
+         },
+         email:{
+             type: String,
+             ref: "Users"
+         },
+         username:{
+            type: String,
             ref: "Users"
         }
-    ]
+         
+     }
+     ]
 
 }, {
     timestamps: true
@@ -113,10 +170,10 @@ UserSchema.pre('save', async function ( next) {
 })
 
 UserSchema.methods.isPasswordCorrect = async function (password) {
-    console.log("isPasswordCorrect");
-    console.log("Password after saving");
-    console.log(this.password);
-    console.log(typeof(password));
+    //console.log("isPasswordCorrect");
+    //console.log("Password after saving");
+    //console.log(this.password);
+    //console.log(typeof(password));
     return  bcrypt.compareSync(password, this.password);
 }
 

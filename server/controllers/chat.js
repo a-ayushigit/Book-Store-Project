@@ -1,216 +1,308 @@
 const express = require('express')
 const Message = require('../models/Message');
-const  Conversation  = require('../models/Conversation');
+const Conversation = require('../models/Conversation');
 const User = require('../models/User');
-const { getReceiverSocketId , io} = require('../socket/socket');
+const { getReceiverSocketId, io } = require('../socket/socket');
 
-const sendMessage = async (req , res) =>{
-    try{
-    //console.log(req);
-    const {message} = req.body ;
-    const {id:receiverId} = req.params ;
-    const senderId = req.user._id;
-    console.log(receiverId);
-    console.log(typeof receiverId);
-    //console.log("Hello")
-    let conversation = await Conversation.findOne({
-        participants:{ $all : [senderId , receiverId]},
+const getPublicInfo = async (id) => {
+    try {
 
-    });
-    //console.log("Hello2")
-    if(!conversation){
-        conversation = await Conversation.create({
-            participants :[senderId , receiverId],
-        })
-       // console.log("Hell03")
-    }
-
-    const newMessage = await Message.create({
-        senderId , receiverId , message
-    });
-
-    if(newMessage){
-        conversation.messages.push(newMessage._id);
-    }
-
-
+        const user = await User.findById(id);
+    if (!user) return null;
     
-    await Promise.all([conversation.save() , newMessage.save()]);
-    // console.log("Hello")
-    const receiverSocketId = getReceiverSocketId(receiverId);
-    if(receiverSocketId){
-        io.to(receiverSocketId).emit("newMessage" , newMessage);//sending message to specific client
+    const userPubInfo = { 
+        username: user.username, 
+        fullname: user.fullname, 
+        image: user.avatarImage, 
+        _id: user._id,
+        email: user.email
+    };
+    
+    // console.log(" public info _id :", typeof userPubInfo._id);
+    // console.log(" public info user._id :", typeof user._id);
+    // console.log(" public info user._doc :", typeof user._doc);
+
+    return userPubInfo;
+        
+    } catch (error) {
+        console.error("Error in getPublicInfo: ", error.message);
+        return null;
     }
+    
+};
 
-    res.status(201).json(newMessage);
+const sendMessage = async (req, res) => {
+    try {
+        //console.log(req);
+        const { message } = req.body;
+        const { id: receiverId } = req.params;
+        const senderId = req.user._id;
+        console.log(receiverId);
+        console.log(typeof receiverId);
+        //console.log("Hello")
+        let conversation = await Conversation.findOne({
+            participants: { $all: [senderId, receiverId] },
+
+        });
+        //console.log("Hello2")
+        if (!conversation) {
+            conversation = await Conversation.create({
+                participants: [senderId, receiverId],
+            })
+            // console.log("Hell03")
+        }
+
+        const newMessage = await Message.create({
+            senderId, receiverId, message
+        });
+
+        if (newMessage) {
+            conversation.messages.push(newMessage._id);
+        }
+
+
+
+        await Promise.all([conversation.save(), newMessage.save()]);
+        // console.log("Hello")
+        const receiverSocketId = getReceiverSocketId(receiverId);
+        if (receiverSocketId) {
+            io.to(receiverSocketId).emit("newMessage", newMessage);//sending message to specific client
+        }
+
+        res.status(201).json(newMessage);
 
 
 
     }
-    catch(err){
+    catch (err) {
         console.log("Error in message controller :", err.message)
     }
 }
 
-const getMessage = async (req , res) =>{
-try{
-    const {id:chattingUserId} = req.params;
-    const senderId = req.user.id;
-
-    const conversation = await Conversation.findOne({
-        participants:{ $all :[senderId , chattingUserId] }, 
-    }).populate('messages');
-
-    if(!conversation) return res.status(200).json([]);
-
-    const messages = conversation.messages;
-    res.status(200).json(messages);
-
-
-
-}
-catch(err){
-    console.log("Error in get message controller :", err.message)
-}
-}
-
-const acceptFriendRequest = async(req , res) =>{
-    try{
-    const {id:userId} = req.params;
-    // console.log(req.user);
-    //console.log("hello friend!!")
-    const receiver = await User.findById(req.user._id);//check if user has the object pendingFriends or not 
-    const sender = await User.findById(userId);
-    if (receiver.pendingFriends.includes(userId)){
-        //console.log(typeof(receiver.pendingFriends));
-        //console.log(typeof(userId));
-        const userIndex = receiver.pendingFriends.indexOf(userId);
-        const receiverIndex = sender.pendingFriends.indexOf(receiver._id);
-        if (userIndex > -1){
-            receiver.pendingFriends.splice(userIndex, 1);
-            receiver.friends.push(userId);
-
-            sender.pendingFriends.splice(userIndex, 1);
-            sender.friends.push(receiver._id);
-            Promise.all([receiver.save() , sender.save()]).then(res.status(200).json({message : "Friend request accepted",pendingFriends:receiver.pendingFriends , friends:receiver.friends})).catch((err)=>{
-                console.log(err);
-            })
-
-           
-        }
-        console.log(receiver._id);
-        console.log(typeof(receiver._id));
-        console.log(typeof JSON.stringify(receiver._id))
-        const receiverSocketId = getReceiverSocketId(receiver._id.toString());
-        console.log("receiverSocketId: " + receiverSocketId);
-    if(receiverSocketId){
-        console.log("socket friend entered ")
-        io.to(receiverSocketId).emit("modifyFriendList" , {pendingFriends:receiver.pendingFriends , friends:receiver.friends});//sending message to specific client
-        console.log("sent the list ")
-    }
-      
-
-    }
-    else{
-        res.status(400).json({message : "Friend request not found"});
-    }
-    }
-    catch(err){
-        console.log("Error in accept friend request  controller :", err.message) 
-    }
-    
-}
-const rejectFriendRequest = async(req , res) =>{
-    try{
-    const {id:userId} = req.params;
-    const receiver = await User.findById(req.user._id);
-    if (receiver.pendingFriends.includes(userId)){
-        const userIndex = group.pendingFriends.indexOf(userId);
-        if (userIndex > -1){
-            receiver.pendingFriends.splice(userIndex, 1);
-            
-            receiver.save().then(res.status(200).json({message : "Friend request rejected"})).catch((err)=>{
-                console.log(err);
-            })
-
-        }
-
-    }
-    else{
-        res.status(400).json({message : "Friend request not found"});
-    }
-    }
-    catch(err){
-        console.log("Error in get chat controller :", err.message) 
-    }
-    
-}
-const sendFriendRequest = async (req , res) =>{
-
+const getMessage = async (req, res) => {
     try {
-        const {id:receiverId} = req.params;
-        const receiver = await User.findById(receiverId);
-        const senderId = req.user._id;
-        const sender = await User.findById(senderId);
-        if (sender.friends.includes(receiver)){
-            res.status(200).json({message : "You are already friends"});
-        }
-        else if (sender.pendingFriends.includes(receiver._id) && receiver.pendingFriends.includes(sender._id)){
-            res.status(200).json({message : "Friend request already sent"});
-        }
-        else if (sender.pendingFriends.includes(receiver._id) && !receiver.pendingFriends.includes(sender._id) && !receiver.friends.includes(sender._id)){
-            sender.pendingFriends.splice(receiver._id, 1);
-            await sender.save().then(res.status(200).json({message : "Friend request not accepted"})).catch(err => console.log(err));
+        const { id: chattingUserId } = req.params;
+        const senderId = req.user.id;
+
+        const conversation = await Conversation.findOne({
+            participants: { $all: [senderId, chattingUserId] },
+        }).populate('messages');
+
+        if (!conversation) return res.status(200).json([]);
+
+        const messages = conversation.messages;
+        res.status(200).json(messages);
+
+
+
+    }
+    catch (err) {
+        console.log("Error in get message controller :", err.message)
+    }
+}
+
+const acceptFriendRequest = async (req, res) => {
+    try {
+        const { id: userId } = req.params;
+        // console.log(req.user);
+        //console.log("hello friend!!")
+        const receiver = await User.findById(req.user._id);//check if user has the object pendingFriends or not 
+        const sender = await User.findById(userId);
+
+        const senderPublicInfo = await getPublicInfo(sender._id);
+        //console.log("sender ",senderPublicInfo);
+        const receiverPublicInfo = await getPublicInfo(receiver._id);
+        //console.log("receiver ",receiverPublicInfo);
+
+        if (receiver.pendingFriends.some((friend)=>friend._id.equals(userId))) {
+            //console.log(typeof(receiver.pendingFriends));
+            //console.log(typeof(userId));
+            const senderIndex = receiver.pendingFriends.findIndex((friend)=>friend._id.equals(userId));
+            const receiverIndex = sender.requestSendPeople.findIndex((friend)=>friend._id.equals(receiver._id));
+            if (senderIndex > -1) {
+                receiver.pendingFriends.splice(senderIndex, 1);
+                receiver.friends.push(senderPublicInfo);
+
+                sender.requestSendPeople.splice(receiverIndex, 1);
+                sender.friends.push(receiverPublicInfo);
+                Promise.all([receiver.save(), sender.save()]);
+                
+
             
+            // console.log(receiver._id);
+            // console.log(typeof (receiver._id));
+            // console.log(typeof JSON.stringify(receiver._id))
+            const receiverSocketId = getReceiverSocketId(receiver._id.toString());
+            console.log("receiverSocketId: " + receiverSocketId);
+            if (receiverSocketId) {
+                console.log("socket friend entered ")
+                io.to(receiverSocketId).emit("modifyFriendList", { pendingFriends: receiver.pendingFriends, friends: receiver.friends , requestSendPeople:receiver.requestSendPeople , senderPendingFriends: sender.pendingFriends , senderRequestSendPeople: sender.requestSendPeople , senderFriends: sender.friends});//sending message to specific client
+                console.log("sent the list ")
+            }
+
+            return res.status(200).json({ message: "Friend request accepted", pendingFriends: receiver.pendingFriends, friends: receiver.friends  , requestSendPeople:receiver.requestSendPeople , senderPendingFriends: sender.pendingFriends , senderRequestSendPeople: sender.requestSendPeople , senderFriends: sender.friends});
+
+        }
 
         }
         else {
-            sender.requestSendPeople.push(receiver._id);
-            receiver.pendingFriends.push(sender._id);
-            await Promise.all([ sender.save() , receiver.save()]).then(res.status(200).json({message : "Friend request sent"})).catch((err)=>{
-                console.log(err);
-            })
-           
+            res.status(400).json({ message: "Friend request not found" });
         }
-        
-
-    } catch (error) {
-        res.status(500).json({"message":error.message});
-        console.log(error);
     }
-   
+    catch (err) {
+        console.log("Error in accept friend request  controller :", err.message)
+        res.status(500).json(err);
+    }
+
 }
 
 
-const getSidePanelUsers = async (req , res)=>{
+
+// The .findIndex method in JavaScript is used to find the index of the first element in an array that satisfies a provided testing function. It executes the provided function once for each element of the array until it finds one where the function returns a truthy value. If no elements satisfy the testing function, it returns -1.
+
+
+
+const rejectFriendRequest = async (req, res) => {
+    try {
+        const { id: userId } = req.params;
+        const receiver = await User.findById(req.user._id);//check if user has the object pendingFriends or not 
+        const sender = await User.findById(userId);
+
+        if (receiver.pendingFriends.some((friend)=>friend._id.equals(userId))) {
+           
+            const senderIndex = receiver.pendingFriends.findIndex((friend)=>friend._id.equals(userId));
+            if (senderIndex > -1) {
+                receiver.pendingFriends.splice(senderIndex, 1);
+               
+                receiver.save()
+                // return (res.status(200).json({ message: "Friend request rejected" }))
+                 
+                const receiverSocketId = getReceiverSocketId(receiver._id.toString());
+                console.log("receiverSocketId: " + receiverSocketId);
+                if (receiverSocketId) {
+                    console.log("socket friend entered ")
+                    io.to(receiverSocketId).emit("modifyFriendList", { pendingFriends: receiver.pendingFriends, friends: receiver.friends , requestSendPeople:receiver.requestSendPeople});//sending message to specific client
+                    console.log("sent the list ")
+                }
+                return res.status(200).json({ message: "Friend request rejected", pendingFriends: receiver.pendingFriends, friends: receiver.friends , requestSendPeople:receiver.requestSendPeople });
+       
+
+            }
+
+        }
+        else {
+            res.status(400).json({ message: "Friend request not found" });
+        }
+    }
+    catch (err) {
+        console.log("Error in get chat controller :", err.message)
+    }
+
+}
+const sendFriendRequest = async (req, res) => {
+    try {
+        const { id: receiverId } = req.params;
+        const receiver = await User.findById(receiverId);
+        const senderId = req.user._id;
+        const sender = await User.findById(senderId);
+
+        // take out publicInfo of the person from sender 
+       
+        const senderPublicInfo = await getPublicInfo(sender._id);
+        console.log("sender ",senderPublicInfo);
+        const receiverPublicInfo = await getPublicInfo(receiver._id);
+        console.log("receiver ",receiverPublicInfo);
+
+        // Check if they are already friends
+        if (sender.friends.some(friend => friend._id.equals(receiverPublicInfo._id))) {
+            return res.status(200).json({ message: "You are already friends" });
+        }
+
+        // Check if friend request already sent
+        else if (sender.requestSendPeople.some(person => person._id.equals(receiverPublicInfo._id)) &&
+            receiver.pendingFriends.some(person => person._id.equals(senderPublicInfo._id))) {
+            return res.status(200).json({ message: "Friend request already sent" });
+        }
+
+        
+        // Check if there is a pending friend request from the receiver
+        //
+        else if (receiver.requestSendPeople.some(person => person._id.equals(senderPublicInfo._id)) &&
+            sender.pendingFriends.some(person => person._id.equals(receiverPublicInfo._id))) {
+            return res.status(200).json({ message: "You received a friend request from this person already!" });
+        }
+
+        // Check if friend request was not accepted and remove it from sender's requestSendPeople
+        else if (sender.requestSendPeople.some(person => person._id.equals(receiverPublicInfo._id)) &&
+            !receiver.pendingFriends.some(person => person._id.equals(senderPublicInfo._id)) &&
+            !receiver.friends.some(friend => friend._id.equals(senderPublicInfo._id))) {
+            sender.requestSendPeople = sender.requestSendPeople.filter(person => !person._id.equals(receiverPublicInfo._id));
+            await sender.save();
+            return res.status(200).json({ message: "Friend request not accepted" });
+        }
+
+
+        // Send friend request
+        else{
+            sender.requestSendPeople.push(receiverPublicInfo);
+            receiver.pendingFriends.push(senderPublicInfo);
+            await Promise.all([sender.save(), receiver.save()]);
+            return res.status(200).json({ message: "Friend request sent" });
+
+        }
+       
+
+    } catch (error) {
+        res.status(500).json({ "message": error.message  });
+        console.log(error);
+    }
+
+        // ```
+        // Using the === operator instead of .equals did not work because === checks for strict equality, which means both the value and the type must be the same. In the case of comparing MongoDB ObjectIDs, === compares the object references, not their contents. MongoDB ObjectIDs are objects, and even if two ObjectIDs have the same value, they are different instances, so === will return false.
+
+        //  To compare MongoDB ObjectIDs, the .equals method  provided by the ObjectId class should be used. This method compares the actual values of the ObjectIDs.
+        
+        // ```
+
+        // ```
+        // Avoid using .then.catch in try/catch block to prevent multiple responses being sent , 
+        // (need more examples here to understand completely )
+        // ```
+
     
-    try{
+
+}
+
+
+const getSidePanelUsers = async (req, res) => {
+
+    try {
         // console.log("get side panel users ",req.user);
         const loggedInUserid = req.user._id;
         // console.log(req.user);
         const loggedInUser = await User.findById(loggedInUserid);
         //console.log(loggedInUser);
-        const users = await User.find({ '_id' :{$ne: loggedInUserid}}).select(
-            "username bookshelves groups moderatorGroups avatarImage"    );
-        const friendsData = users.map((user) =>{
-            if (loggedInUser.friends.includes(user._id)){
-                return {...user._doc, isFriend : true};
+        const users = await User.find({ '_id': { $ne: loggedInUserid } }).select(
+            "username bookshelves groups moderatorGroups avatarImage");
+        const friendsData = users.map((user) => {
+            if (loggedInUser.friends.includes(user._id)) {
+                return { ...user._doc, isFriend: true };
             }
             else {
-                return {...user._doc, isFriend : false};
+                return { ...user._doc, isFriend: false };
             }
         })
         //console.log(friendsData);
-            res.status(200).json(friendsData);
+        res.status(200).json(friendsData);
 
     }
-    catch(err){
+    catch (err) {
         console.error("Error in getUsersForSidebar: ", err.message);
         res.status(500).json({ "err": "Internal server error" });
     }
-   
-    
+
+
 }
 
 
-module.exports = {sendMessage , getMessage , sendFriendRequest , acceptFriendRequest , rejectFriendRequest , getSidePanelUsers };
+module.exports = { sendMessage, getMessage, sendFriendRequest, acceptFriendRequest, rejectFriendRequest, getSidePanelUsers };

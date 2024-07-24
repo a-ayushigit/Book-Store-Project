@@ -6,31 +6,31 @@ import useUpdateFriendListRt from './hooks/useUpdateFriendListRt';
 const Accordion = () => {
     const [toggle, setToggle] = useState(null);
     const { user } = useContext(UserContext);
-    const [pendingFriends, setPendingFriends] = useState([]);
-    const [friends, setFriends] = useState([]);
-    const [requestedFriends, setRequestedFriends] = useState([]);
+    // const [pendingFriends, setPendingFriends] = useState([]);
+    // const [friends, setFriends] = useState([]);
+    // const [requestedFriends, setRequestedFriends] = useState([]);
     useUpdateFriendListRt();
 
 
-    const getUserFriendPublicInfo = (friends) => {
-        // console.log("Hello!!")
-        //  console.log(user);
-        console.log(friends);
-        if (!friends) return [];
-        try {
+    // const getUserFriendPublicInfo = (friends) => {
+    //     // console.log("Hello!!")
+    //     //  console.log(user);
+    //     console.log(friends);
+    //     if (!friends) return [];
+    //     try {
 
-            let data = [];
-            friends.map(async (friendId) => {
-                const res = await axios.get(`userAdmin/${friendId}`);
-                console.log(res);
-                data.push(res.data);
-            })
-            return data;
-        } catch (error) {
-            console.log(error);
-            return null;
-        }
-    }
+    //         let data = [];
+    //         friends.map(async (friendId) => {
+    //             const res = await axios.get(`userAdmin/${friendId}`);
+    //             console.log(res);
+    //             data.push(res.data);
+    //         })
+    //         return data;
+    //     } catch (error) {
+    //         console.log(error);
+    //         return null;
+    //     }
+    // }
 
     const acceptFriendRequest = async (id) => {
         try {
@@ -45,50 +45,50 @@ const Accordion = () => {
     }
 
 
-    const getUserFriends = async () => {
-        if (user.pendingFriends.length > 0) {
-            const pendingFriendsData = await getUserFriendPublicInfo(user.pendingFriends);
-            setPendingFriends(pendingFriendsData);
-        }
-        if (user.requestSendPeople.length > 0) {
-            const requestedFriendsData = await getUserFriendPublicInfo(user.requestSendPeople);
-            setRequestedFriends(requestedFriendsData);
-        }
-        if (user.friends.length > 0) {
-            const friendsData = await getUserFriendPublicInfo(user.friends);
-            setFriends(friendsData);
-        }
-    };
+    // const getUserFriends = async () => {
+    //     if (user.pendingFriends.length > 0) {
+    //         const pendingFriendsData = await getUserFriendPublicInfo(user.pendingFriends);
+    //         setPendingFriends(pendingFriendsData);
+    //     }
+    //     if (user.requestSendPeople.length > 0) {
+    //         const requestedFriendsData = await getUserFriendPublicInfo(user.requestSendPeople);
+    //         setRequestedFriends(requestedFriendsData);
+    //     }
+    //     if (user.friends.length > 0) {
+    //         const friendsData = await getUserFriendPublicInfo(user.friends);
+    //         setFriends(friendsData);
+    //     }
+    // };
 
-    useEffect(() => {
-        // if((user.bookshelf !== undefined) && (user.bookshelf !== null)){
-        //   //getBookshelf();
+    // useEffect(() => {
+    //     // if((user.bookshelf !== undefined) && (user.bookshelf !== null)){
+    //     //   //getBookshelf();
 
 
 
-        // }
-        getUserFriends();
+    //     // }
+    //     // getUserFriends();
 
-        console.log("pendingFriends", pendingFriends);
-        console.log("requestedFriends", requestedFriends);
-        console.log("friends", friends);
+    //     // console.log("pendingFriends", pendingFriends);
+    //     // console.log("requestedFriends", requestedFriends);
+    //     // console.log("friends", friends);
 
-    }, [user, user.pendingFriends, user.friends]);
+    // }, [user]);
 
 
     const accordionObj = [{
         "header": "Pending Friend Requests",
-        "content": pendingFriends,
+        "content": user.pendingFriends,
         "containsButton": true,
 
     },
     {
         "header": "Friend Requests Sent",
-        "content": requestedFriends
+        "content": user.requestSendPeople
     },
     {
         "header": "Friends",
-        "content": friends
+        "content": user.friends
     }]
 
     // console.log("content",data.content);
@@ -98,7 +98,7 @@ const Accordion = () => {
                 <div key={i}>
                     <div className="flex flex-row justify-between">
                         <div>{data.header}</div>
-                        <div onClick={() => toggle === null? setToggle(i) : setToggle(null)}>{toggle == i ? '-' : '+'}</div>
+                        <div className="hover:cursor-pointer" onClick={() => toggle !== null? setToggle(null) :setToggle(i) }>{toggle == i ? '-' : '+'}</div>
                     </div>
                     <div >
                         {toggle === i? data.content?.map((item, i) =>
@@ -111,7 +111,7 @@ const Accordion = () => {
                                     <span>{item.username}</span>
 
                                 </div>
-                                <div>{data.containsButton && <button onClick={() => acceptFriendRequest(item._id)}>Accept</button>}</div>
+                                <div>{data.containsButton && <button className="hover:cursor-pointer" onClick={() => acceptFriendRequest(item._id)}>Accept</button>}</div>
                             </div>
                         )
                             // console.log(item)
