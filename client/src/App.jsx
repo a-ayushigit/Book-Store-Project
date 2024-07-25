@@ -74,6 +74,13 @@ const router = createBrowserRouter(
         <Route
           path="/groups/:groupId/:subpage"
           element={<GroupPage />}
+          loader={
+            async( {params} ) => {
+              const res = await axios.get(`/groups/${params.groupId}`);
+              console.log(res.data);
+              return res.data;
+            }
+           }
           />
         <Route 
            path="/individual/discussions/:discussionId" 

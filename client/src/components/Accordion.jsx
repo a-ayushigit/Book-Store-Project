@@ -44,6 +44,17 @@ const Accordion = () => {
 
     }
 
+    const rejectFriendRequest = async (id) => {
+        try {
+            const res = await axios.put(`/chats/${id}/reject`);
+            console.log(res);
+            console.log("button clicked!");
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
 
     // const getUserFriends = async () => {
     //     if (user.pendingFriends.length > 0) {
@@ -112,6 +123,7 @@ const Accordion = () => {
 
                                 </div>
                                 <div>{data.containsButton && <button className="hover:cursor-pointer" onClick={() => acceptFriendRequest(item._id)}>Accept</button>}</div>
+                                <div>{data.containsButton && <button className="hover:cursor-pointer" onClick={() => rejectFriendRequest(item._id)}>Reject</button>}</div>
                             </div>
                         )
                             // console.log(item)

@@ -41,7 +41,7 @@ const CommunityForm = ({group , discussion , optionsList , handleSubmission}) =>
   )
 }
 
-const DiscussionForm = ({handleSubmission})=>{
+ const DiscussionForm = ({handleSubmission})=>{
  return ( <div className="backdrop-blur-xl flex flex-col w-[60vw] items-center justify-center border border-blue-950 mx-auto ">
       
  <form className="flex flex-col items-center w-full justify-center " onSubmit={handleSubmission}>

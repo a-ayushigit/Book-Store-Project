@@ -23,20 +23,21 @@ const useUpdateFriendListRt = () => {
         //       console.log("socket friends", friends); 
           
         // })
-        const handleModifyFriendList = ({ pendingFriends, friends , requestSendPeople , senderRequestSendPeople , senderFriends , senderPendingFriends }) => {
+        const handleModifyFriendList = ({ pendingFriends , friends , requestSendPeople }) => {
             console.log("hello socket friends");
-            setUser((prev) => ({
-              ...prev,
-              pendingFriends,
-              friends,
-              requestSendPeople,
-            }));
-            console.log("socket pending", pendingFriends);
-            console.log("socket friends", friends);
-            console.log("socket requestSendPeople", requestSendPeople);
-            console.log("socket sender " , senderRequestSendPeople);
-            console.log("socket sender " , senderFriends);
-            console.log("socket pending", senderPendingFriends);
+            //console.log(payload);
+           
+              setUser((prev) => ({
+                ...prev,
+                pendingFriends,
+                friends,
+                requestSendPeople,
+              }));
+
+            
+            
+           
+            
           };
       
           socket?.on("modifyFriendList", handleModifyFriendList);

@@ -37,7 +37,7 @@ const sendRequest = async(groupId)=>{
     getGroups()
   }, [])
   return (
-    <div className="h-full ">
+    <div className="h-full min-h-screen">
       <div><CommunityNavbar/></div>
       <h1 className="flex font-bold text-4xl font-serif justify-center">GROUPS</h1>
       <div className="grid grid-cols-12 gap-4 p-3">

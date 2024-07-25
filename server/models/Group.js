@@ -29,8 +29,15 @@ const GroupSchema = new mongoose.Schema({
         required: true
     },
     members: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Users'
+        id:{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Users'
+        }, 
+        name:{
+            type: String,
+            ref: 'Users'
+        }
+        
     }],
 
     bookshelf:{
@@ -44,11 +51,16 @@ const GroupSchema = new mongoose.Schema({
         }
 
     },
-    moderators: [
-        {
+    moderators: [{
+        id:{
             type: mongoose.Schema.Types.ObjectId,
-            ref: "Users",
+            ref: 'Users'
+        }, 
+        name:{
+            type: String,
+            ref: 'Users'
         }
+    }
     ],
     tags: {
         type: Array,
@@ -61,8 +73,14 @@ const GroupSchema = new mongoose.Schema({
     },
     pendingMembers: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Users",
+            id:{
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Users'
+            }, 
+            name:{
+                type: String,
+                ref: 'Users'
+            }
         }
     ],
     isPublic: {

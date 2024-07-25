@@ -31,8 +31,8 @@ const Community = () => {
   const handleSubmissionGroup = async (ev) => {
     ev.preventDefault();
     try {
-      console.log(typeof (Number(user._id)));
-      await axios.post('/groups/createGroup',
+      console.log(ev.target[0].value);
+      await axios.post(`/groups/createGroup/${user._id}`,
         {
           name: ev.target[0].value,
           description: ev.target[1].value,

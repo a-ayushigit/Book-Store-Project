@@ -2,7 +2,7 @@ const express = require('express')
 const Message = require('../models/Message');
 const Conversation = require('../models/Conversation');
 const User = require('../models/User');
-const { getReceiverSocketId, io } = require('../socket/socket');
+const { getUserSocketId, io } = require('../socket/socket');
 
 const getPublicInfo = async (id) => {
     try {
@@ -64,7 +64,7 @@ const sendMessage = async (req, res) => {
 
         await Promise.all([conversation.save(), newMessage.save()]);
         // console.log("Hello")
-        const receiverSocketId = getReceiverSocketId(receiverId);
+        const receiverSocketId = getUserSocketId(receiverId);
         if (receiverSocketId) {
             io.to(receiverSocketId).emit("newMessage", newMessage);//sending message to specific client
         }
@@ -114,11 +114,23 @@ const acceptFriendRequest = async (req, res) => {
         const receiverPublicInfo = await getPublicInfo(receiver._id);
         //console.log("receiver ",receiverPublicInfo);
 
-        if (receiver.pendingFriends.some((friend)=>friend._id.equals(userId))) {
+        if (receiver.pendingFriends.some((friend)=>
+           
+            friend._id.equals(userId)
+            // console.log(friend._id.equals(userId));
+            // console.log("friend id ",friend._id);
+            // console.log("received request id ",userId);
+        
+        
+        )
+    
+        ) {
             //console.log(typeof(receiver.pendingFriends));
             //console.log(typeof(userId));
             const senderIndex = receiver.pendingFriends.findIndex((friend)=>friend._id.equals(userId));
             const receiverIndex = sender.requestSendPeople.findIndex((friend)=>friend._id.equals(receiver._id));
+            console.log('sender ind',senderIndex);
+            console.log('receiver ind',receiverIndex);
             if (senderIndex > -1) {
                 receiver.pendingFriends.splice(senderIndex, 1);
                 receiver.friends.push(senderPublicInfo);
@@ -132,21 +144,48 @@ const acceptFriendRequest = async (req, res) => {
             // console.log(receiver._id);
             // console.log(typeof (receiver._id));
             // console.log(typeof JSON.stringify(receiver._id))
-            const receiverSocketId = getReceiverSocketId(receiver._id.toString());
+            const receiverSocketId = getUserSocketId(receiver._id.toString());
+            const senderSocketId = getUserSocketId(sender._id.toString());
             console.log("receiverSocketId: " + receiverSocketId);
+            console.log("senderSocketId:" + senderSocketId);
+            const receiverPayload = 
+                {
+                    
+                    pendingFriends: receiver.pendingFriends,
+                    friends: receiver.friends , 
+                    requestSendPeople:receiver.requestSendPeople ,
+                   
+                };
+            const senderPayload =
+                {
+                    
+                    pendingFriends: sender.pendingFriends ,
+                    requestSendPeople: sender.requestSendPeople ,
+                    friends: sender.friends
+
+
+                 };
+                 
             if (receiverSocketId) {
                 console.log("socket friend entered ")
-                io.to(receiverSocketId).emit("modifyFriendList", { pendingFriends: receiver.pendingFriends, friends: receiver.friends , requestSendPeople:receiver.requestSendPeople , senderPendingFriends: sender.pendingFriends , senderRequestSendPeople: sender.requestSendPeople , senderFriends: sender.friends});//sending message to specific client
+                io.to(receiverSocketId).emit("modifyFriendList",receiverPayload );//sending message to specific client
+                console.log("sent the list ")
+               
+            }
+            if (senderSocketId) {
+                console.log("socket friend entered ")
+                io.to(senderSocketId).emit("modifyFriendList",senderPayload );//sending message to specific client
                 console.log("sent the list ")
             }
 
-            return res.status(200).json({ message: "Friend request accepted", pendingFriends: receiver.pendingFriends, friends: receiver.friends  , requestSendPeople:receiver.requestSendPeople , senderPendingFriends: sender.pendingFriends , senderRequestSendPeople: sender.requestSendPeople , senderFriends: sender.friends});
+            return res.status(200).json({ message: "Friend request accepted"});
 
         }
 
         }
         else {
             res.status(400).json({ message: "Friend request not found" });
+            
         }
     }
     catch (err) {
@@ -177,14 +216,41 @@ const rejectFriendRequest = async (req, res) => {
                 receiver.save()
                 // return (res.status(200).json({ message: "Friend request rejected" }))
                  
-                const receiverSocketId = getReceiverSocketId(receiver._id.toString());
+                const receiverSocketId = getUserSocketId(receiver._id.toString());
+                const senderSocketId = getUserSocketId(sender._id.toString());
                 console.log("receiverSocketId: " + receiverSocketId);
+
+                const receiverPayload = 
+                {
+                    
+                    pendingFriends: receiver.pendingFriends,
+                    friends: receiver.friends , 
+                    requestSendPeople:receiver.requestSendPeople ,
+                   
+                };
+            const senderPayload =
+                {
+                    
+                    pendingFriends: sender.pendingFriends ,
+                    requestSendPeople: sender.requestSendPeople ,
+                    friends: sender.friends
+
+
+                 };
+
                 if (receiverSocketId) {
                     console.log("socket friend entered ")
-                    io.to(receiverSocketId).emit("modifyFriendList", { pendingFriends: receiver.pendingFriends, friends: receiver.friends , requestSendPeople:receiver.requestSendPeople});//sending message to specific client
+                    io.to(receiverSocketId).emit("modifyFriendList", receiverPayload);//sending message to specific client
                     console.log("sent the list ")
                 }
-                return res.status(200).json({ message: "Friend request rejected", pendingFriends: receiver.pendingFriends, friends: receiver.friends , requestSendPeople:receiver.requestSendPeople });
+                if (senderSocketId) {
+                    console.log("socket friend entered ")
+                    io.to(senderSocketId).emit("modifyFriendList",senderPayload );//sending message to specific client
+                    console.log("sent the list ")
+                }
+    
+
+                return res.status(200).json({ message: "Friend request rejected" });
        
 
             }

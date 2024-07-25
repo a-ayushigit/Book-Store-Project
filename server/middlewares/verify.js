@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const User = require("../models/User");
 
 const verifyToken = (req, res, next) => {
     try {
@@ -53,24 +54,41 @@ const verifyTokenAndAdmin = (req, res, next) => {
 
 }
 
-const verifyTokenAndModeratorOrCreator = (req, res, next) => {
-    verifyTokenAndAuthorization(req, res, () => {
+const verifyTokenAndModeratorOrCreator =  (req, res, next) => {
+    verifyToken(req, res, async() => {
         // if(req.user.isModerator ){
         //     next();
         // }
         // else{
         //     res.status(403).json("Not authorized to do that !");
         // }
-        const groupId = req.body.groupId;
-        if (req.user.groups.includes({
-            _id: groupId, roles: [
-                {
-                    $or: ['creator', 'moderator']
+        // if (((req.user._id === req.params.id) || req.user.isAdmin)) {
+        //     next();
+        // }
+        // else {
+        //     res.status(403).json("Not authorized to do that !");
+        // }
+        const groupId = req.params.id;
+        // if (req.user.groups.includes({
+        //     _id: groupId, roles: [
+        //         {
+        //             $or: ['creator', 'moderator']
 
-                }
-            ]
-        }
-        )) {
+        //         }
+        //     ]
+        // }
+    // ))
+    const user = await User.findById(req.user._id);
+        const isAuthorized = user.groups?.some((group) => 
+        group._id.equals(groupId) 
+    // && (group.roles.includes('creator') || group.roles.includes('moderator'))
+    );
+    console.log("user groups ",user.groups);
+    console.log("value ",isAuthorized);
+    // console.log(user);
+    // req.user.groups.some((group) => group._id.equals(groupId))
+        if(isAuthorized)
+         {
             next();
         }
         else {

@@ -32,9 +32,18 @@ const deleteDiscussion = async (req,res) =>{
 }
 
 const getAllDiscussions = async(req , res) =>{
+    const queryParams = req.query?.groupId;
     try {
-        const Discussions = await Discussion.find({});
-        res.status(200).json(Discussions);
+        if(queryParams){
+            const discussions = await Discussion.find({groupId : queryParams});
+            res.status(200).json(discussions);
+            return;
+        }
+        else {
+            const discussions = await Discussion.find({});
+            res.status(200).json(discussions);
+        }
+       
     } catch (error) {
         console.log(error.message);
         res.status(500).send({message : error.message});  
@@ -44,7 +53,7 @@ const getAllDiscussions = async(req , res) =>{
 const getOneDiscussion = async(req , res) =>{
     try{
         const {id} = req.params ;
-        const Discussions = await Discussion.find({_id:id});
+        const Discussions = await Discussion.findById(id);
         res.status(200).json({Discussions});
     }
     catch(error){
@@ -52,6 +61,8 @@ const getOneDiscussion = async(req , res) =>{
         res.status(500).send({message : error.message});
     }
 }
+
+
 
 const updateDiscussion = async (req , res)=>{
 
