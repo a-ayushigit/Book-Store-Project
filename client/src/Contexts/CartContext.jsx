@@ -2,8 +2,8 @@ import {createContext , useEffect, useState} from "react";
 
 
 export const CartContext = createContext({
-
-    books:[] ,
+//methods that we are providing through the context 
+    items:[] ,
     removeOneBook:()=>{},
     addToCart:()=>{},
     getProductQuantity:()=>{},
@@ -17,8 +17,9 @@ export const CartContext = createContext({
 
 export default function CartProvider({children}){
     const [cartProducts , setCartProducts] = useState([]);
-
+     
     useEffect(()=>{
+        //the actions which are taking place to get  the data which is accessible in the whole application
         if( localStorage.getItem('cart') !== null &&  localStorage.getItem('cart') !== undefined){
             let existingCartItem = localStorage.getItem('cart');
             console.log(`existingCartItem ${existingCartItem}`)
@@ -100,7 +101,7 @@ export default function CartProvider({children}){
         localStorage.setItem('cart' , JSON.stringify(cartProducts?.map(b => b._id === book._id ? {...b , quantity:quantity - 1 }:b)));
        }
     }
-
+//the exact values which will be available in the whole application are provided through the contextValue
     const contextValue = {
         items : cartProducts , 
         removeOneBook,

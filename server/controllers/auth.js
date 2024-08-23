@@ -115,7 +115,7 @@ const login = async (req, res) => {
 
 const profile = async (req, res) => {
    
-   
+    console.log(req);
     try {
         const  accessToken  = req.cookies.accessToken;
         // console.log("token",token);
