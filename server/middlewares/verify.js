@@ -42,9 +42,10 @@ const verifyTokenAndAuthorization = (req, res, next) => {
 
 //only admin allowed tasks 
 const verifyTokenAndAdmin = (req, res, next) => {
-    verifyToken(req, res, () => {
-
-        if (req.user.isAdmin) {
+    verifyToken(req, res, async() => {
+        console.log("verify " , req.user);
+        const user = await User.findById(req.user._id);
+        if (user.isAdmin) {
             next();
         }
         else {

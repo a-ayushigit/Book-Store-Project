@@ -2,9 +2,9 @@ import React from 'react'
 import Carousel from '../components/Carousel'
 import Banner from '../components/Banner'
 import TopHero from '../components/TopHero'
-
-
-
+// import {mysecret} from '../lib/paystack'
+const mysecret = process.env.VITE_PAYSTACK_TEST_SECRET
+console.log("my secret",mysecret)
 
 const IndexPage = () => {
   return (

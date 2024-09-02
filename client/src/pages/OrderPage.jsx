@@ -38,7 +38,7 @@ const OrderPage = ({ orders }) => {
                     <div className="flex items-center justify-center w-auto col-span-12 sm:col-span-3">
                       <img src={book.imageUrl} alt="" className="sm:h-[12rem] w-auto h-auto" />
                     </div>
-                    <div className="flex flex-col w-auto col-span-12 sm:col-span-9">
+                    <div className="flex flex-col w-auto col-span-12 sm:col-span-9 text-black">
 
                       <p className="flex flex-row justify-start pt-8 sm:text-2xl font-bold font-serif">{book.title}
 

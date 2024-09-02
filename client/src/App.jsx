@@ -19,6 +19,8 @@ import GroupsPage from './pages/GroupsPage.jsx'
 import GroupPage from './pages/GroupPage.jsx'
 import GroupDiscussionPage from './pages/GroupDiscussionPage.jsx'
 import DiscussionPage from './pages/DiscussionPage.jsx'
+import AdminPage from './pages/AdminPage.jsx'
+import PaymentPage from './pages/PaymentPage.jsx'
 axios.defaults.baseURL = "http://localhost:5000/api/v1/";//so that we dont have to write theentire address again and again 
 axios.defaults.withCredentials = true;
 
@@ -93,6 +95,8 @@ const router = createBrowserRouter(
             }
            }
            />
+           <Route path="/admin" element={<AdminPage/>}/>
+           <Route path="/payment" element={<PaymentPage/>}/>
       </Route>
     </Route>
 

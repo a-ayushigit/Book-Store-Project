@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext , useState} from 'react'
 import Logo from "../assets/logo.jpg";
 import { Link } from 'react-router-dom';
 import PersonIcon from '@mui/icons-material/Person';
@@ -17,31 +17,37 @@ const Header = () => {
   const cart = useContext(CartContext);
   const booksCount = cart.items.reduce((sum , book)=>sum + book.quantity , 0);
   console.log(user);
+  // console.log(user.fullname);
+  // console.log(user.isAdmin);
+  // const [admin , setAdmin] = useState(!user.isAdmin);
   const Menu = [
     {
      id: 1, 
      icon: <HomeIcon/>,
      name: "Home", 
      link: "/#",
+    //  access: loading ? ,
     },
     {
       id: 2,  
       icon:<LocalMallIcon/>,
       name:"Shop" ,
       link: "/shop",
+      // access: admin,
     },
     {
       id: 3,
       // icon: user ? <PersonIcon /> :loading?<>Loading...</>: <LoginIcon />,
       icon:loading?null:(user ? <PersonIcon />:<LoginIcon />),
       name:loading?<>Loading...</>: (user && user.username ? <>{' ' + user?.username?.split(" ")[0]}</> : "Login") , 
-      link:loading?"#": (user ? "/account" : "/login"),
+      link:loading?"#": (user ? user.isAdmin ? "/admin" :"/account" : "/login"),
     },
      {
       id:4 , 
       icon:<ForumIcon/>,
       name: "Community" ,
       link:"/community",
+      // access: admin,
      },
     {
       id: 5, 
@@ -53,7 +59,8 @@ const Header = () => {
       </>,
       name: "Cart", 
       link: "/cart",
-    }  
+      // access: admin,
+    }
   ]
 
   return (
@@ -76,11 +83,11 @@ const Header = () => {
               Menu.map((menu)=>(
  
                <li key={menu.id} className="inline-block hover:text-blue-700">
-                  <div className="font-bold uppercase text-xs rounded-md hover:border hover:border-blue-950 p-1">
+                  <div className={`font-bold uppercase text-xs rounded-md hover:border hover:border-blue-950 p-1 `}>
                  
-                 
+                 {/* ${menu.access ? "flex" : "hidden"} */}
                   <a href={menu.link}> 
-                  <div className="flex flex-row text-wrap text-xs relative text-center justify-center">
+                  <div className={`flex flex-row text-wrap text-xs relative text-center justify-center `}>
                   {menu.icon}
                   <p className="md:flex flex-row hidden md:text-center justify-center pt-1 pl-1"> {menu.name} </p> 
                   </div>

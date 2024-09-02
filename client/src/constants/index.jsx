@@ -31,3 +31,34 @@ export const groupOptionsList = [
     }
   ]
 
+  export const optionsList = [
+    {
+      id:1 , label:'Full Name'
+    },
+    {
+      id:2 , label:'Mobile Number'
+    },
+    {
+      id:3 , label:'Flat, House no., Building, Company, Apartment'
+    },
+    {
+      id:4 , label:'Pincode'
+    },
+    
+    {
+      id:5 , label:'Area, Street, Sector, Village'
+    },
+    {
+      id:6 , label:'Landmark'
+    },
+    {
+      id:7 , label:'Town/City'
+    }, 
+    {
+      id:8 , label:'State'
+    },
+    {
+      id:9 , label:'Country/Region'
+    }
+  ];
+
