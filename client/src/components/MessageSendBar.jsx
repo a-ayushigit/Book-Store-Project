@@ -17,13 +17,14 @@ const MessageSendBar = () => {
       const res =  await axios.post(`/chats/${selectedConversation}/sendMessage`,{
         'message':m
       })
-
+      
       console.log("Message sent successfully !")
-      console.log(res);
+      console.log("res*********************************",res);
       setMessages([...messages , 
         {
           'message':res.data.message,
           'senderId':res.data.senderId,
+          'receiverId':res.data.receiverId,
 
         }]);
       setMessage("");

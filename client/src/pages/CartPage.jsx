@@ -32,8 +32,8 @@ const CartPage = () => {
   
   //  console.log(handlePayment)
   return (<div className=" flex flex-col flex-grow overflow-y-scroll no-scrollbar ">
-   <Modal modal={modal} handlePayment={handlePayment} setModal={setModal} optionsList={optionsList} 
-     />
+   {/* <Modal modal={modal} handlePayment={handlePayment} setModal={setModal} optionsList={optionsList} 
+     /> */}
    {/* {console.log(handlePayment)} */}
     <div className="dark:bg-red-400 bg-cyan-700 h-screen text-white">
       

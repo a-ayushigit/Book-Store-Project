@@ -82,15 +82,18 @@ const sendMessage = async (req, res) => {
 const getMessage = async (req, res) => {
     try {
         const { id: chattingUserId } = req.params;
-        const senderId = req.user.id;
-
+        console.log(req.user);
+        const senderId = req.user._id;
+        console.log("senderId" , senderId);
         const conversation = await Conversation.findOne({
             participants: { $all: [senderId, chattingUserId] },
         }).populate('messages');
-
+        //   console.log("conversation********************************",conversation);
         if (!conversation) return res.status(200).json([]);
 
         const messages = conversation.messages;
+        // console.log("helooooooooooooooo");
+        // console.log(messages);
         res.status(200).json(messages);
 
 
@@ -280,7 +283,7 @@ const sendFriendRequest = async (req, res) => {
         console.log("receiver ",receiverPublicInfo);
 
         // Check if they are already friends
-        if (sender.friends.some(friend => friend._id.equals(receiverPublicInfo._id))) {
+        if (sender.friends.some(friend => friend._id.equals(senderPublicInfo._id))) {
             return res.status(200).json({ message: "You are already friends" });
         }
 
@@ -348,15 +351,29 @@ const getSidePanelUsers = async (req, res) => {
         // console.log(req.user);
         const loggedInUser = await User.findById(loggedInUserid);
         //console.log(loggedInUser);
-        const users = await User.find({ '_id': { $ne: loggedInUserid } }).select(
-            "username bookshelves groups moderatorGroups avatarImage");
+        const users = await User.find({ '_id': { $ne: loggedInUserid } , 'isAdmin' : false}).select(
+            "username bookshelves groups moderatorGroups avatarImage isAdmin");
         const friendsData = users.map((user) => {
-            if (loggedInUser.friends.includes(user._id)) {
+            // if (loggedInUser.friends.includes(user._id)) {
+            //     return { ...user._doc, isFriend: true };
+            // }
+           console.log("admin check ****************" , user);
+           
+            if(loggedInUser.friends.some((friend)=>(friend._id.equals(user._id)))){
+
                 return { ...user._doc, isFriend: true };
             }
             else {
                 return { ...user._doc, isFriend: false };
             }
+           
+
+           
+       
+           
+
+           
+         
         })
         //console.log(friendsData);
         res.status(200).json(friendsData);

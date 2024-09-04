@@ -13,13 +13,16 @@ import { useChatContext } from '../Contexts/ChatContext.jsx';
 import useListenRtMessage from './hooks/useListenRtMessage.jsx';
 import useConversations from '../zustand/useConversations.jsx';
 // import  useSocketContext  from "../Contexts/SocketContext.jsx";
+
+
+
+
 const Chatcomponent = () => {
     const { socket } = useContext(SocketContext);
-    const user = useContext(UserContext);
-    //const [conversations, setConversations] = useState([])
+  
     const [users, setUsers] = useState([]);
     const { onlineUsers } = useContext(SocketContext);
-    // const [selectedPerson , setSelectedPerson] = useState('');
+   
     const { selectedConversation, setSelectedConversation, messages, setMessages } = useConversations();
     useListenRtMessage();
     console.log("messages" , messages);
@@ -71,7 +74,7 @@ const Chatcomponent = () => {
     useEffect(() => {
         try {
             getSidePanelUsers();
-            
+            console.log(users[0]);
 
 
         }
@@ -88,13 +91,13 @@ const Chatcomponent = () => {
                 <div className="flex col-span-5 sm:col-span-3 bg-blue-400 flex-col no-scrollbar   max-h-[100vh] overflow-y-scroll">
                     {/* users list displayed  */}
                     {users.map((user) => {
-                        // console.log(user);
+                        console.log(user);
                         
                         const isOnline = onlineUsers.includes(user._id);
                         // console.log(isOnline , user.username);
 
                         return (
-                            <div key={user._id} className={`flex flex-row justify-between p-2 border border-white hover:cursor-pointer text-xs sm:text-sm ${selectedConversation === user._id ? "bg-blue-800" : "hover:bg-blue-300"}`} onClick={user.isFriend ? () => { openchat(user._id) } : () => alert("Not a friend")}>
+                            <div key={user._id} className={`flex flex-row justify-between p-2 border border-white hover:cursor-pointer text-xs sm:text-sm ${selectedConversation === user._id ? "bg-blue-800 text-white" : "hover:bg-blue-300"}`} onClick={user.isFriend ? () => { openchat(user._id) } : () => alert("Not a friend")}>
                                 <div className="flex flex-row items-center">
                                     {/* <img src={user.profilePic} alt="" className="h-10 w-10 rounded-full" /> */}
                                     <PersonIcon className="h-10 w-10 rounded-full" />
