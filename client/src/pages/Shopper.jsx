@@ -68,7 +68,7 @@ const Shopper = () => {
   const [binding, setBinding] = useState([]);
   const [books, setBooks] = useState([]);
   const [totalBooks, setTotalBooks] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(60);
+  const [maxPrice, setMaxPrice] = useState(700);
   const [rating, setRating] = useState(0);
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
@@ -107,6 +107,7 @@ const Shopper = () => {
         setTotalBooks(response.data.total);
         console.log(response.data.books);
         console.log(response.data.total);
+        console.log(response.data);
 
       }).catch((err) => console.log(err)).finally(
         console.log(books)
@@ -183,8 +184,8 @@ const Shopper = () => {
         <div className="flex flex-row gap-3 object-contain px-2 text-wrap ">
 
           <span className="text-xs sm:text-sm">Rs.0</span>
-          <input type="range" min={0} max={60} defaultValue={60} className="flex flex-wrap w-[12vw]" onChange={(e) => setMaxPrice(e.target.value)} />
-          <span className="text-xs sm:text-sm">Rs.60</span>
+          <input type="range" min={0} max={700} defaultValue={700} className="flex flex-wrap w-[12vw]" onChange={(e) => setMaxPrice(e.target.value)} />
+          <span className="text-xs sm:text-sm">Rs.700</span>
           <p className="flex text-wrap text-xs sm:text-sm">Max Price:- Rs.{maxPrice}</p>
         </div>
         {/* rating */}

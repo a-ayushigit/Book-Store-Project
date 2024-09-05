@@ -149,23 +149,7 @@ Hello
          </>}
         </div>
         <div className="col-span-3 bg-pink-500 h-full min-h-screen">
-{/* <Accordion data={
-{
-  "header":"Pending Friend Requests", 
-  "content": pendingFriends,
-  "containsButton":true,
- 
-} 
-} func={acceptFriendRequest}/>
-<Accordion data={{
-  "header":"Friend Requests Sent", 
-  "content": requestedFriends
-}}/>
-<Accordion data={{
-  "header":"Friends", 
-  "content": friends
 
-}} /> */}
 
 <Accordion/>
 

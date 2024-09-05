@@ -7,12 +7,13 @@
             "description": "Between life and death there is a library, and within that library, the shelves go on forever.",
             "category": ["Fiction", "Fantasy", "Contemporary"],
             "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1602190253i/52578297.jpg",
-            "price": 15.99,
+            "price": 158.99,
             "language": "English",
             "binding": "Hardcover",
             "tags": ["Best Seller", "Trending"],
             "discount": 10,
-            "rating":4.5
+            "rating":4.5 , 
+            "stock":300
         },
         {
             "title": "Educated",
@@ -21,12 +22,13 @@
             "description": "A memoir by Tara Westover detailing her struggles growing up in a strict and abusive household in rural Idaho but eventually escaping to learn about the wider world through education.",
             "category": ["Biography", "Memoir", "Non-fiction"],
             "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1506026635i/35133922.jpg",
-            "price": 18.00,
+            "price": 180.00,
             "language": "English",
             "binding": "Paperback",
             "tags": ["Best Seller", "International Best Sellers"],
             "discount": 5,
-            "rating":4.5
+            "rating":4.5,
+            "stock":300
         },
         {
             "title": "Becoming",
@@ -35,12 +37,13 @@
             "description": "An intimate, powerful, and inspiring memoir by the former First Lady of the United States.",
             "category": ["Biography", "Memoir", "Non-fiction"],
             "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1528206996i/38746485.jpg",
-            "price": 20.00,
+            "price": 200.00,
             "language": "English",
             "binding": "Hardcover",
             "tags": ["Best Seller", "International Best Sellers"],
             "discount": 15,
-            "rating":4.5
+            "rating":4.5,
+            "stock":350
         },
         {
             "title": "Where the Crawdads Sing",
@@ -49,12 +52,13 @@
             "description": "A coming-of-age murder mystery set in the marshes of North Carolina.",
             "category": ["Fiction", "Mystery", "Thriller"],
             "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1582135294i/36809135.jpg",
-            "price": 14.99,
+            "price": 149.99,
             "language": "English",
             "binding": "Paperback",
             "tags": ["Best Seller", "Trending"],
             "discount": 0,
-            "rating":4.5
+            "rating":4.5,
+            "stock":390
         },
         {
             "title": "Sapiens: A Brief History of Humankind",
@@ -63,12 +67,13 @@
             "description": "A book that explores the history of humankind from the Stone Age to the present.",
             "category": ["Non-fiction", "History", "Science"],
             "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1703329310i/23692271.jpg",
-            "price": 22.99,
+            "price": 229.99,
             "language": "English",
             "binding": "Hardcover",
             "tags": ["Best Seller", "International Best Sellers"],
             "discount": 10,
-            "rating":4.5
+            "rating":4.5,
+            "stock":400
         },
         {
             "title": "Atomic Habits",
@@ -77,12 +82,13 @@
             "description": "An easy & proven way to build good habits & break bad ones.",
             "category": ["Self-help", "Non-fiction", "Psychology"],
             "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1655988385i/40121378.jpg",
-            "price": 16.99,
+            "price": 169.99,
             "language": "English",
             "binding": "Hardcover",
             "tags": ["Best Seller", "Trending"],
             "discount": 5,
-            "rating":4.5
+            "rating":4.5,
+            "stock":300
         },
         {
             "title": "The Alchemist",
@@ -91,12 +97,13 @@
             "description": "A philosophical book about a young shepherd in search of treasure.",
             "category": ["Fiction", "Fantasy", "Adventure"],
             "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654371463i/18144590.jpg",
-            "price": 13.99,
+            "price": 135.99,
             "language": "English",
             "binding": "Paperback",
             "tags": ["Best Seller", "International Best Sellers"],
             "discount": 20,
-            "rating":4.5
+            "rating":4.5,
+            "stock":300
         },
         {
             "title": "The Four Agreements",
@@ -105,12 +112,13 @@
             "description": "A practical guide to personal freedom, based on ancient Toltec wisdom.",
             "category": ["Self-help", "Spirituality", "Non-fiction"],
             "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1630664059i/6596.jpg",
-            "price": 12.99,
+            "price": 128.99,
             "language": "English",
             "binding": "Paperback",
             "tags": ["Best Seller", "Trending"],
             "discount": 10,
-            "rating":4.5
+            "rating":4.5,
+            "stock":290
         },
         {
             "title": "Normal People",
@@ -119,12 +127,13 @@
             "description": "A novel about the complex relationship between two people from different backgrounds.",
             "category": ["Fiction", "Romance", "Contemporary"],
             "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1571423190i/41057294.jpg",
-            "price": 17.99,
+            "price": 180,
             "language": "English",
             "binding": "Hardcover",
             "tags": ["Best Seller", "Trending"],
             "discount": 5,
-            "rating":4.5
+            "rating":4.5,
+            "stock":700
         },
         {
             "title": "Dune",
@@ -133,12 +142,13 @@
             "description": "A science fiction novel set in a distant future amidst a huge interstellar empire.",
             "category": ["Fiction", "Science Fiction", "Fantasy"],
             "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1555447414i/44767458.jpg",
-            "price": 19.99,
+            "price": 199.99,
             "language": "English",
             "binding": "Hardcover",
             "tags": ["Best Seller", "International Best Sellers"],
             "discount": 10,
-            "rating":4.5
+            "rating":4.5,
+            "stock":300
         } , 
         
             {
@@ -148,12 +158,13 @@
                 "description": "A dystopian novel set in a totalitarian society under constant surveillance.",
                 "category": ["Fiction", "Dystopian", "Classic"],
                 "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657781256i/61439040.jpg",
-                "price": 14.99,
+                "price": 145.99,
                 "language": "English",
                 "binding": "Paperback",
                 "tags": ["Best Seller", "International Best Sellers"],
                 "discount": 15,
-                "rating":4.5
+                "rating":4.5,
+                "stock":400
             },
             {
                 "title": "The Catcher in the Rye",
@@ -162,12 +173,13 @@
                 "description": "A novel about the experiences of a young man in New York City.",
                 "category": ["Fiction", "Classic", "Young Adult"],
                 "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1398034300i/5107.jpg",
-                "price": 10.99,
+                "price": 100.99,
                 "language": "English",
                 "binding": "Paperback",
                 "tags": ["Best Seller", "Trending"],
                 "discount": 0,
-                "rating":4.5
+                "rating":4.5,
+                "stock":300
             },
             {
                 "title": "The Great Gatsby",
@@ -176,12 +188,13 @@
                 "description": "A novel about the American dream and the Roaring Twenties.",
                 "category": ["Fiction", "Classic", "Historical"],
                 "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1490528560i/4671.jpg",
-                "price": 13.99,
+                "price": 135.99,
                 "language": "English",
                 "binding": "Paperback",
                 "tags": ["Best Seller", "International Best Sellers"],
                 "discount": 10,
-                "rating":4.5
+                "rating":4.5,
+                "stock":900
             },
             {
                 "title": "To Kill a Mockingbird",
@@ -190,12 +203,13 @@
                 "description": "A novel about racial injustice in the Deep South.",
                 "category": ["Fiction", "Classic", "Historical"],
                 "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1582303449i/29008550.jpg",
-                "price": 15.99,
+                "price": 150.99,
                 "language": "English",
                 "binding": "Hardcover",
                 "tags": ["Best Seller", "International Best Sellers"],
                 "discount": 5,
-                "rating":4.5
+                "rating":4.5,
+                "stock":800
             },
             {
                 "title": "Pride and Prejudice",
@@ -204,12 +218,14 @@
                 "description": "A romantic novel about manners and matrimonial machinations.",
                 "category": ["Fiction", "Classic", "Romance"],
                 "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1320399351i/1885.jpg",
-                "price": 9.99,
+                "price": 299,
                 "language": "English",
                 "binding": "Paperback",
                 "tags": ["Best Seller", "International Best Sellers"],
                 "discount": 20,
-                "rating":4.5
+                "rating":4.5,
+                "stock":300
+        
             },
             {
                 "title": "Brave New World",
@@ -218,12 +234,14 @@
                 "description": "A dystopian novel about a future society driven by technology and consumerism.",
                 "category": ["Fiction", "Dystopian", "Science Fiction"],
                 "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1575509280i/5129.jpg",
-                "price": 12.99,
+                "price": 128.99,
                 "language": "English",
                 "binding": "Paperback",
                 "tags": ["Best Seller", "International Best Sellers"],
                 "discount": 10,
-                "rating":4.5
+                "rating":4.5,
+                "stock":380
+
             },
             {
                 "title": "The Hobbit",
@@ -232,12 +250,13 @@
                 "description": "A fantasy novel about the adventures of Bilbo Baggins.",
                 "category": ["Fiction", "Fantasy", "Adventure"],
                 "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1546071216i/5907.jpg",
-                "price": 14.99,
+                "price": 194.99,
                 "language": "English",
                 "binding": "Hardcover",
                 "tags": ["Best Seller", "International Best Sellers"],
                 "discount": 5,
-                "rating":4.5
+                "rating":4.5,
+                "stock":300
             },
             {
                 "title": "The Road",
@@ -246,12 +265,13 @@
                 "description": "A post-apocalyptic novel about a father and son's journey through a desolate America.",
                 "category": ["Fiction", "Post-Apocalyptic", "Drama"],
                 "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1600241424i/6288.jpg",
-                "price": 16.99,
+                "price": 168.99,
                 "language": "English",
                 "binding": "Hardcover",
                 "tags": ["Best Seller", "International Best Sellers"],
                 "discount": 10,
-                "rating":4.5
+                "rating":4.5,
+                "stock":600
             },
             {
                 "title": "Harry Potter and the Sorcerer's Stone",
@@ -260,12 +280,13 @@
                 "description": "The first book in the Harry Potter series about a young wizard's adventures at Hogwarts.",
                 "category": ["Fiction", "Fantasy", "Young Adult"],
                 "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1586281809i/53027676.jpg",
-                "price": 20.99,
+                "price": 200.99,
                 "language": "English",
                 "binding": "Hardcover",
                 "tags": ["Best Seller", "International Best Sellers"],
                 "discount": 10,
-                "rating":4.5
+                "rating":4.5,
+                "stock":500
             },
             {
                 "title": "The Da Vinci Code",
@@ -274,12 +295,13 @@
                 "description": "A mystery thriller that involves symbology and secret societies.",
                 "category": ["Fiction", "Mystery", "Thriller"],
                 "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1579621267i/968.jpg",
-                "price": 18.99,
+                "price": 189.99,
                 "language": "English",
                 "binding": "Hardcover",
                 "tags": ["Best Seller", "International Best Sellers"],
                 "discount": 10,
-                "rating":4.5
+                "rating":4.5,
+                "stock":800
             },
             
                 {
@@ -289,12 +311,13 @@
                     "description": "A psychological thriller about a woman who stops speaking after committing a violent act.",
                     "category": ["Fiction", "Thriller", "Mystery"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1668782119i/40097951.jpg",
-                    "price": 16.99,
+                    "price": 169.99,
                     "language": "English",
                     "binding": "Hardcover",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 10,
-                    "rating":4.5
+                    "rating":4.5,
+                    "stock":300
                 },
                 {
                     "title": "The Subtle Art of Not Giving a F*ck",
@@ -303,12 +326,13 @@
                     "description": "A self-help book that emphasizes embracing life's limitations.",
                     "category": ["Self-help", "Non-fiction", "Psychology"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1685834422i/49682914.jpg",
-                    "price": 14.99,
+                    "price": 146.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 5,
-                    "rating":5
+                    "rating":5,
+                    "stock":800
                 },
                 {
                     "title": "The Goldfinch",
@@ -317,12 +341,13 @@
                     "description": "A novel that traces the life of a boy who survives an explosion at a museum.",
                     "category": ["Fiction", "Literary", "Drama"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1378710146i/17333223.jpg",
-                    "price": 18.99,
+                    "price": 180.99,
                     "language": "English",
                     "binding": "Hardcover",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 15,
-                    "rating":5
+                    "rating":5,
+                    "stock":350
                 },
                 {
                     "title": "Thinking, Fast and Slow",
@@ -331,12 +356,13 @@
                     "description": "A book that delves into the two systems of thinking that drive our decisions.",
                     "category": ["Non-fiction", "Psychology", "Science"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1317793965i/11468377.jpg",
-                    "price": 17.00,
+                    "price": 170.00,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 10,
-                    "rating":5
+                    "rating":5,
+                    "stock":300
                 },
                 {
                     "title": "The Handmaid's Tale",
@@ -345,12 +371,13 @@
                     "description": "A dystopian novel about a totalitarian regime that treats women as property.",
                     "category": ["Fiction", "Dystopian", "Classic"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1578028274i/38447.jpg",
-                    "price": 15.99,
+                    "price": 150.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 5,
-                    "rating":5
+                    "rating":5,
+                    "stock":300
                 },
                 {
                     "title": "The Power of Habit",
@@ -359,12 +386,13 @@
                     "description": "A book that explores the science behind why habits exist and how they can be changed.",
                     "category": ["Self-help", "Non-fiction", "Psychology"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1545854312i/12609433.jpg",
-                    "price": 16.99,
+                    "price": 160.99,
                     "language": "English",
                     "binding": "Hardcover",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 10,
-                    "rating":4
+                    "rating":4,
+                    "stock":800
                 },
                 {
                     "title": "Little Fires Everywhere",
@@ -373,12 +401,13 @@
                     "description": "A novel about the intertwined fates of the picture-perfect Richardson family and an enigmatic mother and daughter.",
                     "category": ["Fiction", "Drama", "Contemporary"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1522684533i/34273236.jpg",
-                    "price": 14.99,
+                    "price": 140.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 5,
-                    "rating":4
+                    "rating":4,
+                    "stock":300
                 },
                 {
                     "title": "The Giver",
@@ -387,12 +416,13 @@
                     "description": "A dystopian novel about a boy who learns the truth about his seemingly perfect society.",
                     "category": ["Fiction", "Dystopian", "Young Adult"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1342493368i/3636.jpg",
-                    "price": 12.99,
+                    "price": 120.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 10,
-                    "rating":4
+                    "rating":4,
+                    "stock":300
                 },
                 {
                     "title": "Eleanor Oliphant Is Completely Fine",
@@ -401,12 +431,13 @@
                     "description": "A novel about an eccentric and socially awkward woman who learns to navigate life.",
                     "category": ["Fiction", "Contemporary", "Drama"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1557858891i/35900387.jpg",
-                    "price": 13.99,
+                    "price": 130.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 10,
-                    "rating":4
+                    "rating":4,
+                    "stock":300
                 },
                 {
                     "title": "Good Omens",
@@ -415,12 +446,13 @@
                     "description": "A comedic novel about an angel and a demon teaming up to prevent the apocalypse.",
                     "category": ["Fiction", "Fantasy", "Comedy"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1615552073i/12067.jpg",
-                    "price": 15.99,
+                    "price": 150.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 5,
-                    "rating":4
+                    "rating":4,
+                    "stock":300
                 },
                 {
                     "title": "The Night Circus",
@@ -429,12 +461,13 @@
                     "description": "A fantasy novel about a magical competition between two young illusionists.",
                     "category": ["Fiction", "Fantasy", "Romance"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387124618i/9361589.jpg",
-                    "price": 14.99,
+                    "price": 140.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 10,
-                    "rating":4
+                    "rating":4,
+                    "stock":300
                 },
                 {
                     "title": "The Martian",
@@ -443,12 +476,13 @@
                     "description": "A science fiction novel about an astronaut stranded on Mars who must use his ingenuity to survive.",
                     "category": ["Fiction", "Science Fiction", "Adventure"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1413706054i/18007564.jpg",
-                    "price": 13.99,
+                    "price": 130.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 5,
-                    "rating":4
+                    "rating":4,
+                    "stock":400
                 },
                 {
                     "title": "The Girl on the Train",
@@ -457,12 +491,13 @@
                     "description": "A psychological thriller about a woman who becomes entangled in a missing persons investigation.",
                     "category": ["Fiction", "Thriller", "Mystery"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1574805682i/22557272.jpg",
-                    "price": 15.99,
+                    "price": 150.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 5,
-                    "rating":4
+                    "rating":4,
+                    "stock":300
                 },
                 {
                     "title": "Gone Girl",
@@ -471,12 +506,13 @@
                     "description": "A mystery thriller about a woman who goes missing on her fifth wedding anniversary.",
                     "category": ["Fiction", "Mystery", "Thriller"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1554086139i/19288043.jpg",
-                    "price": 16.99,
+                    "price": 160.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 10,
-                    "rating":4
+                    "rating":4,
+                    "stock":300
                 },
                 {
                     "title": "The Underground Railroad",
@@ -485,12 +521,13 @@
                     "description": "A novel that reimagines the historical Underground Railroad as an actual railroad system.",
                     "category": ["Fiction", "Historical", "Drama"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1493178362i/30555488.jpg",
-                    "price": 17.99,
+                    "price": 170.99,
                     "language": "English",
                     "binding": "Hardcover",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 0,
-                    "rating":4
+                    "rating":4,
+                    "stock":300
                 },
                 {
                     "title": "A Song of Ice and Fire (Game of Thrones)",
@@ -499,12 +536,13 @@
                     "description": "A fantasy epic series set in the fictional continents of Westeros and Essos.",
                     "category": ["Fiction", "Fantasy", "Epic"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1562726234i/13496.jpg",
-                    "price": 19.99,
+                    "price": 199.99,
                     "language": "English",
                     "binding": "Hardcover",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 15,
-                    "rating":4
+                    "rating":4,
+                    "stock":300
                 },
                 {
                     "title": "The Kite Runner",
@@ -513,12 +551,13 @@
                     "description": "A novel about the friendship between two boys growing up in Afghanistan.",
                     "category": ["Fiction", "Drama", "Historical"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1579036753i/77203.jpg",
-                    "price": 12.99,
+                    "price": 120.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 10,
-                    "rating":4
+                    "rating":4,
+                    "stock":300
                 },
                 {
                     "title": "The Book Thief",
@@ -527,12 +566,13 @@
                     "description": "A novel set in Nazi Germany, narrated by Death, about a young girl who steals books and shares them with her neighbors.",
                     "category": ["Fiction", "Historical", "Drama"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1522157426i/19063.jpg",
-                    "price": 14.99,
+                    "price": 149.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 5,
-                    "rating":4
+                    "rating":4,
+                    "stock":300
                 },
                 {
                     "title": "The Hunger Games",
@@ -541,12 +581,13 @@
                     "description": "The first book in a dystopian trilogy about a girl who volunteers to take her sister's place in a televised fight to the death.",
                     "category": ["Fiction", "Dystopian", "Young Adult"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1586722975i/2767052.jpg",
-                    "price": 11.99,
+                    "price": 110.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers","24 hr deals"],
                     "discount": 0,
-                    "rating":4
+                    "rating":4,
+                    "stock":300
                 },
                 {
                     "title": "The Help",
@@ -555,12 +596,13 @@
                     "description": "A novel set in the 1960s American South that explores racial segregation and the relationships between maids and their employers.",
                     "category": ["Fiction", "Historical", "Drama"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1622355533i/4667024.jpg",
-                    "price": 13.99,
+                    "price": 139.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 10,
-                    "rating":4
+                    "rating":4,
+                    "stock":300
                 },
                 {
                     "title": "The Shadow of the Wind",
@@ -569,12 +611,13 @@
                     "description": "A novel set in post-war Barcelona about a young boy who discovers a mysterious book that changes his life.",
                     "category": ["Fiction", "Mystery", "Historical"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1628791882i/1232.jpg",
-                    "price": 15.99,
+                    "price": 159.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 10,
-                    "rating":5
+                    "rating":5,
+                    "stock":400
                 },
                 {
                     "title": "The Nightingale",
@@ -583,12 +626,13 @@
                     "description": "A novel about two sisters in Nazi-occupied France and their struggle to survive and resist.",
                     "category": ["Fiction", "Historical", "Drama"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1681839850i/21853621.jpg",
-                    "price": 16.99,
+                    "price": 169.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending","24 hr deals"],
                     "discount": 5,
-                    "rating":5
+                    "rating":5,
+                    "stock":350
                 },
                 {
                     "title": "The Secret History",
@@ -597,12 +641,13 @@
                     "description": "A novel about a group of classics students at an elite college who become entangled in murder.",
                     "category": ["Fiction", "Mystery", "Drama"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1451554846i/29044.jpg",
-                    "price": 14.99,
+                    "price": 149.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 5,
-                    "rating":5
+                    "rating":5,
+                    "stock":300
                 },
                 {
                     "title": "All the Light We Cannot See",
@@ -611,12 +656,13 @@
                     "description": "A novel set during World War II that follows the intersecting lives of a blind French girl and a German boy.",
                     "category": ["Fiction", "Historical", "Drama"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1451445646i/18143977.jpg",
-                    "price": 17.99,
+                    "price": 179.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 10,
-                    "rating":5
+                    "rating":5,
+                    "stock":400
                 },
                 {
                     "title": "The Seven Husbands of Evelyn Hugo",
@@ -625,12 +671,13 @@
                     "description": "A novel about a reclusive Hollywood icon who reveals the truth about her glamorous and scandalous life.",
                     "category": ["Fiction", "Historical", "Romance"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1664458703i/32620332.jpg",
-                    "price": 16.99,
+                    "price": 169.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 10,
-                    "rating":5
+                    "rating":5,
+                    "stock":300
                 },
                 {
                     "title": "The Tattooist of Auschwitz",
@@ -639,12 +686,13 @@
                     "description": "A novel based on the true story of Lale Sokolov, a Jewish man who became the tattooist at Auschwitz-Birkenau.",
                     "category": ["Fiction", "Historical", "Drama"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1596365612i/54784931.jpg",
-                    "price": 15.99,
+                    "price": 159.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 5,
-                    "rating":5
+                    "rating":5,
+                    "stock":300
                 },
                 {
                     "title": "Crazy Rich Asians",
@@ -653,12 +701,13 @@
                     "description": "A novel about the extravagant lives of wealthy Asian families and the cultural clash between old and new money.",
                     "category": ["Fiction", "Romance", "Comedy"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1364852559i/16085481.jpg",
-                    "price": 14.99,
+                    "price": 149.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 5,
-                    "rating":5
+                    "rating":5,
+                    "stock":300
                 },
                 {
                     "title": "One Hundred Years of Solitude",
@@ -667,12 +716,13 @@
                     "description": "A multi-generational story of the Buendía family in the fictional town of Macondo.",
                     "category": ["Fiction", "Magical Realism", "Historical"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327881361i/320.jpg",
-                    "price": 17.99,
+                    "price": 179.99,
                     "language": "Spanish",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 10,
-                    "rating":5
+                    "rating":5,
+                    "stock":300
                 },
                 {
                     "title": "The Alchemist",
@@ -681,12 +731,13 @@
                     "description": "A philosophical book about a young shepherd's journey to find treasure.",
                     "category": ["Fiction", "Philosophical", "Adventure"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654371463i/18144590.jpg",
-                    "price": 14.99,
+                    "price": 149.99,
                     "language": "Portuguese",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 5,
-                    "rating":5
+                    "rating":5,
+                    "stock":300
                 },
                 {
                     "title": "My Name is Red",
@@ -695,12 +746,13 @@
                     "description": "A historical novel about the clash between East and West in the Ottoman Empire.",
                     "category": ["Fiction", "Historical", "Mystery"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1547450869i/2517.jpg",
-                    "price": 18.99,
+                    "price": 189.99,
                     "language": "Turkish",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 15,
-                    "rating":5
+                    "rating":5,
+                    "stock":500
                 },
                 {
                     "title": "The Girl with the Dragon Tattoo",
@@ -709,12 +761,13 @@
                     "description": "A mystery thriller involving a journalist and a hacker uncovering family secrets.",
                     "category": ["Fiction", "Thriller", "Mystery"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1696892687i/161552845.jpg",
-                    "price": 16.99,
+                    "price": 169.99,
                     "language": "Swedish",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 10,
-                    "rating":5
+                    "rating":5,
+                    "stock":300
                 },
                 {
                     "title": "The Little Prince",
@@ -723,26 +776,29 @@
                     "description": "A philosophical tale about a young prince traveling through space.",
                     "category": ["Fiction", "Philosophical", "Children"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1367545443i/157993.jpg",
-                    "price": 12.99,
+                    "price": 129.99,
                     "language": "French",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 5,
-                    "rating":5
+                    "rating":5,
+                    "stock":300
                 },
                 {
                     "title": "Blindness",
                     "author": "José Saramago",
                     "publishYear": 1995,
                     "description": "A dystopian novel about a city struck by an epidemic of blindness.",
-                    "category": ["Fiction", "Dystopian", "Philosophical"],
+                    "category": ["Fiction", "Dystopian", "Philosophical","Social"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1528481068i/40495148.jpg",
-                    "price": 14.99,
+                    "price": 149.99,
                     "language": "Portuguese",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 10,
-                    "rating":4
+                    "rating":4,
+                    "stock":250
+                    
 
                 },
                 {
@@ -752,40 +808,43 @@
                     "description": "A nostalgic story of loss and burgeoning sexuality set in 1960s Tokyo.",
                     "category": ["Fiction", "Romance", "Drama"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1713542603i/11297.jpg",
-                    "price": 13.99,
+                    "price": 139.99,
                     "language": "Japanese",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 5,
-                    "rating":3
+                    "rating":3,
+                    "stock":300
                 },
                 {
                     "title": "The Wind-Up Bird Chronicle",
                     "author": "Haruki Murakami",
                     "publishYear": 1994,
                     "description": "A novel about a man's search for his missing wife that leads him into a netherworld beneath Tokyo.",
-                    "category": ["Fiction", "Mystery", "Magical Realism"],
+                    "category": ["Fiction", "Mystery", "Magical Realism","Fantasy"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327872639i/11275.jpg",
-                    "price": 17.99,
+                    "price": 179.99,
                     "language": "Japanese",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 10,
-                    "rating":3
+                    "rating":3,
+                    "stock":500
                 },
                 {
                     "title": "Crime and Punishment",
                     "author": "Fyodor Dostoevsky",
                     "publishYear": 1866,
                     "description": "A philosophical novel about the mental anguish and moral dilemmas of a poor ex-student who plans to kill a pawnbroker.",
-                    "category": ["Fiction", "Philosophical", "Classic"],
+                    "category": ["Fiction", "Philosophical", "Classic","Dystopian"],
                     "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1382846449i/7144.jpg",
-                    "price": 18.99,
+                    "price": 189.99,
                     "language": "Russian",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 15,
-                    "rating":3
+                    "rating":3,
+                    "stock":300
                 },
                 {
                     "title": "गोदान (Godan)",
@@ -794,12 +853,13 @@
                     "description": "भारत के ग्रामीण जीवन की सजीव तस्वीर प्रस्तुत करता एक उपन्यास।",
                     "category": ["Fiction", "Classic", "Drama"],
                     "imageUrl": "https://m.media-amazon.com/images/I/81ePoyTbAoL._AC_UY327_FMwebp_QL65_.jpg",
-                    "price": 12.99,
+                    "price": 129.99,
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 10,
-                    "rating":3
+                    "rating":3,
+                    "stock":300
                 },
                 {
                     "title": "राग दरबारी (Raag Darbari)",
@@ -808,12 +868,13 @@
                     "description": "व्यंग्य के माध्यम से भारतीय समाज और राजनीति पर कटाक्ष करता उपन्यास।",
                     "category": ["Fiction", "Satire", "Drama"],
                     "imageUrl": "https://m.media-amazon.com/images/I/91lTTaDHHAS._AC_UY327_FMwebp_QL65_.jpg",
-                    "price": 14.99,
+                    "price": 140.99,
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 5,
-                    "rating":3
+                    "rating":3,
+                    "stock":300
                 },
                 {
                     "title": "मधुशाला (Madhushala)",
@@ -822,12 +883,13 @@
                     "description": "मदिरा और जीवन के विभिन्न पहलुओं को दर्शाती एक काव्य रचना।",
                     "category": ["Poetry", "Classic", "Philosophical"],
                     "imageUrl": "https://m.media-amazon.com/images/I/71VVm4pMYvL._AC_UY327_FMwebp_QL65_.jpg",
-                    "price": 11.99,
+                    "price": 311.99,
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 10,
-                    "rating":3
+                    "rating":3,
+                    "stock":300
                 },
                 {
                     "title": "चित्रलेखा (Chitralekha)",
@@ -836,12 +898,13 @@
                     "description": "प्रेम और अध्यात्म के द्वंद्व को प्रस्तुत करता एक उपन्यास।",
                     "category": ["Fiction", "Philosophical", "Romance"],
                     "imageUrl": "https://m.media-amazon.com/images/I/61o49pHzjBL._AC_UY327_FMwebp_QL65_.jpg",
-                    "price": 13.99,
+                    "price": 139.99,
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 5,
-                    "rating":3
+                    "rating":3,
+                    "stock":400
                 },
                 {
                     "title": "गुनाहों का देवता (Gunaho Ka Devta)",
@@ -850,12 +913,13 @@
                     "description": "प्रेम और बलिदान की एक मार्मिक कहानी।",
                     "category": ["Fiction", "Romance", "Drama"],
                     "imageUrl": "https://m.media-amazon.com/images/I/41DdeYNfqLL._AC_UY327_FMwebp_QL65_.jpg",
-                    "price": 12.99,
+                    "price": 129.99,
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers" , "24 hr deals"],
                     "discount": 10,
-                    "rating":3
+                    "rating":3,
+                    "stock":300
                 },
                 {
                     "title": "तमस (Tamas)",
@@ -864,12 +928,13 @@
                     "description": "1947 के भारत-पाक विभाजन के दौरान की त्रासदी पर आधारित उपन्यास।",
                     "category": ["Fiction", "Historical", "Drama"],
                     "imageUrl": "https://m.media-amazon.com/images/I/81faMT-cnzL._AC_UY327_FMwebp_QL65_.jpg",
-                    "price": 14.99,
+                    "price": 149.99,
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 5,
-                    "rating":3
+                    "rating":3,
+                    "stock":300
                 },
                 {
                     "title": "मैला आँचल (Maila Anchal)",
@@ -878,12 +943,13 @@
                     "description": "ग्रामीण भारत के जीवन को चित्रित करता उपन्यास।",
                     "category": ["Fiction", "Classic", "Drama"],
                     "imageUrl": "https://m.media-amazon.com/images/I/71VlU8PZ36L._AC_UY327_FMwebp_QL65_.jpg",
-                    "price": 13.99,
+                    "price": 139.99,
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 10,
-                    "rating":3
+                    "rating":3,
+                    "stock":300
                 },
                 {
                     "title": "कुरु कुरु स्वाहा (Kuru Kuru Swaha)",
@@ -892,12 +958,13 @@
                     "description": "शहरी जीवन की जटिलताओं को दर्शाता उपन्यास।",
                     "category": ["Fiction", "Drama", "Social"],
                     "imageUrl": "https://m.media-amazon.com/images/I/81DkzdvBjJL._AC_UY327_FMwebp_QL65_.jpg",
-                    "price": 11.99,
+                    "price": 119.99,
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
                     "discount": 5,
-                    "rating":3
+                    "rating":3,
+                    "stock":300
                 },
                 {
                     "title": "सूरज का सातवाँ घोड़ा (Suraj Ka Satvan Ghoda)",
@@ -906,12 +973,13 @@
                     "description": "मानव जीवन के विभिन्न रंगों को दर्शाती कहानियों का संग्रह।",
                     "category": ["Fiction", "Philosophical", "Drama"],
                     "imageUrl": "https://m.media-amazon.com/images/I/A1DAbvETwYL._AC_UY327_FMwebp_QL65_.jpg",
-                    "price": 12.99,
+                    "price": 129.99,
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
                     "discount": 10,
-                    "rating":3
+                    "rating":3,
+                    "stock":300
                 },
                 {
                     "title": "नीलकंठ (Neelkanth)",
@@ -920,12 +988,13 @@
                     "description": "महादेवी वर्मा द्वारा लिखित आत्मकथात्मक रचनाओं का संग्रह।",
                     "category": ["Non-Fiction", "Autobiography", "Classic"],
                     "imageUrl": "https://m.media-amazon.com/images/I/71yMdKrcAvL._AC_UY327_FMwebp_QL65_.jpg",
-                    "price": 15.99,
+                    "price": 159.99,
                     "language": "Hindi",
                     "binding": "Paperback",
                     "tags": ["Crazy Bookpacks", "Academic", "24 hr deals"],
                     "discount": 5,
-                    "rating":3
+                    "rating":3,
+                    "stock":300
                 },
                 {
                     "title": "Exam Prep",
@@ -934,247 +1003,266 @@
                     "description": "This book on Objective Quantitative Aptitude will play a vital role in your Competitive Exams preparations as Quantitative Aptitude is a fundamental part of almost all Competitive Examinations in India, including Banking, SSC, Railways, UPSC, and various other State Level Exams.",
                     "category": ["Exam"],
                     "imageUrl": "https://m.media-amazon.com/images/G/31/img20/Books/092021/UnrecExam/Quantitative_aptitude__Reasoning._SY530_QL85_.jpg",
-                    "price": 15.99,
+                    "price": 159.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": [ "Academic"],
                     "discount": 5,
-                    "rating":3
+                    "rating":3,
+                    "stock":300
                 },
                 {
                     "title": "The Diary of a Young Girl",
                     "author": "Anne Frank",
                     "publishYear": 1947,
-                    "description": "The diary of Anne Frank, a Jewish girl hiding from the Nazis in Amsterdam during World War II.",
+                    "description": "The diary of Anne Frank, a Jewish girl hiding from the Nazis in Amsterdam during World War II.Discovered in the attic in which she spent the last years of her life, Anne Frank's remarkable diary has become a world classic—a powerful reminder of the horrors of war and an eloquent testament to the human spirit.In 1942, with the Nazis occupying Holland, a thirteen-year-old Jewish girl and her family fled their home in Amsterdam and went into hiding. For the next two years, until their whereabouts were betrayed to the Gestapo, the Franks and another family lived cloistered in the “Secret Annexe” of an old office building. Cut off from the outside world, they faced hunger, boredom, the constant cruelties of living in confined quarters, and the ever-present threat of discovery and death. In her diary Anne Frank recorded vivid impressions of her experiences during this period. By turns thoughtful, moving, and surprisingly humorous, her account offers a fascinating commentary on human courage and frailty and a compelling self-portrait of a sensitive and spirited young woman whose promise was tragically cut short.",
                     "category": ["Non-Fiction", "Autobiography", "Historical"],
-                    "imageUrl": "https://example.com/diary-of-anne-frank.jpg",
-                    "price": 12.99,
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1560816565i/48855.jpg",
+                    "price": 129.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "stock":300
                 },
                 {
                     "title": "Long Walk to Freedom",
                     "author": "Nelson Mandela",
                     "publishYear": 1994,
-                    "description": "The autobiography of Nelson Mandela, detailing his early life, education, and 27 years in prison.",
+                    "description": "The autobiography of Nelson Mandela, detailing his early life, education, and 27 years in prison.Nelson Mandela is one of the great moral and political leaders of our time: an international hero whose lifelong dedication to the fight against racial oppression in South Africa won him the Nobel Peace Prize and the presidency of his country.Since his triumphant release in 1990 from more than a quarter-century of imprisonment, Mandela has been at the center of the most compelling and inspiring political drama in the world. As president of the African National Congress and head of South Africa's anti-apartheid movement, he was instrumental in moving the nation toward multiracial government and majority rule. He is revered everywhere as a vital force in the fight for human rights and racial equality.The foster son of a Thembu chief, Mandela was raised in the traditional, tribal culture of his ancestors, but at an early age learned the modern, inescapable reality of what came to be called apartheid, one of the most powerful and effective systems of oppression ever conceived. In classically elegant and engrossing prose, he tells of his early years as an impoverished student and law clerk in a Jewish firm in Johannesburg, of his slow political awakening, and of his pivotal role in the rebirth of a stagnant ANC and the formation of its Youth League in the 1950s.He describes the struggle to reconcile his political activity with his devotion to his family, the anguished breakup of his first marriage, and the painful separations from his children. He brings vividly to life the escalating political warfare in the fifties between the ANC and the government, culminating in his dramatic escapades as an underground leader and the notorious Rivonia Trial of 1964, at which he was sentenced to life imprisonment. Herecounts the surprisingly eventful twenty-seven years in prison and the complex, delicate negotiations that led both to his freedom and to the beginning of the end of apartheid. Finally he provides the ultimate inside account.",
                     "category": ["Non-Fiction", "Autobiography", "Historical"],
-                    "imageUrl": "https://example.com/long-walk-to-freedom.jpg",
-                    "price": 15.99,
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327997342i/318431.jpg",
+                    "price": 159.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "stock":300
                 },
                 {
                     "title": "The Story of My Experiments with Truth",
                     "author": "Mahatma Gandhi",
                     "publishYear": 1927,
-                    "description": "The autobiography of Mahatma Gandhi, focusing on his spiritual and moral development.",
+                    "description": "The autobiography of Mahatma Gandhi, focusing on his spiritual and moral development.It is not my purpose to attempt a real autobiography. I simply want to tell the story of my numerous experiments with truth, and as my life consists of nothing but those experiments, it is true that the story will take the shape of an autobiography...Identification with everything that lives is impossible without self-purification; without self-purification, the observance of the law of Ahimsa must remain an empty dream; God can never be realised by one who is not pure of heart. Self-purification, therefore, must remain purification in all walks of life. And purification being highly infectious, purification of oneself necessarily leads to the purification of one's surroundings.But the path to self-purification is hard and steep. To attain perfect purity, one has to become absolutely passion-free in thought, speech and action; to rise above the opposing currents of love and hatred, attachment and repulsion. I know that I have not in me as yet the triple purity, in spite of constant ceaseless striving for it. That is why the world's praise fails to move me; indeed it very often stings me. To conquer the subtle passions seems to me far harder than the physical conquest of the world by the force of arms. Ever since my return to India, I have had experiences of the dormant passions lying hidden within me. The knowledge of them has made me feel humiliated though not defeated. The experiences and experiments have sustained me and given me great joy. But I know I still have before me a difficult path to traverse. I must reduce myself to zero. So long as a man does not of his own free will put himself last among his fellow creatures, there is no salvation for him. Ahimsa is the farthest limit of humility.",
                     "category": ["Non-Fiction", "Autobiography", "Philosophical"],
-                    "imageUrl": "https://example.com/experiments-with-truth.jpg",
-                    "price": 13.99,
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1201265181i/2656458.jpg",
+                    "price": 139.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "stock":300
                 },
                 {
                     "title": "I Know Why the Caged Bird Sings",
                     "author": "Maya Angelou",
                     "publishYear": 1969,
-                    "description": "Maya Angelou's memoir about her early years and the struggles she faced growing up in the American South.",
+                    "description": "Maya Angelou's memoir about her early years and the struggles she faced growing up in the American South.Here is a book as joyous and painful, as mysterious and memorable, as childhood itself. I Know Why the Caged Bird Sings captures the longing of lonely children, the brute insult of bigotry, and the wonder of words that can make the world right. Maya Angelou's debut memoir is a modern American classic beloved worldwide.Sent by their mother to live with their devout, self-sufficient grandmother in a small Southern town, Maya and her brother, Bailey, endure the ache of abandonment and the prejudice of the local “powhitetrash.” At eight years old and back at her mother's side in St. Louis, Maya is attacked by a man many times her age—and has to live with the consequences for a lifetime. Years later, in San Francisco, Maya learns that love for herself, the kindness of others, her own strong spirit, and the ideas of great authors (“I met and fell in love with William Shakespeare”) will allow her to be free instead of imprisoned.",
                     "category": ["Non-Fiction", "Autobiography", "Drama"],
-                    "imageUrl": "https://example.com/caged-bird-sings.jpg",
-                    "price": 14.99,
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1327957927i/13214.jpg",
+                    "price": 149.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "stock":300
                 },
                 {
                     "title": "Dreams from My Father",
                     "author": "Barack Obama",
                     "publishYear": 1995,
-                    "description": "Barack Obama's memoir about his early life, his work as a community organizer, and his search for identity.",
+                    "description": "Barack Obama's memoir about his early life, his work as a community organizer, and his search for identity.In this lyrical, unsentimental, and compelling memoir, the son of a black African father and a white American mother searches for a workable meaning to his life as a black American. It begins in New York, where Barack Obama learns that his father—a figure he knows more as a myth than as a man—has been killed in a car accident. This sudden death inspires an emotional odyssey—first to a small town in Kansas, from which he retraces the migration of his mother's family to Hawaii, and then to Kenya, where he meets the African side of his family, confronts the bitter truth of his father's life, and at last reconciles his divided inheritance.",
                     "category": ["Non-Fiction", "Autobiography", "Political"],
-                    "imageUrl": "https://example.com/dreams-from-my-father.jpg",
-                    "price": 16.99,
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1352340675i/88061.jpg",
+                    "price": 169.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 10
+                    "discount": 10,
+                    "stock":300
                 },
                
                 {
                     "title": "Bossypants",
                     "author": "Tina Fey",
                     "publishYear": 2011,
-                    "description": "Tina Fey's memoir about her journey from aspiring comedian to successful television star.",
+                    "description": "Tina Fey's memoir about her journey from aspiring comedian to successful television star.Tina Fey was just a young girl with a dream: a recurring stress dream that she was being chased through a local airport by her middle-school gym teacher. She also had a dream that one day she would be a comedian on TV.At last, Tina Fey's story can be told. From her youthful days as a vicious nerd to her tour of duty on Saturday Night Live; from her passionately halfhearted pursuit of physical beauty to her life as a mother eating things off the floor; from her one-sided college romance to her nearly fatal honeymoon—from the beginning of this paragraph to this final sentence.",
                     "category": ["Non-Fiction", "Autobiography", "Comedy"],
-                    "imageUrl": "https://example.com/bossypants.jpg",
-                    "price": 15.99,
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1481509554i/9418327.jpg",
+                    "price": 159.99,
                     "language": "English",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "stock":300
                 },
                 {
                     "title": "The Glass Castle",
                     "author": "Jeannette Walls",
                     "publishYear": 2005,
-                    "description": "Jeannette Walls' memoir about her unconventional and often dysfunctional childhood.",
+                    "description": "Jeannette Walls' memoir about her unconventional and often dysfunctional childhood.The Glass Castle is a remarkable memoir of resilience and redemption, and a revelatory look into a family at once deeply dysfunctional and uniquely vibrant. When sober, Jeannette's brilliant and charismatic father captured his children's imagination, teaching them physics, geology, and how to embrace life fearlessly. But when he drank, he was dishonest and destructive. Her mother was a free spirit who abhorred the idea of domesticity and didn't want the responsibility of raising a family.",
                     "category": ["Non-Fiction", "Autobiography", "Drama"],
-                    "imageUrl": "https://example.com/glass-castle.jpg",
-                    "price": 16.99,
-                    "language": "English",
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1523542886i/7445.jpg",
+                    "price": 169.99,
+                    "language": "Italian",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 10
+                    "discount": 10,
+                    "stock":300
                 },
                 {
                     "title": "Born a Crime",
                     "author": "Trevor Noah",
                     "publishYear": 2016,
-                    "description": "Trevor Noah's memoir about growing up in apartheid South Africa and his rise to fame as a comedian.",
+                    "description": "Trevor Noah's memoir about growing up in apartheid South Africa and his rise to fame as a comedian.Trevor Noah's unlikely path from apartheid South Africa to the desk of The Daily Show began with a criminal act: his birth. Trevor was born to a white Swiss father and a black Xhosa mother at a time when such a union was punishable by five years in prison. Living proof of his parents' indiscretion, Trevor was kept mostly indoors for the earliest years of his life, bound by the extreme and often absurd measures his mother took to hide him from a government that could, at any moment, steal him away. Finally liberated by the end of South Africa's tyrannical white rule, Trevor and his mother set forth on a grand adventure, living openly and freely and embracing the opportunities won by a centuries-long struggle.",
                     "category": ["Non-Fiction", "Autobiography", "Comedy"],
-                    "imageUrl": "https://example.com/born-a-crime.jpg",
-                    "price": 14.99,
-                    "language": "English",
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1473867911i/29780253.jpg",
+                    "price": 214.99,
+                    "language": "Russian",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 5
+                    "discount": 5,
+                    "stock":300
                 },
                 {
                     "title": "When Breath Becomes Air",
                     "author": "Paul Kalanithi",
                     "publishYear": 2016,
-                    "description": "Paul Kalanithi's memoir about his life and battle with terminal cancer as a neurosurgeon.",
+                    "description": "Paul Kalanithi's memoir about his life and battle with terminal cancer as a neurosurgeon.For readers of Atul Gawande, Andrew Solomon, and Anne Lamott, a profoundly moving, exquisitely observed memoir by a young neurosurgeon faced with a terminal cancer diagnosis who attempts to answer the question 'What makes a life worth living?'",
                     "category": ["Non-Fiction", "Autobiography", "Inspirational"],
-                    "imageUrl": "https://example.com/when-breath-becomes-air.jpg",
-                    "price": 17.99,
-                    "language": "English",
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1492677644i/25899336.jpg",
+                    "price": 179.99,
+                    "language": "Italian",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "stock":300
                 },
                 {
                     "title": "Steve Jobs",
                     "author": "Walter Isaacson",
                     "publishYear": 2011,
-                    "description": "The authorized biography of Steve Jobs, based on numerous interviews with him, his family, and colleagues.",
+                    "description": "The authorized biography of Steve Jobs, based on numerous interviews with him, his family, and colleagues.Walter Isaacson's worldwide bestselling biography of Apple cofounder Steve Jobs. Based on more than forty interviews with Steve Jobs conducted over two years--as well as interviews with more than 100 family members, friends, adversaries, competitors, and colleagues--Walter Isaacson has written a riveting story of the roller-coaster life and searingly intense personality of a creative entrepreneur whose passion for perfection and ferocious drive revolutionized six industries: personal computers, animated movies, music, phones, tablet computing, and digital publishing. Isaacson's portrait touched millions of readers. At a time when America is seeking ways to sustain its innovative edge, Jobs stands as the ultimate icon of inventiveness and applied imagination. He knew that the best way to create value in the twenty-first century was to connect creativity with technology. He built a company where leaps of the imagination were combined with remarkable feats of engineering. Although Jobs cooperated with the author, he asked for no control over what was written. He put nothing off-limits. He encouraged the people he knew to speak honestly. He himself spoke candidly about the people he worked with and competed against. His friends, foes, and colleagues offer an unvarnished view of the passions, perfectionism, obsessions, artistry, devilry, and compulsion for control that shaped his approach to business and the innovative products that resulted. His tale is instructive and cautionary, filled with lessons about innovation, character, leadership, and values. Steve Jobs is the inspiration for the movie of the same name starring Michael Fassbender, Kate Winslet, Seth Rogen, and Jeff Daniels, directed by Danny Boyle with a screenplay by Aaron Sorkin.",
                     "category": ["Non-Fiction", "Autobiography", "Business"],
-                    "imageUrl": "https://example.com/steve-jobs.jpg",
-                    "price": 19.99,
-                    "language": "English",
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1511288482i/11084145.jpg",
+                    "price": 199.99,
+                    "language": "German",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "stock":300
                 },
                 {
                     "title": "The Autobiography of Malcolm X",
                     "author": "Malcolm X and Alex Haley",
                     "publishYear": 1965,
-                    "description": "The life story of Malcolm X, based on interviews with journalist Alex Haley.",
+                    "description": "The life story of Malcolm X, based on interviews with journalist Alex Haley.Through a life of passion and struggle, Malcolm X became one of the most influential figures of the 20th Century. In this riveting account, he tells of his journey from a prison cell to Mecca, describing his transition from hoodlum to Muslim minister. Here, the man who called himself 'the angriest Black man in America' relates how his conversion to true Islam helped him confront his rage and recognize the brotherhood of all mankind.",
                     "category": ["Non-Fiction", "Autobiography", "Historical"],
-                    "imageUrl": "https://example.com/autobiography-of-malcolm-x.jpg",
-                    "price": 16.99,
-                    "language": "English",
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1434682864i/92057.jpg",
+                    "price": 160.99,
+                    "language": "Spanish",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "stock":300
                 },
                 {
                     "title": "The Liars' Club",
                     "author": "Mary Karr",
                     "publishYear": 1995,
-                    "description": "Mary Karr's memoir about her troubled childhood in a small Texas town.",
+                    "description": "Mary Karr's memoir about her troubled childhood in a small Texas town.Mary Karr grew up in a swampy East Texas refinery town in a volatile and defiantly loving family. In this funny, devastating, haunting memoir and with a raw and often painful honesty, she looks back at life with a painter mother, seven times married, whose outlaw spirit could tip over into psychosis, and a hard-drinking, fist-swinging father who liked nothing better than to spin tales with his cronies at the Liars' Club.",
                     "category": ["Non-Fiction", "Autobiography", "Drama"],
-                    "imageUrl": "https://example.com/liars-club.jpg",
-                    "price": 13.99,
-                    "language": "English",
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1499665766i/14241.jpg",
+                    "price": 139.99,
+                    "language": "Chinese",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "stock":300
                 },
                 {
                     "title": "Wild",
                     "author": "Cheryl Strayed",
                     "publishYear": 2012,
-                    "description": "Cheryl Strayed's memoir about her 1,100-mile solo hike along the Pacific Crest Trail.",
+                    "description": "Cheryl Strayed's memoir about her 1,100-mile solo hike along the Pacific Crest Trail.At twenty-two, Cheryl Strayed thought she had lost everything. In the wake of her mother's death, her family scattered and her own marriage was soon destroyed. Four years later, with nothing more to lose, she made the most impulsive decision of her life. With no experience or training, driven only by blind will, she would hike more than a thousand miles of the Pacific Crest Trail from the Mojave Desert through California and Oregon to Washington State — and she would do it alone.",
                     "category": ["Non-Fiction", "Autobiography", "Adventure"],
-                    "imageUrl": "https://example.com/wild.jpg",
-                    "price": 14.99,
-                    "language": "English",
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1453189881i/12262741.jpg",
+                    "price": 149.99,
+                    "language": "French",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "stock":300
                 },
                 {
                     "title": "Just as I Am",
                     "author": "Cicely Tyson",
                     "publishYear": 2021,
-                    "description": "Cicely Tyson's memoir about her legendary career in Hollywood and her personal life.",
+                    "description": "Cicely Tyson's memoir about her legendary career in Hollywood and her personal life.Just as I Am is my truth. It is me, plain and unvarnished, with the glitter and garland set aside. Here, I am indeed Cicely, the actress who has been blessed to grace the stage and screen for six decades. Yet I am also the church girl who once rarely spoke a word. I am the teenager who sought solace in the verses of the old hymn for which this book is named. I am a daughter and mother, a sister, and a friend. I am an observer of human nature and the dreamer of audacious dreams. I am a woman who has hurt as immeasurably as I have loved, a child of God divinely guided by His hand. And here in my ninth decade, I am a woman who, at long last, has something meaningful to say.",
                     "category": ["Non-Fiction", "Autobiography", "Inspirational"],
-                    "imageUrl": "https://example.com/just-as-i-am.jpg",
-                    "price": 18.99,
-                    "language": "English",
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1608626888i/50622390.jpg",
+                    "price": 189.99,
+                    "language": "Russian",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "International Best Sellers"],
-                    "discount": 10
+                    "discount": 10,
+                    "stock":300
                 },
                 {
                     "title": "A Promised Land",
                     "author": "Barack Obama",
                     "publishYear": 2020,
-                    "description": "Barack Obama's memoir about his early political career and first term as President of the United States.",
+                    "description": "Barack Obama's memoir about his early political career and first term as President of the United States.In the stirring, highly anticipated first volume of his presidential memoirs, Barack Obama tells the story of his improbable odyssey from young man searching for his identity to leader of the free world, describing in strikingly personal detail both his political education and the landmark moments of the first term of his historic presidency—a time of dramatic transformation and turmoil.",
                     "category": ["Non-Fiction", "Autobiography", "Political"],
-                    "imageUrl": "https://example.com/a-promised-land.jpg",
-                    "price": 20.99,
-                    "language": "English",
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1600357110i/55361205.jpg",
+                    "price": 200.99,
+                    "language": "Chinese",
                     "binding": "Hardcover",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 15
+                    "discount": 15,
+                    "stock":300
                 },
                 {
                     "title": "Yes Please",
                     "author": "Amy Poehler",
                     "publishYear": 2014,
-                    "description": "Amy Poehler's memoir about her journey through comedy and her personal life.",
+                    "description": "Amy Poehler's memoir about her journey through comedy and her personal life.In Amy Poehler's highly anticipated first book, Yes Please, she offers up a big juicy stew of personal stories, funny bits on sex and love and friendship and parenthood and real life advice (some useful, some not so much), like when to be funny and when to be serious. Powered by Amy's charming and hilarious, biting yet wise voice, Yes Please is a book full of words to live by.",
                     "category": ["Non-Fiction", "Autobiography", "Comedy"],
-                    "imageUrl": "https://example.com/yes-please.jpg",
-                    "price": 13.99,
-                    "language": "English",
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1402815435i/20910157.jpg",
+                    "price": 139.99,
+                    "language": "Italian",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "stock":300
                 },
                 {
                     "title": "Me Talk Pretty One Day",
                     "author": "David Sedaris",
                     "publishYear": 2000,
-                    "description": "David Sedaris' memoir about his life in America and France, filled with humorous essays.",
+                    "description": "David Sedaris' memoir about his life in America and France, filled with humorous essays.Anyone that has read NAKED and BARREL FEVER, or heard David Sedaris speaking live or on the radio will tell you that a new collection from him is cause for jubilation. His recent move to Paris from New York inspired these hilarious new pieces, including 'Me Talk Pretty One Day', about his attempts to learn French from a sadistic teacher who declares that 'every day spent with you is like having a caesarean section'. His family is another inspiration. 'You Can't Kill the Rooster' is a portrait of his brother, who talks incessant hip-hop slang to his bewildered father. And no one hones a finer fury in response to such modern annoyances as restaurant meals presented in ludicrous towers of food and cashiers with six-inch fingernails.",
                     "category": ["Non-Fiction", "Autobiography", "Comedy"],
-                    "imageUrl": "https://example.com/me-talk-pretty-one-day.jpg",
-                    "price": 14.99,
-                    "language": "English",
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1431013639i/4137.jpg",
+                    "price": 149.99,
+                    "language": "Spanish",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 5
+                    "discount": 5,
+                    "stock":300
                 },
                 {
                     "title": "On Writing: A Memoir of the Craft",
                     "author": "Stephen King",
                     "publishYear": 2000,
-                    "description": "Stephen King's memoir about his life and career as a writer, including writing advice.",
+                    "description": "Stephen King's memoir about his life and career as a writer, including writing advice.'Long live the King' hailed Entertainment Weekly upon the publication of Stephen King's On Writing. Part memoir, part master class by one of the bestselling authors of all time, this superb volume is a revealing and practical view of the writer's craft, comprising the basic tools of the trade every writer must have. King's advice is grounded in his vivid memories from childhood through his emergence as a writer, from his struggling early career to his widely reported near-fatal accident in 1999 -- and how the inextricable link between writing and living spurred his recovery. Brilliantly structured, friendly and inspiring, On Writing will empower and entertain everyone who reads it -- fans, writers, and anyone who loves a great story well told.(back cover)",
                     "category": ["Non-Fiction", "Autobiography", "Writing"],
-                    "imageUrl": "https://example.com/on-writing.jpg",
-                    "price": 16.99,
-                    "language": "English",
+                    "imageUrl": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1436735207i/10569.jpg",
+                    "price": 169.99,
+                    "language": "German",
                     "binding": "Paperback",
                     "tags": ["Best Seller", "Trending"],
-                    "discount": 10
+                    "discount": 10,
+                    "stock":300
                 }
                 
             ]

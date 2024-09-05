@@ -88,16 +88,19 @@ const Accordion = () => {
 
 
     const accordionObj = [{
+        "id":1,
         "header": "Pending Friend Requests",
         "content": user.pendingFriends,
         "containsButton": true,
 
     },
     {
+        "id":2,
         "header": "Friend Requests Sent",
         "content": user.requestSendPeople
     },
     {
+        "id":3,
         "header": "Friends",
         "content": user.friends
     }]
@@ -109,10 +112,10 @@ const Accordion = () => {
                 <div key={i}>
                     <div className="flex flex-row justify-between">
                         <div>{data.header}</div>
-                        <div className="hover:cursor-pointer" onClick={() => toggle !== null? setToggle(null) :setToggle(i) }>{toggle == i ? '-' : '+'}</div>
+                        <div className="hover:cursor-pointer" onClick={() => toggle !== data.id? setToggle(data.id) :setToggle(null) }>{toggle === data.id ? '-' : '+'}</div>
                     </div>
                     <div >
-                        {toggle === i? data.content?.map((item, i) =>
+                        {toggle === data.id? data.content?.map((item, i) =>
                         (
                             <div key={i} className="flex flex-row justify-between">
                                 <div className="flex flex-row">
