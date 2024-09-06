@@ -9,6 +9,7 @@ import secure from '../assets/IconImages/secure_transaction.png'
 import { CartContext } from '../Contexts/CartContext';
 import {useNavigate} from "react-router-dom";
 import ReviewComponent from '../components/ReviewComponent';
+import ReviewList from '../components/ReviewList';
 const BookPage = () => {
   const [bookdetails, setBookdetails] = useState(null);
   const res = useLoaderData();
@@ -19,6 +20,7 @@ const BookPage = () => {
       console.log(data);
       setBookdetails(data);
       setLoading(false);
+
     }
 
   }, [])
@@ -101,10 +103,16 @@ const BookPage = () => {
           </div>
            
         </div>
-        <div>
+        <div className="flex flex-row">
+            <div className="flex self-start ">
           {/* Review Component  */}
-          <ReviewComponent/>
+          <ReviewComponent bookId={bookdetails._id}/>
         </div>
+        <div>
+          <ReviewList bookId={bookdetails._id}/>
+        </div>
+        </div>
+      
 
       </div>
 

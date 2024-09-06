@@ -1,5 +1,6 @@
 const express = require("express");
 const Review = require("../models/Review");
+const User = require("../models/User");
 
 
 const createReview = async (req , res) =>{
@@ -52,6 +53,24 @@ const getOneReview = async(req , res) =>{
     }
 }
 
+const getBookReviews = async(req,res) => {
+    try {
+        const {bookId} = req.params;
+        const reviews = await Review.find({bookId:bookId}).populate({
+            path:'userId',
+            select:'fullname'
+        });
+        // reviews.map(async(review)=>{
+           //referred mongoose library 
+
+        // })
+        res.status(200).json({reviews});
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).send({message: error.message});
+    }
+}
+
 const updateReview = async (req , res)=>{
     try{
         const {id} = req.params;
@@ -76,4 +95,4 @@ const updateReview = async (req , res)=>{
 }
 
 
-module.exports = {createReview , deleteReview , getAllReviews , getOneReview , updateReview }
+module.exports = {createReview , deleteReview , getAllReviews , getOneReview , updateReview , getBookReviews}

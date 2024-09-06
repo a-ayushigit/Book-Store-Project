@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const reviewSchema = new mongoose.Schema({
    userId:{
     type:mongoose.Schema.Types.ObjectId, 
-    unique:true , 
+    
     required:true,
     ref:"Users"
    },
@@ -11,6 +11,10 @@ const reviewSchema = new mongoose.Schema({
     type:mongoose.Schema.Types.ObjectId,
     required:true,
     ref:"Books"
+   },
+   heading:{
+    type:String,
+    required:true
    },
    description:{
     type:String,
@@ -28,5 +32,5 @@ const reviewSchema = new mongoose.Schema({
         timestamps:true,
     }
 )
-
+reviewSchema.index({userId:1 , bookId:1}, {unique : true});
 module.exports = mongoose.model("Reviews" , reviewSchema);

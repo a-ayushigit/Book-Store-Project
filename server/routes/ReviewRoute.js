@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {getAllReviews , getOneReview , updateReview , deleteReview , createReview } = require("../controllers/review");
+const {getAllReviews , getOneReview , updateReview , deleteReview , createReview , getBookReviews } = require("../controllers/review");
 
 const {verifyTokenAndAuthorization, verifyTokenAndAdmin} = require("../middlewares/verify");
 
@@ -13,8 +13,9 @@ const {verifyTokenAndAuthorization, verifyTokenAndAdmin} = require("../middlewar
 
 router.get('/' ,getAllReviews );
 router.get('/:id' , getOneReview);
-router.post('/:id' , verifyTokenAndAdmin , createReview);
-router.put('/:id', verifyTokenAndAdmin , updateReview);
-router.delete('/:id' , verifyTokenAndAdmin , deleteReview);
+router.get('/getreview/:bookId', getBookReviews);
+router.post('/create/:id' , verifyTokenAndAuthorization , createReview);
+router.put('/update/:id', verifyTokenAndAuthorization, updateReview);
+router.delete('/delete/:id' , verifyTokenAndAuthorization , deleteReview);
 
 module.exports = router ;
