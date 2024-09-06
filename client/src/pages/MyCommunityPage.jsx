@@ -2,6 +2,7 @@ import React, { useContext , useEffect , useState } from 'react'
 import { UserContext } from '../Contexts/UserContext';
 import axios from 'axios';
 import Accordion from '../components/Accordion';
+import BookshelfComponent from '../components/BookshelfComponent';
 // import useUpdateFriendListRt from '../components/hooks/useUpdateFriendListRt';
 const MyCommunityPage = () => {
   const { user } = useContext(UserContext);
@@ -9,33 +10,7 @@ const MyCommunityPage = () => {
   // const [friends, setFriends] = useState([]);
   // const [requestedFriends, setRequestedFriends] = useState([]);
   // useUpdateFriendListRt();
-  let bookshelfData;
-  const createBookShelf = async () => {
-    try {
-      const date = new Date();
-      const res = await axios.post(`/bookshelf`, { ownerId: user._id , type:"Users" , name: user.fullname+date});
-      console.log(res.data);
-    } catch (error) {
-     console.log(error);
-     alert("Error creating bookshelf:", error); 
-    }
-    
-  }
-  const getBookshelf = async() =>{
-    try {
-    const res = await axios.get(`/bookshelf/${user.bookshelf.id}`, {
-      params: {
-        ownerId: user._id,
-        type: "Users"
-      }
-    });
-    console.log(res.data);
-    bookshelfData = res.data;
-    } catch (error) {
-      console.log("Error getting bookshelf:", error);
-    }
-    
-  }
+
 
 //   const getUserFriendPublicInfo =  (friends) =>{
 //     // console.log("Hello!!")
@@ -141,13 +116,10 @@ const MyCommunityPage = () => {
         <div className="col-span-3 bg-red-500 h-full min-h-screen">
 Hello
         </div>
-        <div className="col-span-6 bg-yellow-500 h-full min-h-screen"> 
-        <p>My Bookshelf </p>
-         <button onClick={()=>{createBookShelf()}}> Create Your Own Bookshelf</button>
-         {user.bookshelf?<>{user.bookshelf.name}</>:<>
-         No bookshelf created !!
-         </>}
-        </div>
+       <div className="col-span-6">
+       <BookshelfComponent/>
+       </div>
+       
         <div className="col-span-3 bg-pink-500 h-full min-h-screen">
 
 

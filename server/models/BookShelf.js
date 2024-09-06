@@ -24,12 +24,7 @@ const bookshelfSchema = new mongoose.Schema({
       enum: ['Users', 'Groups']
     }
   },
-   booksRead:[
-    {
-    type:mongoose.Schema.Types.ObjectId,
-    ref:"Books"
-    }
-   ]
+
 
 
 },

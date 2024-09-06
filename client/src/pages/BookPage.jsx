@@ -10,7 +10,12 @@ import { CartContext } from '../Contexts/CartContext';
 import {useNavigate} from "react-router-dom";
 import ReviewComponent from '../components/ReviewComponent';
 import ReviewList from '../components/ReviewList';
+import { UserContext } from '../Contexts/UserContext';
+import axios from 'axios';
+
 const BookPage = () => {
+  const {user} = useContext(UserContext);
+  
   const [bookdetails, setBookdetails] = useState(null);
   const res = useLoaderData();
   const [loading, setLoading] = useState(true);
@@ -20,6 +25,7 @@ const BookPage = () => {
       console.log(data);
       setBookdetails(data);
       setLoading(false);
+      console.log(user);
 
     }
 
@@ -27,6 +33,25 @@ const BookPage = () => {
 
   const cart = useContext(CartContext);
   const navigate = useNavigate();
+  const addToBookshelf = async () => {
+    console.log(bookdetails._id);
+    console.log("my bookshelf ",user.bookshelf._id)
+    try {
+      const res = await axios.post(`/bookshelf/add` , {
+        id:user.bookshelf?.id,
+        ownerId: user._id ,
+        bookId : bookdetails._id,
+        type:"Users"
+       } );
+       console.log(res);
+       navigate('/account/mycommunity');
+    } catch (error) {
+      
+      console.log(error);
+      alert("Error : book already added to the bookshelf" ,JSON.stringify(error.response.data.error));
+    }
+
+  }
   return (
     loading ?
       <Loader /> :
@@ -58,7 +83,7 @@ const BookPage = () => {
               navigate('/cart');
             }}
             className="bg-blue-600 text-white p-2 rounded-sm m-1">Add to cart</button>
-            <button className="bg-blue-600 text-white p-2 rounded-sm">Add to bookshelf</button>
+            <button className="bg-blue-600 text-white p-2 rounded-sm" onClick={()=>{addToBookshelf()}}>Add to bookshelf</button>
            </div>
          
           </div>
@@ -103,12 +128,12 @@ const BookPage = () => {
           </div>
            
         </div>
-        <div className="flex flex-row">
-            <div className="flex self-start ">
+        <div className="grid grid-cols-12">
+            <div className="flex self-start col-span-4">
           {/* Review Component  */}
           <ReviewComponent bookId={bookdetails._id}/>
         </div>
-        <div>
+        <div className="col-span-8 flex flex-col">
           <ReviewList bookId={bookdetails._id}/>
         </div>
         </div>

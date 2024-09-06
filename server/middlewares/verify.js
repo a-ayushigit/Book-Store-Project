@@ -140,4 +140,24 @@ const verifyTokenAndAuthorizationGetBookshelf = (req, res, next) => {
 
 }
 
-module.exports = { verifyToken, verifyTokenAndAuthorization, verifyTokenAndModeratorOrCreator, verifyTokenAndAdmin , verifyTokenAndAuthorizationCreateBookshelf ,  verifyTokenAndAuthorizationGetBookshelf};
+const verifyTokenAndAuthorizationForBookshelf = () => {
+    verifyToken(req, res, () => {
+        console.log("user_id", req.user._id);
+            console.log("params", req.params);
+            console.log("body" , req.body);
+            console.log("query" , req.query);
+            console.log(req.user);
+        //     console.log(req.user._id === req.body?.ownerId);
+        //     console.log(req.params?.id === req.body?.ownerId)
+        
+        if ((req.query.type === 'Users') && (req.user._id === req.query?.ownerId)) {
+            next();
+          } else if ((req.query.type === 'Groups') && (req.params?.groupId === req.query?.ownerId)) {
+            next();
+          } else {
+            res.status(403).json("Not authorized to do that!");
+          }
+    });
+} 
+
+module.exports = { verifyToken, verifyTokenAndAuthorization, verifyTokenAndModeratorOrCreator, verifyTokenAndAdmin , verifyTokenAndAuthorizationCreateBookshelf ,  verifyTokenAndAuthorizationGetBookshelf ,verifyTokenAndAuthorizationForBookshelf };

@@ -12,7 +12,8 @@ const getGroupBookshelf = async(req , res) => {
 
 const getUserBookshelf = async (req , res) => {
     try {
-        const userBookshelf = await Bookshelf.find({ user: req.params.userId });
+        const userBookshelf = await Bookshelf.find({ 'owner.id': req.params.ownerId }).populate({path:"booksToRead"});
+        console.log(userBookshelf);
         res.status(200).json(userBookshelf);
     } catch (error) {
         res.status(500).json(error);
@@ -21,22 +22,22 @@ const getUserBookshelf = async (req , res) => {
 
 const addBookToBookshelf = async(req , res) => {
     try {
-        const {id} = req.params;
+        const {id} = req.body;
         const bookshelf = await Bookshelf.findById(id);
         const {bookId} = req.body;
-        const {status} = req.body;// status of book whether it has been read or not 
-        if(bookshelf.booksToRead.includes(bookId) || bookshelf.booksRead.includes(bookId)){
+        console.log(bookshelf);
+        if(bookshelf.booksToRead.some((book)=>book.equals(bookId)) ){
+            console.log("Me************************");
             return res.status(403).json({"error": "Book already added in the booklist "});
             
         }
-        if(status === "read"){
-            bookshelf.booksRead.push(bookId);
-        }
-        else{
-            bookshelf.booksToRead.push(bookId);
-        }
-        
+       else{
+        bookshelf.booksToRead.push(bookId);
+        await bookshelf.save();
+        console.log( bookshelf.booksToRead);
         res.status(200).json("Book added successfully to bookshelf!");
+       }
+        
 
     } catch (error) {
         res.status(500).json(error);
@@ -69,7 +70,7 @@ const deleteBookFromBookshelf = async(req , res) => {
 const getOneBookShelf = async(req , res) =>{
     try{
         const {id} = req.params ;
-        const bookshelf = await Bookshelf.findById(id);
+        const bookshelf = await Bookshelf.findById(id).populate({path:"booksToRead"});
         res.status(200).json({bookshelf});
     }
     catch(error){
