@@ -68,7 +68,7 @@ const Shopper = () => {
   const [binding, setBinding] = useState([]);
   const [books, setBooks] = useState([]);
   const [totalBooks, setTotalBooks] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(700);
+  const [maxPrice, setMaxPrice] = useState(300);
   const [rating, setRating] = useState(0);
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
@@ -100,19 +100,31 @@ const Shopper = () => {
   //useEffect for url 
 
   useEffect(() => {
-    if (url) {
-      console.log(url);
+    // if (url) {
+    //   console.log(url);
+    //   axios.get(url).then((response) => {
+    //     setBooks(response.data.books);
+    //     setTotalBooks(response.data.total);
+    //     console.log("response books ",response.data.books);
+    //     console.log(response.data.total);
+    //     console.log(response.data);
+
+    //   }).catch((err) => console.log(err)).finally(
+    //     console.log("state books",books)
+    //   )
+    // }
+
+          console.log(url);
       axios.get(url).then((response) => {
         setBooks(response.data.books);
         setTotalBooks(response.data.total);
-        console.log(response.data.books);
+        console.log("response books ",response.data.books);
         console.log(response.data.total);
         console.log(response.data);
 
       }).catch((err) => console.log(err)).finally(
-        console.log(books)
+        console.log("state books",books)
       )
-    }
 
 
   }, [url])
@@ -183,9 +195,9 @@ const Shopper = () => {
         <h3 className="font-serif font-bold dark:text-white">Price</h3>
         <div className="flex flex-row gap-3 object-contain px-2 text-wrap ">
 
-          <span className="text-xs sm:text-sm">Rs.0</span>
-          <input type="range" min={0} max={700} defaultValue={700} className="flex flex-wrap w-[12vw]" onChange={(e) => setMaxPrice(e.target.value)} />
-          <span className="text-xs sm:text-sm">Rs.700</span>
+          <span className="text-xs sm:text-sm">Rs.100</span>
+          <input type="range" min={100} max={300} defaultValue={300} className="flex flex-wrap w-[12vw]" onChange={(e) => setMaxPrice(e.target.value)} />
+          <span className="text-xs sm:text-sm">Rs.300</span>
           <p className="flex text-wrap text-xs sm:text-sm">Max Price:- Rs.{maxPrice}</p>
         </div>
         {/* rating */}

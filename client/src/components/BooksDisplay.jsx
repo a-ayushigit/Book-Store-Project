@@ -2,6 +2,8 @@ import React from 'react'
 import Card from '../components/Card';
 import { Link } from 'react-router-dom'
 const BooksDisplay = ({books , open}) => {
+  console.log("books display" , books);
+  console.log("open ",open)
   return (
     <div className="grid grid-cols-12 ">
           {books && books.map((book, id) => (

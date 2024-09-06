@@ -80,12 +80,12 @@ const CartPage = () => {
               </ul>
              
             </div>
-            
-           <div onClick={()=>navigate("/payment")}>
-            <button>Proceed to pay </button>
+            <div onClick={()=>navigate("/payment")} className="flex h-16 w-full  justify-center col-span-3">
+            <button className="bg-green-800 w-36 border border-blue-950 h-16 text-white rounded-sm text-nowrap p-2">Proceed to pay </button>
            </div>
-          </div>
           
+          </div>
+         
         </div>
         </div>)
         : (<><LoginToContinuePage/></>)}
