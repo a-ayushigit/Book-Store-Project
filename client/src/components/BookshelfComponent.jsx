@@ -55,7 +55,7 @@ const BookshelfComponent = () => {
      <div className="grid grid-cols-12 gap-4 p-4">
 
         {bookshelfData?.bookshelf.booksToRead.map((book,i)=>
-        <div className="h-full w-full items-center justify-center col-span-6 flex flex-col bg-blue-300 shadow-md gap-4">
+        <div key={i} className="h-full w-full items-center justify-center col-span-6 flex flex-col bg-blue-300 shadow-md gap-4">
         <p className="font-bold flex justify-center items-center">{book.title}</p>  
         <p className="flex justify-center items-center">
           <img src={book.imageUrl} className="h-44 w-36 p-2"/>
