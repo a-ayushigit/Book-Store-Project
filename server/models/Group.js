@@ -68,9 +68,15 @@ const GroupSchema = new mongoose.Schema({
     category: {
         type: Array,
     },
-    discussions: {
-        type: Array,
-    },
+    discussions: [
+        {
+            id:{
+                type:mongoose.Schema.Types.ObjectId,
+                ref:'Discussion'
+            }
+        }
+        
+    ],
     pendingMembers: [
         {
             id:{

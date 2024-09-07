@@ -1,7 +1,11 @@
 import React from 'react'
 import axios from 'axios'
-
+import { useContext } from 'react'
+import { UserContext } from '../Contexts/UserContext'
+import {useNavigate} from 'react-router-dom'
 const CreateDiscussion = ({groupId}) =>{
+  const {user} = useContext(UserContext);
+  const navigate = useNavigate();
   const handleSubmission = async (ev) => {
     ev.preventDefault();
     try {
@@ -17,11 +21,11 @@ const CreateDiscussion = ({groupId}) =>{
   
       )
       alert('Discussion created successfully!');
-      navigate('/discussions');
+      navigate(`/groups/${groupId}/groupDiscussions`);
     }
     catch (error) {
-      console.log(err);
-      alert(`${err.message} - Error creating discussion`);
+      console.log(error);
+      alert(`${error.message} - Error creating discussion`);
     }
   }
 return (

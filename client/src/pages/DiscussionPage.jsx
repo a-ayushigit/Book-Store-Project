@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 const DiscussionPage = () => {
     const res = useLoaderData();
     useEffect(()=>{
-        console.log(res);
+        console.log(res.Discussions);
        }, [])
   return (
     <div>
