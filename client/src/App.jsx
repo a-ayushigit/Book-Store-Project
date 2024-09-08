@@ -32,14 +32,14 @@ const router = createBrowserRouter(
 
         <Route index path="/" element={<IndexPage />} />
         
-        <Route path="shop" element={<Shopper />} />
-        <Route path="account" element={<AccountPage />} />
-        <Route path="cart" element={<CartPage />} />
-        <Route path="account/:subpage" element={<AccountPage />} />
-        <Route path="community" element={<Community />} />
-        <Route path="chats" element={<ChatPage />} />
+        <Route path="/shop" element={<Shopper />} />
+        <Route path="/account" element={<AccountPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/account/:subpage" element={<AccountPage />} />
+        <Route path="/community" element={<Community />} />
+        <Route path="/chats" element={<ChatPage />} />
         <Route
-          path='book/:id'
+          path='/book/:id'
           element={<BookPage />}
           loader={
             async ({ params }) => {
@@ -48,8 +48,8 @@ const router = createBrowserRouter(
               return res.data;
             }
           } />
-        <Route path="discussions" element={<DiscussionsPage />} />
-        <Route path="groups" element={<GroupsPage />} />
+        <Route path="/discussions" element={<DiscussionsPage />} />
+        <Route path="/groups" element={<GroupsPage />} />
         <Route
           path="/groups/:groupId"
           element={<GroupPage />}
@@ -98,8 +98,8 @@ const router = createBrowserRouter(
         <Route path="/payment" element={<PaymentPage />} />
       </Route>
       <Route path="/admin" element={<AdminPage />} />
-      <Route path="login" element={<LoginPage />} />
-      <Route path="register" element={<RegisterPage />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
     </Route>
 
   )
