@@ -38,7 +38,7 @@ useEffect(() => {
     const fetchUser = async () => {
         try {
             const { data } = await axios.get('/auth/profile');
-            
+            console.log(data);
         } catch (err) {
             console.log(err);
         } finally {
