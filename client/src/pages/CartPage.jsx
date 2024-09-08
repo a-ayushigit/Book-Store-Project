@@ -13,7 +13,7 @@ import LoginToContinuePage from './LoginToContinuePage';
 
 //dotenv.config()
 const CartPage = () => {
-  console.log(import.meta.env.KEY_ID_PAYSTACK_TEST_SECRET);
+  // console.log(import.meta.env.KEY_ID_PAYSTACK_TEST_SECRET);
   const cart = useContext(CartContext);
   const user = useContext(UserContext);
   const booksCount = cart.items.reduce((sum, book) => sum + book.quantity, 0);
@@ -102,7 +102,10 @@ const CartPage = () => {
          
         </div>
         </div>)
-        : (<><LoginToContinuePage/></>)}
+        : 
+        // (<><LoginToContinuePage/></>)
+        null
+        }
     </div>
     </div>)
 }
