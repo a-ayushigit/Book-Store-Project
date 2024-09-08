@@ -118,6 +118,7 @@ const profile = async (req, res) => {
     // console.log(req);
     try {
         const  accessToken  = req.cookies.accessToken;
+        console.log("hello1 from profile")
         // console.log("token",token);
         //console.log("Hello profile 3");
         //console.log(typeof(accessToken));
