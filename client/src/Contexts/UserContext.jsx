@@ -39,13 +39,19 @@ useEffect(() => {
         try {
             const  {data } = await axios.get('/auth/profile');
             console.log("data ",data);
-            setUser(data);
+            setUser(data).then(()=>{});
         } catch (err) {
             console.log(err);
         } finally {
             
             setLoading(false);
         }
+        // const  {data } = await axios.get('/auth/profile').then(()=>{
+        //     console.log("data ",data);
+        //     setUser(data).then(()=>{
+        //         setLoading(false);
+        //     });
+        // }).catch(err=>console.log(err));
     };
 
     fetchUser();
