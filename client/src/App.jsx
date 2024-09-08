@@ -21,7 +21,7 @@ import GroupDiscussionPage from './pages/GroupDiscussionPage.jsx'
 import DiscussionPage from './pages/DiscussionPage.jsx'
 import AdminPage from './pages/AdminPage.jsx'
 import PaymentPage from './pages/PaymentPage.jsx'
-axios.defaults.baseURL = "http://localhost:5000/api/v1/";//so that we dont have to write theentire address again and again 
+axios.defaults.baseURL = "https://book-store-project-backend-0ij2.onrender.com/api/v1/";//so that we dont have to write theentire address again and again 
 axios.defaults.withCredentials = true;
 
 const router = createBrowserRouter(
