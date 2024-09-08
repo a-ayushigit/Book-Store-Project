@@ -62,7 +62,10 @@ const Header = () => {
       // access: admin,
     }
   ]
-
+ 
+  if (loading) {
+    return <div>Loading...</div>;  // Show a loading spinner or some placeholder
+  }
   return (
     <div className="h-10 bg-cyan-200  dark:bg-red-950 duration-200 dark:text-white">
       <div className="w-full  flex  h-10 shadow justify-between py-1 px-2 gap-1 ">
