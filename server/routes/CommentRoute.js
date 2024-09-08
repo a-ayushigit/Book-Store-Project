@@ -15,6 +15,6 @@ router.get('/' ,getAllComments );
 router.get('/:id' , getOneComment);
 router.post('/:id' ,  verifyTokenAndAuthorization, createComment);
 router.put('/:id',  verifyTokenAndAuthorization, updateComment);
-router.delete('/:id' ,  verifyTokenAndAdmin , deleteComment);
+router.delete('/:id' , verifyTokenAndAuthorization , deleteComment);
 
 module.exports = router ;

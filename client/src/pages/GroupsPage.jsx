@@ -37,13 +37,13 @@ const GroupsPage = () => {
     getGroups()
   }, [])
   return (
-    <div className="h-full min-h-screen">
+    <div className="h-full dark:bg-red-950 min-h-screen">
       <div><CommunityNavbar /></div>
-      <h1 className="flex font-bold text-4xl font-serif justify-center">GROUPS</h1>
+      <h1 className="flex font-bold text-4xl dark:text-white font-serif justify-center">GROUPS</h1>
       <div className="grid grid-cols-12 gap-4 p-3">
         {groups.map((group, i) => (
           <div key={i} className="flex flex-row sm:col-span-6 col-span-12 hover:cursor-pointer">
-            <div className="flex flex-col h-full w-full  bg-indigo-200 p-4 border-blue-500 border shadow-sm shadow-pink-800 ">
+            <div className="flex flex-col h-full w-full dark:bg-yellow-700 bg-indigo-200 p-4 border-blue-500 border shadow-sm shadow-pink-800 ">
               <h1 className="text-xl font-bold ">{group.name}</h1>
               <p>{group.description.substr(0, 100) + '...'}</p>
               <div className="flex flex-row gap-5 p-1 justify-between items-center ">

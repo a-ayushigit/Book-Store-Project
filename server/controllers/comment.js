@@ -75,5 +75,23 @@ const updateComment = async (req , res)=>{
     }
 }
 
+const addOrUpdateComment = async(req,res)=> {
+    const {userId , discussionId , value , items} = req.body;
+    try {
+        // first I am searching if the root comment exists or not , if it does not exists , I am creating the root comment 
+        let rootComment = await Comment.findOne({discussion : discussionId , userId});
+        if(!rootComment){
+            rootComment = await Comment.create({
+                userId,
+                discussion:discussionId,
+                value,
+                items
+            })
+        }
+    } catch (error) {
+        
+    }
+}
+
 
 module.exports = {createComment , deleteComment , getAllComments , getOneComment , updateComment }

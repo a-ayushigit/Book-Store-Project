@@ -6,17 +6,22 @@ const commentSchema = new mongoose.Schema({
     unique:true , 
     required:true
    },
-   bookshelfName:{
-    type:String , 
-    ref:'Bookshelves'
+   discussion:{
+    type:mongoose.Schema.Types.ObjectId, 
+    ref:'Discussion',
+    required:true
    },
-   description:{
+   value:{
     type:String,
     required:true
    },
-   like:{
-    type:Number
-   }
+   items:[
+    {
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Comments"
+
+    }
+   ]
    
 
 },

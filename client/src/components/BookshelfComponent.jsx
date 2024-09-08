@@ -44,10 +44,10 @@ const BookshelfComponent = () => {
   },[])
 
   return (
-    <div className=" bg-yellow-500 h-full min-h-screen flex flex-col items-center gap-3"> 
-    <p className="flex justify-center font-bold text-3xl">My Bookshelf </p>
+    <div className="  h-full min-h-screen flex flex-col items-center gap-3"> 
+    <p className="flex justify-center font-bold dark:text-white text-3xl text-blue-800">My Bookshelf </p>
      <button
-     className={user.bookshelf?"hidden":`bg-green-900 text-white border border-blue-950 p-2 rounded-lg self-center`} 
+     className={user.bookshelf?"hidden":`dark:bg-green-900 bg-blue-800 text-white border border-blue-950 p-2 rounded-lg self-center`} 
      onClick={()=>{createBookShelf()}}>
     Create Your Own Bookshelf
     </button>
@@ -55,8 +55,8 @@ const BookshelfComponent = () => {
      <div className="grid grid-cols-12 gap-4 p-4">
 
         {bookshelfData?.bookshelf?.booksToRead?.map((book,i)=>
-        <div key={i} className="h-full w-full items-center justify-center col-span-6 flex flex-col bg-blue-300 shadow-md gap-4">
-        <p className="font-bold flex justify-center items-center">{book.title}</p>  
+        <div key={i} className="h-full w-full rounded-md items-center justify-center col-span-6 flex flex-col dark:bg-red-950 bg-blue-300 shadow-md gap-4">
+        <p className="font-bold flex justify-center items-center text-nowrap">{book.title}</p>  
         <p className="flex justify-center items-center">
           <img src={book.imageUrl} className="h-44 w-36 p-2"/>
         </p>

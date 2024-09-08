@@ -31,8 +31,7 @@ const router = createBrowserRouter(
       <Route element={<Layout />}>
 
         <Route index path="/" element={<IndexPage />} />
-        <Route path="login" element={<LoginPage />} />
-        <Route path="register" element={<RegisterPage />} />
+        
         <Route path="shop" element={<Shopper />} />
         <Route path="account" element={<AccountPage />} />
         <Route path="cart" element={<CartPage />} />
@@ -51,53 +50,56 @@ const router = createBrowserRouter(
           } />
         <Route path="discussions" element={<DiscussionsPage />} />
         <Route path="groups" element={<GroupsPage />} />
-        <Route 
-           path="/groups/:groupId" 
-           element={<GroupPage />}
-           loader={
-            async( {params} ) => {
+        <Route
+          path="/groups/:groupId"
+          element={<GroupPage />}
+          loader={
+            async ({ params }) => {
               const res = await axios.get(`/groups/${params.groupId}`);
               console.log(res.data);
               return res.data;
             }
-           }
-           />
-        <Route 
-           path="/groups/:groupId/discussions/:discussionId" 
-           element={<DiscussionPage />} 
-           loader={
-            async( {params} ) => {
+          }
+        />
+        <Route
+          path="/groups/:groupId/discussions/:discussionId"
+          element={<DiscussionPage />}
+          loader={
+            async ({ params }) => {
               const res = await axios.get(`/discussions/${params.discussionId}`);
               console.log(res.data);
               return res.data;
             }
-           }
-           />
+          }
+        />
         <Route
           path="/groups/:groupId/:subpage"
           element={<GroupPage />}
           loader={
-            async( {params} ) => {
+            async ({ params }) => {
               const res = await axios.get(`/groups/${params.groupId}`);
               console.log(res.data);
               return res.data;
             }
-           }
-          />
-        <Route 
-           path="/individual/discussions/:discussionId" 
-           element={<DiscussionPage />} 
-           loader={
-            async( {params} ) => {
+          }
+        />
+        <Route
+          path="/individual/discussions/:discussionId"
+          element={<DiscussionPage />}
+          loader={
+            async ({ params }) => {
               const res = await axios.get(`/discussions/${params.discussionId}`);
               console.log(res.data);
               return res.data;
             }
-           }
-           />
-           <Route path="/admin" element={<AdminPage/>}/>
-           <Route path="/payment" element={<PaymentPage/>}/>
+          }
+        />
+        
+        <Route path="/payment" element={<PaymentPage />} />
       </Route>
+      <Route path="/admin" element={<AdminPage />} />
+      <Route path="login" element={<LoginPage />} />
+      <Route path="register" element={<RegisterPage />} />
     </Route>
 
   )

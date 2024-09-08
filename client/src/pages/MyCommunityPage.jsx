@@ -6,6 +6,10 @@ import BookshelfComponent from '../components/BookshelfComponent';
 // import useUpdateFriendListRt from '../components/hooks/useUpdateFriendListRt';
 const MyCommunityPage = () => {
   const { user } = useContext(UserContext);
+  
+  useEffect(()=>{
+  console.log(user);
+  },[])
   // const [pendingFriends , setPendingFriends] = useState([]);
   // const [friends, setFriends] = useState([]);
   // const [requestedFriends, setRequestedFriends] = useState([]);
@@ -109,18 +113,14 @@ const MyCommunityPage = () => {
  
   return (
     <div className="h-full flex-col items-center justify-center">
-      <div>
-        <p className=" flex justify-self-center text-3xl">My Community</p>
-      </div>
+     
       <div className="grid grid-cols-12">
-        <div className="col-span-3 bg-red-500 h-full min-h-screen">
-Hello
-        </div>
-       <div className="col-span-6">
+        
+       <div className="col-span-8">
        <BookshelfComponent/>
        </div>
        
-        <div className="col-span-3 bg-pink-500 h-full min-h-screen">
+        <div className="col-span-4 h-full min-h-screen">
 
 
 <Accordion/>

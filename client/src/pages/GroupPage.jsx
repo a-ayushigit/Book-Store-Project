@@ -30,7 +30,7 @@ const GroupPage = () => {
 
  
   return (
-    <div className="flex h-full flex-col min-h-screen bg-white text-blue-950 border border-blue-950">
+    <div className="flex h-full flex-col min-h-screen dark:bg-red-300 bg-white text-blue-950 border border-blue-950">
       <div><CommunityNavbar /></div>
       <div className="flex flex-col min-h-screen items-center">
         <h1 className="flex text-4xl m-1 p-3  font-semibold ">{groupData.name}</h1>
@@ -48,8 +48,8 @@ const GroupPage = () => {
         <div>
           <div className="flex  text-green-950 gap-10 font-semibold underline text-xl">
             <p className={`${groupData.isPublic == true ? "hidden" : "border border-blue-950 p-2 rounded-full m-1 hover:bg-blue-300"}`}><Link to={`/groups/${groupData._id}/groupMembers`}>Group Members</Link></p>
-            <p className="border border-blue-950 p-2 rounded-full m-1 hover:bg-blue-300"><Link to={`/groups/${groupData._id}/groupDiscussions`}>Group Discussion</Link></p>
-            <p className="border border-blue-950 p-2 rounded-full m-1 hover:bg-blue-300"><Link to={`/groups/${groupData._id}/createDiscussion`}>Create Discussion</Link></p>
+            <p className="border dark:hover:bg-red-300 border-blue-950 p-2 rounded-full m-1 hover:bg-blue-300"><Link to={`/groups/${groupData._id}/groupDiscussions`}>Group Discussion</Link></p>
+            <p className="border dark:hover:bg-red-300 border-blue-950 p-2 rounded-full m-1 hover:bg-blue-300"><Link to={`/groups/${groupData._id}/createDiscussion`}>Create Discussion</Link></p>
           </div>
         {subpage === 'groupMembers' && <GroupMembersPage  />} 
         {subpage === 'groupDiscussions' && <GroupDiscussionPage groupId={groupData._id}/>}

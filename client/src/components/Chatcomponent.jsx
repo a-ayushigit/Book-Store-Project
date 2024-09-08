@@ -87,8 +87,8 @@ const Chatcomponent = () => {
     return (
         <div className="h-screen" >
             <CommunityNavbar />
-            <div className="grid grid-cols-12 bg-blue-600 h-[100vh] max-h-[100vh] no-scrollbar  overflow-y-scroll">
-                <div className="flex col-span-5 sm:col-span-3 bg-blue-400 flex-col no-scrollbar   max-h-[100vh] overflow-y-scroll">
+            <div className="grid grid-cols-12 dark:bg-red-950 bg-blue-600 h-[100vh] max-h-[100vh] no-scrollbar  overflow-y-scroll">
+                <div className="flex col-span-5 sm:col-span-3 bg-blue-400 dark:bg-red-900 flex-col no-scrollbar   max-h-[100vh] overflow-y-scroll">
                     {/* users list displayed  */}
                     {users.map((user) => {
                         console.log(user);
@@ -97,7 +97,7 @@ const Chatcomponent = () => {
                         // console.log(isOnline , user.username);
 
                         return (
-                            <div key={user._id} className={`flex flex-row justify-between p-2 border border-white hover:cursor-pointer text-xs sm:text-sm ${selectedConversation === user._id ? "bg-blue-800 text-white" : "hover:bg-blue-300"}`} onClick={user.isFriend ? () => { openchat(user._id) } : () => alert("Not a friend")}>
+                            <div key={user._id} className={`flex flex-row justify-between p-2 border border-white hover:cursor-pointer text-xs sm:text-sm ${selectedConversation === user._id ? "bg-blue-800 dark:bg-orange-800 text-white" : "hover:bg-blue-300 hover:dark:bg-orange-300"}`} onClick={user.isFriend ? () => { openchat(user._id) } : () => alert("Not a friend")}>
                                 <div className="flex flex-row items-center">
                                     {/* <img src={user.profilePic} alt="" className="h-10 w-10 rounded-full" /> */}
                                     <PersonIcon className="h-10 w-10 rounded-full" />
@@ -118,7 +118,7 @@ const Chatcomponent = () => {
                     })}
 
                 </div>
-                <div className="flex flex-col  max-h-[90vh] overflow-y-scroll no-scrollbar col-span-7 sm:col-span-9 bg-blue-600 justify-between">
+                <div className="flex flex-col  max-h-[90vh] overflow-y-scroll no-scrollbar col-span-7 sm:col-span-9 dark:bg-yellow-900 bg-blue-600 justify-between">
                     {/* chat displayed  */}
                     {(selectedConversation !== '' || selectedConversation !== null) ?
                         <div className="flex flex-col m-2 ">
@@ -126,7 +126,7 @@ const Chatcomponent = () => {
                                 <div key={i} className={`flex flex-row m-2 p-2 rounded-2xl border border-white bg-yellow-100 w-[20vw] ${(message.senderId === selectedConversation) ?
                                         "self-start" :
                                         "self-end"
-                                    } hover:cursor-pointer hover:bg-blue-300 break-all`}>
+                                    } hover:cursor-pointer hover:dark:bg-red-300 hover:bg-blue-300 break-all`}>
                                     <p> {message.message} </p>
                                 </div>
                             )):

@@ -10,6 +10,7 @@ const verifyToken = (req, res, next) => {
             jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
                 if (err) return res.status(403).json("Invalid token !");
                 req.user = user;//gets the user or err after decoding the token 
+                // console.log("user after token verification",req.user);
                 next();
             });
         }
@@ -17,6 +18,7 @@ const verifyToken = (req, res, next) => {
             return res.status(401).json("Not authorized !")
         }
     } catch (error) {
+        res.status(500).json("Internal server error during token verification");
         console.log(error);
     }
 
@@ -26,14 +28,15 @@ const verifyToken = (req, res, next) => {
 
 const verifyTokenAndAuthorization = (req, res, next) => {
     verifyToken(req, res, () => {
-        //console.log("request" , req);
-        // console.log("request user", req.user);
-        // console.log("request user id ",req.user._id);
-        // console.log("user id from frontend ",req.params.id);
-        if (((req.user._id === req.params.id) || req.user.isAdmin)) {
+`        // console.log("request" , req);
+        // console.log("request user", req.user);`
+        console.log("request user id ",req.user._id);
+        console.log("user id from frontend ",req.params.id);
+        if ( ((req.user._id === req.params.id) || req.user.isAdmin)) {
             next();
         }
         else {
+            console.log("i am producing error")
             res.status(403).json("Not authorized to do that !");
         }
     });
@@ -43,12 +46,15 @@ const verifyTokenAndAuthorization = (req, res, next) => {
 //only admin allowed tasks 
 const verifyTokenAndAdmin = (req, res, next) => {
     verifyToken(req, res, async() => {
-        console.log("verify " , req.user);
+        // console.log("verify " , req.user);
         const user = await User.findById(req.user._id);
-        if (user.isAdmin) {
+        // console.log("check admin ", user.isAdmin);
+        if (user && user.isAdmin) {
+            // console.log("yes it is admin")
             next();
         }
         else {
+            // console.log("me not an admin")
             res.status(403).json("Not authorized to do that !");
         }
     });

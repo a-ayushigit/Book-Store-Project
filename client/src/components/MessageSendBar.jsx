@@ -42,7 +42,7 @@ const MessageSendBar = () => {
       <input type="text" className="focus:border-none" placeholder="Type in your message" value={message} 
       onChange={(e)=> setMessage(e.target.value)} 
       />
-      <button className=" border border-white bg-blue-400 rounded-xl size-10 p-1 items-center hover:cursor-pointer hover:bg-blue-950 hover:scale-105" onClick={()=>sendMessage(message)}>
+      <button className=" border border-white dark:bg-red-500 bg-blue-400 rounded-xl size-10 p-1 items-center hover:cursor-pointer hover:bg-blue-950 hover:scale-105" onClick={()=>sendMessage(message)}>
       <SendIcon />
       </button>
       

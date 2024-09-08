@@ -30,7 +30,7 @@ const CreateDiscussion = ({groupId}) =>{
   }
 return (
 
-  <form className="flex flex-col items-center w-full justify-center " onSubmit={handleSubmission}>
+  <form className="flex flex-col items-center w-full border border-red-950 justify-center dark:bg-red-300 bg-blue-100" onSubmit={handleSubmission}>
     <h2 className="flex items-center text-xl font-bold ">Start a Discussion</h2>
     <div className="flex flex-col col-span-6 w-full items-center p-5">
       <label className="flex items-start justify-around px-2 font-bold py-1 ">Topic</label>

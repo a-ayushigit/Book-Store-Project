@@ -35,19 +35,19 @@ const CartPage = () => {
    {/* <Modal modal={modal} handlePayment={handlePayment} setModal={setModal} optionsList={optionsList} 
      /> */}
    {/* {console.log(handlePayment)} */}
-    <div className="dark:bg-red-400 bg-cyan-700 h-screen text-white">
+    <div className="dark:bg-red-400 bg-cyan-700 min-h-screen  dark:text-red-950 h-full">
       
       {user.user ?
 
-        (<div className="flex flex-grow flex-col">
+        (<div className="flex flex-grow text-white flex-col">
         <h1 className="flex justify-center items-center">CART ITEMS</h1>
-        <div className="dark:bg-red-400 bg-gradient-to-r from-sky-300 to-indigo-300">
+        <div className=" dark:bg-red-400">
           <p className="text-xl flex items-center justify-center">Hello {user.user.username}</p>
           <p className=" flex items-center justify-center">You have {booksCount} books in your cart </p>
           <div className="grid grid-cols-12  relative">
-            <div className="flex flex-grow bg-gradient-to-r from-cyan-200 to-blue-500 dark:bg-red-300 w-full max-h-full h-full min-h-screen col-span-9">
+            <div className="flex flex-grow light:bg-gradient-to-r light:from-cyan-200 light:to-blue-500 dark:bg-red-300 w-full max-h-full h-full min-h-screen col-span-9">
               <ul className="decoration-none flex flex-grow flex-col gap-1 p-1 h-full overflow-y-auto">
-                {(items.map((item) =>
+                {(items.length > 0 ? items.map((item) =>
                   <li key={item._id}>
                     <div className=" w-full h-[15rem] border border-black grid grid-cols-12">
                       <div className="flex items-center justify-center w-auto col-span-12 sm:col-span-3">
@@ -62,9 +62,19 @@ const CartPage = () => {
                         <p className="flex flex-row justify-start ">by {item.author}</p>
                         <p className="flex flex-row justify-start ">Rs. {item.price}</p>
                         <br />
-                        <div className="flex flex-row ">
-                          <div className="flex flex-row text-black justify-start">Quantity : <p className="px-2 h-8 flex flex-row gap-1 text-center"><AddIcon className=" flex self-center place-self-center border border-black p-1 rounded h-8 cursor-pointer" onClick={() => cart.addToCart(item)} /> <input className=" h-8 w-8 flex  px-1  place-items-center justify-items-center rounded " type="number" readOnly value={item.quantity} />
-                            <RemoveIcon className=" flex self-center place-self-center border border-black p-1 rounded h-8 cursor-pointer" onClick={() => cart.removeOneBook(item)} />
+                        <div className="flex flex-row dark:text-red-950">
+                          <div className="flex flex-row items-center justify-start ">Quantity : <p className="px-2 h-8 flex flex-row gap-1 text-center">
+                            
+                            <AddIcon className=" flex self-center place-self-center border dark:border-red-950 border-black p-1 rounded h-8 cursor-pointer " onClick={() => cart.addToCart(item)} /> 
+                            
+                            
+                       
+                              <div className=" h-8 min-w-8 rounded-full items-center justify-center w-auto dark:bg-red-400 bg-blue-400  flex self-center border border-white">
+                                {item.quantity}
+                              </div>
+
+
+                            <RemoveIcon className=" flex self-center  place-self-center border border-black dark:border-red-950 p-1 rounded h-8 cursor-pointer" onClick={() => cart.removeOneBook(item)} />
                           </p></div>
 
                         </div>
@@ -75,13 +85,17 @@ const CartPage = () => {
 
 
                   </li>
-                ))
+                ):
+              <div className="text-white flex items-center justify-center text-6xl self-center place-self-center justify-self-center">
+                Your cart is empty now !!!
+              </div>
+              )
                 }
               </ul>
              
             </div>
             <div onClick={()=>navigate("/payment")} className="flex h-16 w-full  justify-center col-span-3">
-            <button className="bg-green-800 w-36 border border-blue-950 h-16 text-white rounded-sm text-nowrap p-2">Proceed to pay </button>
+            <button className={`${items.length > 0 ? "bg-green-800 w-36 border border-blue-950 h-16 text-yellow-400 font-semibold hover:shadow-md rounded-sm text-nowrap p-2" : "hidden"}`}>Proceed to pay </button>
            </div>
           
           </div>

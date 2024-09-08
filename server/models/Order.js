@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 const OrderSchema = new mongoose.Schema({
-   userId:{type:String , required:true} , 
+   userId:{type:mongoose.Schema.Types.ObjectId , required:true , ref:"Users"} , 
    books:[{
-    bookId:{type:mongoose.Schema.Types.ObjectId ,},
+    bookId:{type:mongoose.Schema.Types.ObjectId , required:true , ref:"books"},
     quantity:{
-        type:Number , default:1, ref:"Books"
+        type:Number , default:1, 
     },
     title:{
         type:String,

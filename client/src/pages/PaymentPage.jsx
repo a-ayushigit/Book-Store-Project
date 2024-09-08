@@ -121,14 +121,14 @@ const PaymentPage = () => {
 
     }
     return (
-        <div className="flex flex-col min-h-screen h-full">
-            <div className="bg-blue-400 w-full max-h-[300rem] h-auto text-black col-span-3 border border-gray-100 p-1 ">
+        <div className="flex flex-col min-h-screen  h-full">
+            <div className="bg-blue-400 dark:bg-yellow-800 w-full max-h-[300rem] h-auto text-black col-span-3 border border-gray-100 p-1 ">
                 <p className="text-lg flex justify-center font-semibold">  ORDER SUMMARY </p>
                 <div className="border-full border-gray-200  flex flex-col  m-1 bg-gray-50 ">
-                    <p className="pl-3 py-1"> PRICE DETAILS</p>
+                    <p className="pl-3 py-1 dark:bg-yellow-800"> PRICE DETAILS</p>
                     <hr />
 
-                    <div className="grid grid-cols-12">
+                    <div className="grid grid-cols-12 dark:bg-yellow-600">
                         <div className='flex flex-row justify-start text-xs col-span-6 pl-3'>Price({booksCount} items)</div>
                         <div className='flex flex-row justify-end text-xs col-span-6 pr-2 font-bold'>Rs.{price}</div>
                         <div className='flex flex-row justify-start text-xs col-span-6 pl-3'>Discount  </div>
@@ -143,14 +143,14 @@ const PaymentPage = () => {
                             <hr />
 
                         </div>
-                        <p className="flex flex-row col-span-12 items-center text-xs justify-center text-green-800 font-semibold">You will save Rs. {discountPrice} on this order  </p>
+                        <p className="flex flex-row col-span-12 font-bold items-center text-xs justify-center text-green-800 ">You will save Rs. {discountPrice} on this order  </p>
 
                     </div>
 
 
                 </div>
             </div>
-            <div  className="flex flex-col justify-center bg-blue-400">
+            <div  className="flex flex-col justify-center  bg-blue-400 dark:bg-yellow-800">
                 <p className="flex  font-bold p-2 justify-between">
                     Add your shipping details ....
 

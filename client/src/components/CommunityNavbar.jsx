@@ -20,11 +20,11 @@ const CommunityNavbar = () => {
     ]
   return (
     <div className="w-full">
-      <nav className="bg-blue-600 text-white flex gap-2 justify-around">
+      <nav className="bg-blue-600 dark:bg-yellow-700 border text-white flex gap-2 justify-around">
      {
       navList.map((item)=>{
         return (
-          <a href={item.link} key={item.id} className="flex py-2 px-3 gap-1 text-sm hover:font-extralight hover:text-yellow-500">{item.name}</a>
+          <a href={item.link} key={item.id} className="flex py-2 px-3 gap-1 text-sm hover:font-extralight  hover:text-yellow-500">{item.name}</a>
         )
       })
      }

@@ -33,7 +33,7 @@ const ProfilePage = ({
  
   return (
     <div>
-      <div className="">
+      <div className="px-3 ">
               Logged in as {user.username} ({user.email})
               </div>
               <div className='flex items-center justify-center my-5 gap-2'>
@@ -44,15 +44,15 @@ const ProfilePage = ({
               <div>
                 <form enctype="multipart/form-data" onSubmit={handleSubmit} className="p-2 flex flex-col items-start gap-3">
               <label>Full Name</label>
-              <input type="text" name="name" disabled={!editAllow}  value={editAllow?fullname:user.fullname}  onChange={(e)=>setFullname(e.target.value)} />
+              <input className={`${editAllow ? "text-black" : "text-white"}`} type="text" name="name" disabled={!editAllow}  value={editAllow?fullname:user.fullname}  onChange={(e)=>setFullname(e.target.value)} />
               <label>Username</label>
-              <input type="text"  name="username" value={editAllow?username:user.username} disabled={!editAllow} onChange={(e)=>setUsername(e.target.value)}/>
+              <input className={`${editAllow ? "text-black" : "text-white"}`} type="text"  name="username" value={editAllow?username:user.username} disabled={!editAllow} onChange={(e)=>setUsername(e.target.value)}/>
               <label>Email</label>
-              <input type="email" name="email" value={editAllow?email:user.email} disabled={!editAllow} onChange={(e)=> setEmail(e.target.value)}/>
+              <input className={`${editAllow ? "text-black" : "text-white"}`} type="email" name="email" value={editAllow?email:user.email} disabled={!editAllow} onChange={(e)=> setEmail(e.target.value)}/>
               <label>Password</label>
-              <input type="password" name="password" value={editAllow?password:null}  disabled={!editAllow} onChange={(e)=>setPassword(e.target.value)}/>
+              <input className={`${editAllow ? "text-black" : "text-white"}`} type="password" name="password" value={editAllow?password:null}  disabled={!editAllow} onChange={(e)=>setPassword(e.target.value)}/>
               <label>Upload Avatar Image</label>
-              <input type="file" name="avatar" onChange={(e)=> {
+              <input className={`${editAllow ? "text-black" : "text-white"}`} type="file" name="avatar" onChange={(e)=> {
                 setAvatar(e.target.files[0]);
                 console.log(e.target.files[0]);
                 console.log("target ",e.target);

@@ -20,8 +20,14 @@ const LoginPage = () => {
       
       alert('Login successful');
       setUser(data);
+      console.log(data);
+      if(data.loggedInUser.isAdmin === true) {
+        navigate('/admin');
+      }
+      else{
+        navigate('/');
+      }
       
-      navigate('/');
 
 
 
@@ -38,7 +44,7 @@ const LoginPage = () => {
 
         <input type="email" placeholder="emilydoe@gmail.com" value={email} onChange={ev => setEmail(ev.target.value)} />
         <input type="password" placeholder="Password" value={password} onChange={ev => setPassword(ev.target.value)} />
-        <button className="light dark:bg-red-900 hover:shadow-2xl">Log In </button>
+        <button className="light hover:shadow-2xl">Log In </button>
       </form>
       <div className="text-center -mt-60 mb-64 text-gray-900 font-bold py-2 text-sm">Don't have an account ? <Link to={'/register'} className="underline text-balance">Register Now</Link></div>
     </div>

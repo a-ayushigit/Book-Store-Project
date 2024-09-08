@@ -31,7 +31,11 @@ const deleteOrder = async (req,res) =>{
 
 const getAllOrders = async(req , res) =>{
     try {
-        const Orders = await Order.find({});
+        const Orders = await Order.find({}).populate({
+            path:"userId",
+            select:"fullname"
+
+        });
         res.status(200).json(Orders);
     } catch (error) {
         console.log(error.message);
@@ -75,6 +79,7 @@ const updateOrder = async (req , res)=>{
 }
 
 const getIncome = async(req,res) =>{
+    console.log("hello order 1")
     const date = new Date();
     const lastMonth = new Date(date.setMonth(date.getMonth()-1));
     const previousMonth = new Date(new Date().setMonth(lastMonth.getMonth() - 1));

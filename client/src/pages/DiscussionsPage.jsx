@@ -26,13 +26,13 @@ const DiscussionsPage = () => {
     getDiscussions();
   }, [])
   return (
-    <div className="flex h-screen flex-col overflow-x-hidden">
+    <div className="flex h-screen flex-col overflow-x-hidden dark:bg-red-950 dark:text-white">
       <CommunityNavbar />
-      <h1 className="flex font-bold text-4xl font-serif justify-center">DISCUSSIONS</h1>
+      <h1 className="flex font-bold text-4xl font-serif justify-center ">DISCUSSIONS</h1>
       <div className="grid grid-cols-12 gap-4 p-3">
         {discussions.map((discussion, i) => (
           <div key={i} className="flex  flex-row sm:col-span-6 col-span-12 hover:cursor-pointer">
-            <div className="flex flex-col h-full w-full  bg-indigo-200 p-4 border-blue-500 border shadow-sm shadow-pink-800 ">
+            <div className="flex flex-col h-full w-full dark:bg-yellow-800 bg-indigo-200 p-4 border-blue-500 border shadow-sm shadow-pink-800 ">
               <h1 className="text-xl font-bold ">{discussion.topic}</h1>
               <p className="flex truncate max-h-20">{discussion.content.substring(0 , 100) + '...'}</p>
               <div className="flex flex-row gap-5 p-1 justify-between items-center ">

@@ -62,6 +62,8 @@ const Shopper = () => {
 
   const [open, setOpen] = useState(false);
 
+  const [sortOpen, setSortOpen] = useState(false);
+
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
   const [selectedLanguages, setSelectedLanguages] = useState([]);
@@ -72,8 +74,10 @@ const Shopper = () => {
   const [rating, setRating] = useState(0);
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
-  const [searchText , setSearchText] = useState("");
-  let query1 = "", query2 = "", query3 = "", query4 = "", query5 = "", query6 = "";
+  const [searchText, setSearchText] = useState("");
+  const [sortOption, setSortOption] = useState("");
+  const [sortDirection, setSortDirection] = useState("asc"); 
+  let query1 = "", query2 = "", query3 = "", query4 = "", query5 = "", query6 = "" , querySort="";
 
   let curUrl = "";
 
@@ -87,14 +91,18 @@ const Shopper = () => {
     query4 = binding.length ? `&binding=${binding.join(',')}` : "";
     query5 = `&numericFilters=price<=${maxPrice},rating>=${rating}`;
     query6 = `title=${title}`
+    if (sortOption) {
+      querySort = sortDirection === 'desc' ? `&sort=-${sortOption}` : `&sort=${sortOption}`;
+    }
+    // querySort = sortOption ? `&sort=${sortOption},${sortDirection}` : "";
     //console.log(query5);
 
 
-    if (!title) curUrl = `/books?page=${curPage}&limit=${LIMIT}${query1}${query2}${query3}${query4}${query5}`;
-    else curUrl = `/books?title=${title}`
+    if (!title) curUrl = `/books?page=${curPage}&limit=${LIMIT}${query1}${query2}${query3}${query4}${query5}${querySort}`;
+    else curUrl = `/books?title=${title}${querySort}`
     setUrl(curUrl);
 
-  }, [selectedGenres, curPage, selectedTags, selectedLanguages, binding, maxPrice, rating, title])
+  }, [selectedGenres, curPage, selectedTags, selectedLanguages, binding, maxPrice, rating, title , sortOption , sortDirection])
 
 
   //useEffect for url 
@@ -114,17 +122,17 @@ const Shopper = () => {
     //   )
     // }
 
-          console.log(url);
-      axios.get(url).then((response) => {
-        setBooks(response.data.books);
-        setTotalBooks(response.data.total);
-        console.log("response books ",response.data.books);
-        console.log(response.data.total);
-        console.log(response.data);
+    console.log(url);
+    axios.get(url).then((response) => {
+      setBooks(response.data.books);
+      setTotalBooks(response.data.total);
+      console.log("response books ", response.data.books);
+      console.log(response.data.total);
+      console.log(response.data);
 
-      }).catch((err) => console.log(err)).finally(
-        console.log("state books",books)
-      )
+    }).catch((err) => console.log(err)).finally(
+      console.log("state books", books)
+    )
 
 
   }, [url])
@@ -166,7 +174,14 @@ const Shopper = () => {
 
   }
 
+  const handleSortChange = (e) => {
+    console.log(e.target.value);
+    setSortOption(e.target.value);
+  };
 
+  const handleSortDirectionChange = (e) => {
+    setSortDirection(e.target.value);
+  };
 
   return (
     <div className="dark:bg-pink-200 min-h-screen max-h-[300rem] flex h-auto max-w-h-screen no-scrollbar">
@@ -232,34 +247,55 @@ const Shopper = () => {
         </ul>
 
       </div>
+      <div className={`bg-blue-400 dark:text-yellow-100 dark:bg-red-800 ${sortOpen ? "w-[30vw] max-w-[35vw]" : "hidden w-0"} relative transform duration-900 flex-col break-words text-wrap`}>
+      {sortOpen && (
+          <div className="sort-options dark:text-yellow-100 p-4">
+            <h3 className="font-serif font-bold">Sort by</h3>
+            <select value={sortOption} onChange={(e)=>handleSortChange(e)} className="p-2 bg-white text-black">
+              <option value="">None</option>
+              <option value="price">Price</option>
+              <option value="rating">Rating</option>
+              <option value="publishYear">Publish Year</option>
+            </select>
+
+            <h3 className="font-serif font-bold">Sort Direction</h3>
+            <select value={sortDirection} onChange={(e)=>handleSortDirectionChange(e)} className="p-2 bg-white text-black">
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
+            </select>
+          </div>
+        )}
+
+
+      </div>
       <div className={`${open ? "w-[70vw]  sm:min-w-[65vw] sm:w-[70vw]" : "w-[100vw]"}`}>
         {/* top second nav */}
         <div className="flex flex-row justify-between">
           <div className="flex flex-row">
             <span className="flex m-1 border dark:border-red-900 h-12 w-20 p-4 justify-center items-center text-sm hover:cursor-pointer" onClick={() => setOpen(!open)}>FILTER{open ? <ArrowLeftIcon /> : <FilterListIcon />} </span>
-            <span className="flex m-1 border dark:border-red-900 h-12 w-20 p-4 justify-center items-center text-sm hover:cursor-pointer">SORT <SortIcon /></span>
+            <span className="flex m-1 border dark:border-red-900 h-12 w-20 p-4 justify-center items-center text-sm hover:cursor-pointer" onClick={() => setSortOpen(!sortOpen)}>SORT{sortOpen ? <ArrowLeftIcon /> : <SortIcon />} </span>
           </div>
 
           {/* search bar */}
           <div className="flex flex-row items-center ">
-            <input type="text" placeholder="Search any book" className="flex flex-grow w-auto text-gray-800 max-h-10" onChange={(e) =>{ 
+            <input type="text" placeholder="Search any book" className="flex flex-grow w-auto text-gray-800 max-h-10" onChange={(e) => {
               setTitle(e.target.value);
               setSearchText("");
-              }} />
-            <button className="bg-blue-100 h-9 w-9 rounded-md m-1" onClick={(e) => {
-             setSearchText(title);
+            }} />
+            <button className="bg-blue-950 dark:bg-red-400 text-white h-9 w-9 rounded-md m-1" onClick={(e) => {
+              setSearchText(title);
             }}> <SearchIcon /> </button>
           </div>
         </div>
 
         <div>
           {searchText && (
-            <div className="flex flex-row p-2  m-1 text-blue-950"> 
-             Search Results displayed for&nbsp;<span className="font-bold underline">{searchText}</span> 
+            <div className="flex flex-row p-2  m-1 text-blue-950">
+              Search Results displayed for&nbsp;<span className="font-bold underline">{searchText}</span>
             </div>
           )}
         </div>
-        <BooksDisplay books={books} open={open} />
+        <BooksDisplay books={books} open={open} sortOpen={sortOpen}/>
         <Pagination totalBooks={totalBooks} LIMIT={LIMIT} curPage={curPage} setcurPage={setcurPage} />
       </div>
     </div>

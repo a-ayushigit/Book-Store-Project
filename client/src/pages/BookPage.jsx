@@ -55,7 +55,7 @@ const BookPage = () => {
   return (
     loading ?
       <Loader /> :
-      <div className="min-h-screen h-full p-2 flex flex-col gap-3 overflow-hidden">
+      <div className="min-h-screen h-full p-2 flex flex-col gap-3 dark:bg-orange-300 overflow-hidden">
         <h1 className="text-lg sm:text-3xl font-bold">{bookdetails.title}&nbsp;({bookdetails.publishYear})</h1>
         <div className="grid grid-cols-12 ">
           <div className=" col-span-4 flex flex-col gap-2">
@@ -82,8 +82,8 @@ const BookPage = () => {
               console.log(cart.items);
               navigate('/cart');
             }}
-            className="bg-blue-600 text-white p-2 rounded-sm m-1">Add to cart</button>
-            <button className="bg-blue-600 text-white p-2 rounded-sm" onClick={()=>{addToBookshelf()}}>Add to bookshelf</button>
+            className="bg-blue-600 dark:bg-red-950 text-white p-2 rounded-sm m-1">Add to cart</button>
+            <button className="bg-blue-600 dark:bg-red-950 text-white p-2 rounded-sm" onClick={()=>{addToBookshelf()}}>Add to bookshelf</button>
            </div>
          
           </div>
@@ -94,13 +94,13 @@ const BookPage = () => {
           <div className="flex flex-col col-span-8 items-start gap-2 h-full object-contain">
             <div className="flex flex-col  items-start">
             <div className="flex font-semibold text-xl">{bookdetails.author}</div>
-            <div className="flex items-center justify-center bg-cyan-400 p-1 text-white font-semibold rounded-lg shadow-md">
+            <div className="flex items-center justify-center dark:bg-red-800 bg-cyan-400 p-1 text-white font-semibold rounded-lg shadow-md">
               Rating - {bookdetails.rating}
               <img src={star} className="h-8 w-10"/>
             </div>
             </div>
             
-            <p className="flex justify-around font-thin flex-wrap p-3 border bg-cyan-100 border-blue-950 shadow-xl rounded-md m-2">
+            <p className="flex justify-around font-thin flex-wrap p-3 border dark:bg-red-300 bg-cyan-100 border-blue-950 shadow-xl rounded-md m-2">
               {bookdetails.description}
             </p>
             <div className="grid grid-cols-8 justify-between items-center w-full">

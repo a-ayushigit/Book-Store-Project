@@ -5,7 +5,7 @@ import axios from 'axios';
 import ProfilePage from './ProfilePage';
 import OrderPage  from './OrderPage';
 import MyCommunityPage from './MyCommunityPage';
-
+import ProfileLoader from './ProfileLoader';
 
 
 const AccountPage = () => {
@@ -31,7 +31,7 @@ const AccountPage = () => {
         classes += ' dark:bg-red-800 bg-blue-500 text-white rounded-full';
       }
       else{
-        classes += ' bg-gray-300 rounded-full';
+        classes += ' bg-cyan-100 dark:bg-red-950 rounded-full';
       }
       console.log(classes);
       return classes ;
@@ -59,14 +59,14 @@ const AccountPage = () => {
 
   return (
   <>
-    <div className="mx-3">
+    <div className="min-h-screen px-3 bg-blue-200 dark:bg-yellow-800 dark:text-white text-blue-950">
         <nav className="flex gap-3 items-center justify-center p-5 max-w-auto">
           <Link className={linkClasses("myprofile")} to="/account/myprofile">My Profile</Link>
           <Link onClick={handleOrders} className={linkClasses("myorders")} to="/account/myorders">My Orders</Link>
           <Link className={linkClasses("mycommunity")} to="/account/mycommunity">My Community</Link>
           
         </nav>
-
+         {subpage === null && <ProfileLoader/>}
         {subpage === "myprofile" && <ProfilePage handleLogout={handleLogout}  />}
         {subpage === "myorders" && <OrderPage  user={user} setUser={setUser} orders={orders} />}
         { subpage === "mycommunity" && <MyCommunityPage/>}

@@ -107,14 +107,14 @@ const Accordion = () => {
 
     // console.log("content",data.content);
     return (
-        <div>
+        <div className="flex flex-col dark:text-red-950 text-white  gap-5">
             {accordionObj.map((data , i) => (
-                <div key={i}>
-                    <div className="flex flex-row justify-between">
-                        <div>{data.header}</div>
-                        <div className="hover:cursor-pointer" onClick={() => toggle !== data.id? setToggle(data.id) :setToggle(null) }>{toggle === data.id ? '-' : '+'}</div>
+                <div key={i} className="">
+                    <div className="flex dark:bg-red-500 bg-blue-400 flex-row justify-between rounded-md gap-4 border border-white p-2">
+                        <div className="flex items-center justify-start">{data.header}</div>
+                        <div className="hover:cursor-pointer rounded-full bg-blue-200 dark:bg-yellow-900  text-black p-1" onClick={() => toggle !== data.id? setToggle(data.id) :setToggle(null) }>{toggle === data.id ? '-' : '+'}</div>
                     </div>
-                    <div >
+                    <div className="flex flex-col dark:bg-red-400 bg-blue-200 gap-1 p-2 rounded-sm">
                         {toggle === data.id? data.content?.map((item, i) =>
                         (
                             <div key={i} className="flex flex-row justify-between">
@@ -125,8 +125,8 @@ const Accordion = () => {
                                     <span>{item.username}</span>
 
                                 </div>
-                                <div>{data.containsButton && <button className="hover:cursor-pointer" onClick={() => acceptFriendRequest(item._id)}>Accept</button>}</div>
-                                <div>{data.containsButton && <button className="hover:cursor-pointer" onClick={() => rejectFriendRequest(item._id)}>Reject</button>}</div>
+                                <div>{data.containsButton && <button className="hover:cursor-pointer p-2 rounded-sm dark:bg-red-950 dark:text-white bg-blue-800" onClick={() => acceptFriendRequest(item._id)}>Accept</button>}</div>
+                                <div>{data.containsButton && <button className="hover:cursor-pointer p-2 rounded-sm dark:bg-red-950 dark:text-white bg-blue-800" onClick={() => rejectFriendRequest(item._id)}>Reject</button>}</div>
                             </div>
                         )
                             // console.log(item)

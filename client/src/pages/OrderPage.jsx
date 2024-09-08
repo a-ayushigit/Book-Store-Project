@@ -24,7 +24,7 @@ const OrderPage = ({ orders }) => {
   const {user , setUser} = useContext(UserContext);
 
   return (
-    <div className="grid grid-cols-12">
+    <div className="grid grid-cols-12 dark:text-white">
       <div className="col-span-9">
         {
           orderedItems && orderedItems.map((item) => (
@@ -34,11 +34,11 @@ const OrderPage = ({ orders }) => {
               }</h2>
               <div className="flex flex-col gap-1 py-1">
                 {item.books.map((book) => (
-                  <div className=" w-full h-[15rem] border border-black grid grid-cols-12">
+                  <div className=" w-full h-[15rem] border dark:border-white border-black grid grid-cols-12">
                     <div className="flex items-center justify-center w-auto col-span-12 sm:col-span-3">
                       <img src={book.imageUrl} alt="" className="sm:h-[12rem] w-auto h-auto" />
                     </div>
-                    <div className="flex flex-col w-auto col-span-12 sm:col-span-9 text-black">
+                    <div className="flex flex-col w-auto col-span-12 sm:col-span-9 dark:text-white text-blue-950">
 
                       <p className="flex flex-row justify-start pt-8 sm:text-2xl font-bold font-serif">{book.title}
 

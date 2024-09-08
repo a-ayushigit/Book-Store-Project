@@ -19,7 +19,7 @@ console.log(books);
     const navigate = useNavigate();
   return (
     <div  className="relative flex items-center ">
-        <KeyboardArrowLeftIcon className="relative p-1 hidden hover:block rounded-full bg-transparent hover:bg-indigo-300" onClick={slideLeft}/>
+        <KeyboardArrowLeftIcon className="dark:hover:bg-red-800 dark:hover:text-white relative p-1 hidden hover:block rounded-full bg-transparent hover:bg-indigo-300" onClick={slideLeft}/>
         <div id="slider" className="flex w-full h-full overflow-x-scroll overflow-y-hidden  scroll whitespace-nowrap scroll-smooth no-scrollbar">
 
          
@@ -44,7 +44,7 @@ console.log(books);
       )}
       
         </div>
-        <KeyboardArrowRightIcon className="relative p-1 hidden  rounded-full bg-transparent hover:bg-indigo-300 pl-1" onClick={slideRight}/>
+        <KeyboardArrowRightIcon className="relative p-1 hidden  rounded-full bg-transparent dark:hover:bg-red-800 dark:hover:text-white hover:bg-indigo-300 pl-1" onClick={slideRight}/>
     </div>
   )
 }

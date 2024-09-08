@@ -109,7 +109,8 @@ const obj = {
 }
 
 res.status(200).send(obj);
-console.log(res.data);
+// console.log("result ",res.data);
+// console.log(obj);
 // res.status(200).json({books ,total });
     }
     catch(error){

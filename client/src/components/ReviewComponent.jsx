@@ -41,7 +41,7 @@ const ReviewComponent = ({bookId}) => {
     }
   return (
     <div className="h-full min-h-screen flex flex-col self-center justify-self-center items-center  w-auto ">
-        <div className="shadow-md flex flex-col self-center justify-self-center items-center p-5 bg-blue-100 ">
+        <div className="shadow-md flex flex-col self-center justify-self-center items-center p-5 bg-blue-100 dark:bg-red-300">
         <p className="font-bold text-lg flex ">Create review ....</p>
       <div className="h-full w-auto flex flex-col text-nowrap items-center gap-2 p-1">
       <div className="flex flex-row gap-5 items-center justify-center">

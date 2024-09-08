@@ -88,17 +88,17 @@ const Community = () => {
   }
 
   return (
-    <div className="flex flex-col no-scrollbar">
+    <div className="flex flex-col no-scrollbar dark:bg-yellow-900 ">
       
 
     {user? 
     <>
       <div><CommunityNavbar /></div>
-      <div className={` m-3 items-center justify-center gap-5 ${!user ? "hidden" : "flex"}`}>
-        <button className="flex p-3 rounded-xl bg-cyan-500 text-white " onClick={() => handleGroupAndDiscussion("group")}>Add a Group</button>
-        <button className="flex p-3 rounded-xl bg-cyan-500 text-white " onClick={() => handleGroupAndDiscussion("discussion")}>Start a Discussion</button>
+      <div className={` m-3 items-center  justify-center gap-5 ${!user ? "hidden" : "flex"}`}>
+        <button className="flex p-3 rounded-xl dark:bg-red-950 bg-cyan-500 text-white " onClick={() => handleGroupAndDiscussion("group")}>Add a Group</button>
+        <button className="flex p-3 rounded-xl dark:bg-red-950 bg-cyan-500 text-white " onClick={() => handleGroupAndDiscussion("discussion")}>Start a Discussion</button>
       </div>
-      <div className="flex bg-book-center m-2 p-3">
+      <div className="flex bg-book-center m-2 p-3 ">
         {/* <Modal className="flex " modal={modal}   setModal={setModal} optionsList={optionsList} handleSubmission={handleSubmission} type="group"/> */}
         {
           groupForm ?
