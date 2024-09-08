@@ -15,7 +15,7 @@ export const SocketContextProvider = ({children}) => {
     console.log("Hello socket");
     useEffect(()=>{
         if(user){
-            const socket = io.connect("http://localhost:5000" , {
+            const socket = io.connect("https://book-store-project-backend-0ij2.onrender.com" , {
                 query: { userId : user._id}
             });
             console.log("User connected !");
