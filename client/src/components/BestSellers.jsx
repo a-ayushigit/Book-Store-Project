@@ -9,7 +9,7 @@ const BestSellers = () => {
     useEffect(() => {
         const fetchBooks = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/v1/books');
+                const response = await axios.get('/books');
 
 
                 if (response.status === 200) {
