@@ -37,12 +37,13 @@ export default  function UserContextProvider({children}){
 useEffect(() => {
     const fetchUser = async () => {
         try {
-            const  data  = await axios.get('/auth/profile');
-            console.log(data);
+            const  {data } = await axios.get('/auth/profile');
+            console.log("data ",data);
+            setUser(data);
         } catch (err) {
             console.log(err);
         } finally {
-            setUser(data);
+            
             setLoading(false);
         }
     };
