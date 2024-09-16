@@ -88,15 +88,15 @@ const Carousel = () => {
         let response;
         try {
             if (tag !== "") {
-                response = await axios.get(`http://localhost:5000/api/v1/books?tag=${tag}`);
+                response = await axios.get(`https://book-store-project-backend-0ij2.onrender.com/api/v1/books?tag=${tag}`);
                 setTitle(tag);
             }
             else if (cat !== "") {
-                response = await axios.get(`http://localhost:5000/api/v1/books?category=${cat}`);
+                response = await axios.get(`https://book-store-project-backend-0ij2.onrender.com/api/v1/books?category=${cat}`);
                 setTitle(cat);
             }
             else {
-                response = await axios.get(`http://localhost:5000/api/v1/books?lang=${lang}`);
+                response = await axios.get(`https://book-store-project-backend-0ij2.onrender.com/api/v1/books?lang=${lang}`);
                 setTitle(lang);
             }
             console.log(response.data)
