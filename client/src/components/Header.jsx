@@ -86,12 +86,12 @@ const Header = () => {
                   <div className={`font-bold uppercase text-xs rounded-md hover:border hover:border-blue-950 p-1 `}>
                  
                  {/* ${menu.access ? "flex" : "hidden"} */}
-                  <a href={menu.link}> 
+                  <Link to={menu.link}> 
                   <div className={`flex flex-row text-wrap text-xs relative text-center justify-center `}>
                   {menu.icon}
                   <p className="md:flex flex-row hidden md:text-center justify-center pt-1 pl-1"> {menu.name} </p> 
                   </div>
-                  </a>
+                  </Link>
                   </div>
                </li>
 
