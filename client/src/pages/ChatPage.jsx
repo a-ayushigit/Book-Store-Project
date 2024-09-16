@@ -13,7 +13,7 @@ const ChatPage = () => {
   },[])
   return (
     <div className="h-screen" >
-      {user.user? 
+      {!loading && user.user? 
       <div>
       <Chatcomponent/>
       </div>
