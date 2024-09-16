@@ -30,7 +30,7 @@ const OrderPage = ({ orders }) => {
           orderedItems && orderedItems.map((item) => (
             <div key={item._id}>
               <h2>{
-                (`${monthMap[new Date(item.createdAt).getMonth()]} ${new Date(item.createdAt).getDate()} , ${new Date(item.createdAt).getFullYear()} `)
+                (`${monthMap[Number(new Date(item.createdAt).getMonth())+1]} ${new Date(item.createdAt).getDate()} , ${new Date(item.createdAt).getFullYear()} `)
               }</h2>
               <div className="flex flex-col gap-1 py-1">
                 {item.books.map((book) => (

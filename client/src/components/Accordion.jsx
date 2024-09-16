@@ -118,11 +118,11 @@ const Accordion = () => {
                         {toggle === data.id? data.content?.map((item, i) =>
                         (
                             <div key={i} className="flex flex-row justify-between">
-                                <div className="flex flex-row">
+                                <div className="flex flex-row w-full">
                                     <span>{item.image ? (
                                         <img src={item.image} />
                                     ) : null}</span>
-                                    <span>{item.username}</span>
+                                    <div className="bg-blue-950 text-white w-full p-2 rounded-sm">{item.username}</div>
 
                                 </div>
                                 <div>{data.containsButton && <button className="hover:cursor-pointer p-2 rounded-sm dark:bg-red-950 dark:text-white bg-blue-800" onClick={() => acceptFriendRequest(item._id)}>Accept</button>}</div>

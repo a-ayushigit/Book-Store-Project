@@ -39,7 +39,7 @@ const Header = () => {
       id: 3,
       // icon: user ? <PersonIcon /> :loading?<>Loading...</>: <LoginIcon />,
       icon:loading?null:(user ? <PersonIcon />:<LoginIcon />),
-      name:loading?<>Loading...</>: (user && user.username ? <>{' ' + user?.username?.split(" ")[0]}</> : "") , 
+      name:loading?<>Loading...</>: (user && user.username ? <>{' ' + user?.username?.split(" ")[0]}</> : "Login") , 
       link:loading?"#": (user ? user.isAdmin ? "/admin" :"/account" : "/login"),
     },
      {
