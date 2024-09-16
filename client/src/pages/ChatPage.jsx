@@ -11,15 +11,18 @@ const ChatPage = () => {
   useEffect(() => {
 
   }, [])
+  if(loading) return <>Loading......</>
+  if(!loading && user)
   return (
     <div className="h-screen" >
-      {!loading && user ?
+     
         <div>
           <Chatcomponent />
         </div>
-        : "Please login to chat "}
+       
     </div>
   )
+  if(!loading && !user) return <>"Please login to chat "</>
 }
 
 export default ChatPage
