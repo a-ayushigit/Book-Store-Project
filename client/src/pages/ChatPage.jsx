@@ -9,7 +9,7 @@ const ChatPage = () => {
   // const user = useContext(UserContext);
   const { loading , user} = useContext(UserContext);
   useEffect(() => {
-
+    console.log(user);
   }, [])
   if(loading) return <>Loading......</>
   if(!loading && user)
