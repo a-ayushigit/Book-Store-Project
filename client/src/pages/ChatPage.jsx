@@ -4,21 +4,21 @@ import Chatcomponent from '../components/Chatcomponent';
 
 
 const ChatPage = () => {
-  const [users , setUsers] = useState([]);
+  const [users, setUsers] = useState([]);
   const [messages, setMessages] = useState([]);
-  const user = useContext(UserContext);
-  const {loading} = useContext(UserContext);
-  useEffect(()=>{
+  // const user = useContext(UserContext);
+  const { loading , user} = useContext(UserContext);
+  useEffect(() => {
 
-  },[])
+  }, [])
   return (
     <div className="h-screen" >
-      {!loading && user.user? 
-      <div>
-      <Chatcomponent/>
-      </div>
-       : "Please login to chat "}
-       </div>
+      {!loading && user ?
+        <div>
+          <Chatcomponent />
+        </div>
+        : "Please login to chat "}
+    </div>
   )
 }
 
