@@ -68,10 +68,10 @@ const Header = () => {
       <div className="w-full  flex  h-10 shadow justify-between py-1 px-2 gap-1 ">
         <div className="flex font-bold text-xs sm:text-3xl items-center justify-between">
 
-          <a href="#" className="flex ">
+          <Link to="#" className="flex ">
             <img src={Logo} alt="" className="h-8" />
            <p className="text-xl sm:text-2xl">BookSphere</p> 
-          </a>
+          </Link>
 
         </div>
         <div>

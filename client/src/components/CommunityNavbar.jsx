@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const CommunityNavbar = () => {
     const navList = [
@@ -24,7 +25,7 @@ const CommunityNavbar = () => {
      {
       navList.map((item)=>{
         return (
-          <a href={item.link} key={item.id} className="flex py-2 px-3 gap-1 text-sm hover:font-extralight  hover:text-yellow-500">{item.name}</a>
+          <Link to={item.link} key={item.id} className="flex py-2 px-3 gap-1 text-sm hover:font-extralight  hover:text-yellow-500">{item.name}</Link>
         )
       })
      }
