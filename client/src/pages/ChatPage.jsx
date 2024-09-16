@@ -7,7 +7,7 @@ const ChatPage = () => {
   const [users , setUsers] = useState([]);
   const [messages, setMessages] = useState([]);
   const user = useContext(UserContext);
- 
+  const {loading} = useContext(UserContext);
   useEffect(()=>{
 
   },[])
