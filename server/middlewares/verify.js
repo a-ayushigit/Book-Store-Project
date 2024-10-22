@@ -4,7 +4,7 @@ const User = require("../models/User");
 const verifyToken = (req, res, next) => {
     try {
         const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "");
-
+        console.log(token);
         if (token) {
 
             jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
@@ -33,6 +33,7 @@ const verifyTokenAndAuthorization = (req, res, next) => {
         console.log("request user id ",req.user._id);
         console.log("user id from frontend ",req.params.id);
         if ( ((req.user._id === req.params.id) || req.user.isAdmin)) {
+            
             next();
         }
         else {
